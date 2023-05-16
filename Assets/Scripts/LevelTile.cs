@@ -17,21 +17,25 @@ public class LevelTile : MonoBehaviour
 
     public int row, col, curr_score;
     int plantType, turnCounter;
-    GameObject plant;       //tracks the plant currently planted on this tile
 
+    //GameObject plant;       //tracks the plant currently planted on this tile
+    LevelManager levelManager;
 
     void Start()
     {
         plantType = -1;
-        curr_score = 0;
+        //curr_score = 0;
         turnCounter = 0;
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     public void plantPlant(int plantID)
     {
         plantType = plantID;
         //TODO: initialize the current score of this tile to the base score of the plant
+        //(I think this is already done in plant actions)
         //TODO: maybe do plant actions here? Currently doing them in LevelManager
+        levelManager.plantAction(row, col, plantID);
     }
 
     //Increments the turn counter of this tile and returns the value of the new turn counter

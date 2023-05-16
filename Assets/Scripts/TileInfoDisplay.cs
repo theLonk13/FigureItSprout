@@ -11,6 +11,6 @@ public class TileInfoDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = tiledata.curr_score + "";
+        scoreDisplay.SetText(tiledata.curr_score + "");
     }
 }

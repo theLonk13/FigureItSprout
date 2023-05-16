@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
     GameObject[] tiles;
     [SerializeField] int max_level_size = 1;
+    [SerializeField] TextMeshPro total_score;
     // Start is called before the first frame update
     void Start()
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
+
+        //This is for debugging, maybe take out
+        UpdateScore();
     }
 
     //performs an action corresponding to the plant on a tile
@@ -17,14 +22,46 @@ public class LevelManager : MonoBehaviour
     //TODO Fill out with the rest of the plants
     public void plantAction(int row_num, int col_num, int plantID)
     {
+        Debug.Log("Attempting to plant a plant of ID " + plantID);
         //Perform "Active" plant actions
+        //TODO Update this with other plants as IDs are finalized
         switch (plantID)
         {
             case 1:
                 SpecialPlant(row_num, col_num);
                 break;
             case 2:
-
+                Sage(row_num, col_num);
+                break;
+            case 3:
+                Parsley(row_num, col_num);
+                break;
+            case 4:
+                Cilantro(row_num, col_num);
+                break;
+            case 5:
+                Lemongrass(row_num, col_num);
+                break;
+            case 6:
+                Thyme(row_num, col_num);
+                break;
+            case 7:
+                Clover(row_num, col_num);
+                break;
+            case 8:
+                Alfalfa(row_num, col_num);
+                break;
+            case 9:
+                Basil(row_num, col_num);
+                break;
+            case 10:
+                SunSucc(row_num, col_num);
+                break;
+            case 11:
+                Vipergrass(row_num, col_num);
+                break;
+            case 12:
+                Crabgrass(row_num, col_num);
                 break;
             default:
                 Debug.Log("What are you doing with your life?");
@@ -36,6 +73,9 @@ public class LevelManager : MonoBehaviour
 
         //Increment plant counters and perform "Turn Counter" plant actions
         incCounterPlants();
+
+        //Update the score after all plant actions have finished
+        UpdateScore();
     }
 
     //Searches the tiles array for a tile in a specific position
@@ -54,6 +94,18 @@ public class LevelManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    //Totals the score of all plants after the turn is ended
+    void UpdateScore()
+    {
+        int score = 0;
+        foreach(GameObject tile in tiles)
+        {
+            LevelTile tiledata = tile.GetComponent<LevelTile>();
+            score += tiledata.curr_score;
+        }
+        total_score.SetText(score + "");
     }
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
@@ -84,14 +136,24 @@ public class LevelManager : MonoBehaviour
     //ID 2: Sage - Worth 1 pt. No special effect
     void Sage(int row_num, int col_num)
     {
+        Debug.Log("Attempting to plant sage");
+        LevelTile tiledata = findTile(row_num, col_num);
+        if(tiledata != null)
+        {
+            Debug.Log("Sage planted");
+            tiledata.curr_score = 1;
+        }
+
+        /*
         foreach (GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
             if (tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
             {
-                tiledata.curr_score++;
+                tiledata.curr_score = 1;
             }
         }
+        */
     }
 
     //ID 3: Parsley - Worth 2 pts. No special effect
