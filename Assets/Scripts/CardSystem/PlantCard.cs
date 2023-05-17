@@ -9,11 +9,13 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [SerializeField] int plantID;
 
     public static GameObject LastCardSlot;
+    public static GameObject playerHand;
     private Image image;
 
     void Awake()
     {
         image = GetComponent<Image>();
+        playerHand = GameObject.Find("PlayerHandArea");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -30,11 +32,11 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(LastCardSlot.transform);
+        transform.SetParent(playerHand.transform);
         image.raycastTarget = true;
 
         LevelTile plot_tile = LastCardSlot.GetComponent<LevelTile>();
-        if (plot_tile != null)
+        if (plot_tile != null && plot_tile.getPlantType() <= 0)
         {
             plot_tile.plantPlant(plantID);
             Destroy(this.gameObject);

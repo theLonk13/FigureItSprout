@@ -7,11 +7,18 @@ public class LevelManager : MonoBehaviour
 {
     GameObject[] tiles;
     [SerializeField] int max_level_size = 1;
-    [SerializeField] TextMeshPro total_score;
+    //[SerializeField] TextMeshPro total_score;
+    [SerializeField] TextMeshProUGUI total_score_canvas;
+    [SerializeField] TextMeshProUGUI goal_score_canvas;
+    [SerializeField] int goal_score = 1;
+
+    int total_score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
+        goal_score_canvas.SetText("Goal Score: " + goal_score);
 
         //This is for debugging, maybe take out
         UpdateScore();
@@ -23,6 +30,9 @@ public class LevelManager : MonoBehaviour
     public void plantAction(int row_num, int col_num, int plantID)
     {
         Debug.Log("Attempting to plant a plant of ID " + plantID);
+        //Check "Setup" plant actions
+        checkShame(row_num, col_num);
+
         //Perform "Active" plant actions
         //TODO Update this with other plants as IDs are finalized
         switch (plantID)
@@ -68,9 +78,6 @@ public class LevelManager : MonoBehaviour
                 break;
         }
 
-        //Check "Setup" plant actions
-        checkShame(row_num, col_num);
-
         //Increment plant counters and perform "Turn Counter" plant actions
         incCounterPlants();
 
@@ -99,13 +106,26 @@ public class LevelManager : MonoBehaviour
     //Totals the score of all plants after the turn is ended
     void UpdateScore()
     {
-        int score = 0;
+        total_score = 0;
         foreach(GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
-            score += tiledata.curr_score;
+            total_score += tiledata.curr_score;
         }
-        total_score.SetText(score + "");
+        //total_score.SetText(score + "");
+        total_score_canvas.SetText("Total Score: " + total_score);
+    }
+
+    //returns score
+    public int GetScore()
+    {
+        return total_score;
+    }
+
+    //returns true if the total score of the tiles is at least the goal score, false otherwise
+    public bool GoalMet()
+    {
+        return total_score >= goal_score;
     }
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
@@ -190,7 +210,7 @@ public class LevelManager : MonoBehaviour
         foreach (GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
-            if (tiledata != null && tiledata.row == row_num && tiledata.col != col_num)
+            if (tiledata != null && tiledata.row == row_num && tiledata.col != col_num && tiledata.getPlantType() > 0)
             {
                 total_points++;
             }else if(tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
@@ -326,56 +346,56 @@ public class LevelManager : MonoBehaviour
         
         //top left
         curr_tile = findTile(row_num - 1, col_num - 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //top mid
         curr_tile = findTile(row_num - 1, col_num);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //top right
         curr_tile = findTile(row_num - 1, col_num + 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //mid left
         curr_tile = findTile(row_num, col_num - 1);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //mid right
         curr_tile = findTile(row_num, col_num + 1);
-        if(curr_tile!= null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //botttom left
         curr_tile = findTile(row_num + 1, col_num - 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //bottom mid
         curr_tile = findTile(row_num + 1, col_num);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }
 
         //bottom right
         curr_tile = findTile(row_num + 1, col_num + 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score += 2;
         }

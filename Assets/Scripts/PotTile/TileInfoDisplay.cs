@@ -6,7 +6,7 @@ using TMPro;
 public class TileInfoDisplay : MonoBehaviour
 {
     [SerializeField] LevelTile tiledata;
-    [SerializeField] TextMeshPro scoreDisplay;
+    [SerializeField] TextMeshProUGUI scoreDisplay;
 
     // Update is called once per frame
     void Update()

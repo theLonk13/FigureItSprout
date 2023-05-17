@@ -5,7 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/QuangTestScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv1.unity
+    guid: 9e1587af5f577b94f8f83b5399ac281e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv2.unity
+    guid: b4a5d71db25ea6e40a3ff11ffd201c38
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv3.unity
+    guid: bc85a37bb82a0484396c1f7b5c1b6121
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv4.unity
+    guid: 48ff7883f4f8cf347994cb5fad3fc72f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv5.unity
+    guid: a923bf6b585d0fe409892496c6a85763
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv6.unity
+    guid: a27b7b6046fd0de4d9338acaaca7be24
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv7.unity
+    guid: c00720b3dc9680641870e7bd633c63df
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv8.unity
+    guid: 21f59037c5247e44ca27d51fd0fb8d25
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv9.unity
+    guid: 69d3ad1eda06efc4293b1bbe92f687c1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act1/Act1Lv10.unity
+    guid: add7237cffa5d0b4bb6231fafc38657d
   m_configObjects: {}
