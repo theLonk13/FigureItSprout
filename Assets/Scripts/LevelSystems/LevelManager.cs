@@ -7,10 +7,16 @@ public class LevelManager : MonoBehaviour
 {
     GameObject[] tiles;
     [SerializeField] int max_level_size = 1;
+
+    //score counters
     //[SerializeField] TextMeshPro total_score;
     [SerializeField] TextMeshProUGUI total_score_canvas;
     [SerializeField] TextMeshProUGUI goal_score_canvas;
     [SerializeField] int goal_score = 1;
+
+    //unlocked plant pages
+    [SerializeField] int unlock_plant1 = -1;
+    [SerializeField] int unlock_plant2 = -1;
 
     int total_score = 0;
 
@@ -19,6 +25,8 @@ public class LevelManager : MonoBehaviour
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         goal_score_canvas.SetText("Goal Score: " + goal_score);
+
+        unlock_pages();
 
         //This is for debugging, maybe take out
         UpdateScore();
@@ -126,6 +134,13 @@ public class LevelManager : MonoBehaviour
     public bool GoalMet()
     {
         return total_score >= goal_score;
+    }
+
+    void unlock_pages()
+    {
+        UnlockedPlants unlocks = GameObject.Find("PlantUnlocks").GetComponent<UnlockedPlants>();
+        unlocks.UnlockPlant(unlock_plant1);
+        unlocks.UnlockPlant(unlock_plant2);
     }
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE

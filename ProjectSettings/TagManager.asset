@@ -8,6 +8,9 @@ TagManager:
   - Plant
   - PlantCard
   - debug_NextLv
+  - BookPage
+  - Book
+  - PlantUnlocks
   layers:
   - Default
   - TransparentFX
