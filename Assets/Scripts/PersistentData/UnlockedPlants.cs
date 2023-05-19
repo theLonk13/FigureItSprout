@@ -18,7 +18,7 @@ public class UnlockedPlants : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(plant_unlocks);
+        //Debug.Log(plant_unlocks);
         debug_ShowAllUnlocks();
     }
 
@@ -45,6 +45,6 @@ public class UnlockedPlants : MonoBehaviour
         {
             unlocks += unlock + " ";
         }
-        Debug.Log(unlocks);
+        Debug.Log("Plant Unlocks:\n" + unlocks);
     }
 }

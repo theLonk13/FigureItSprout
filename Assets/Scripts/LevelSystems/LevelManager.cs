@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int unlock_plant1 = -1;
     [SerializeField] int unlock_plant2 = -1;
 
+    //level number for level select
+    [SerializeField] int lvNum;
+
     int total_score = 0;
 
     // Start is called before the first frame update
@@ -26,6 +29,7 @@ public class LevelManager : MonoBehaviour
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         goal_score_canvas.SetText("Goal Score: " + goal_score);
 
+        unlock_level();
         unlock_pages();
 
         //This is for debugging, maybe take out
@@ -141,6 +145,12 @@ public class LevelManager : MonoBehaviour
         UnlockedPlants unlocks = GameObject.Find("PlantUnlocks").GetComponent<UnlockedPlants>();
         unlocks.UnlockPlant(unlock_plant1);
         unlocks.UnlockPlant(unlock_plant2);
+    }
+
+    void unlock_level()
+    {
+        LevelData lv_unlocks = GameObject.Find("LevelData").GetComponent<LevelData>();
+        lv_unlocks.ActivateLevel(lvNum);
     }
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE

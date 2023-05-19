@@ -11,6 +11,7 @@ TagManager:
   - BookPage
   - Book
   - PlantUnlocks
+  - LevelSelector
   layers:
   - Default
   - TransparentFX
