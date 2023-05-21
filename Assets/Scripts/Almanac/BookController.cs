@@ -132,4 +132,18 @@ public class BookController : MonoBehaviour
         Debug.Log("Toggling book");
         book_toggle = -1*book_toggle;
     }
+
+    //opens the book up to the page of a certain plant
+    public void OpenToPlant(int plantID)
+    {
+        foreach(GameObject page in pages)
+        {
+            BookPageData page_data = page.GetComponent<BookPageData>();
+            if(page_data.getPlantID() == plantID)
+            {
+                curr_pg = (page_data.getPgNum() - 1) / 2;
+            }
+        }
+        ToggleBook();        
+    }
 }

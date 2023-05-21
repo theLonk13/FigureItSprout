@@ -30,6 +30,11 @@ public class NextLvButton : MonoBehaviour
 
     public void nextScene()
     {
+        MomPlantData mom_plant = GameObject.Find("MomPlantData").GetComponent<MomPlantData>();
+        if(mom_plant != null)
+        {
+            mom_plant.saveOrchid();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

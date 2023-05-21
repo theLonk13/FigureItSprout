@@ -12,6 +12,7 @@ TagManager:
   - Book
   - PlantUnlocks
   - LevelSelector
+  - PottedSprite
   layers:
   - Default
   - TransparentFX

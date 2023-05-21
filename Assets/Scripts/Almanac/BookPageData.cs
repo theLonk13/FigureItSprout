@@ -24,4 +24,9 @@ public class BookPageData : MonoBehaviour
     {
         return plantID;
     }
+
+    public int getPgNum()
+    {
+        return pgNumber;
+    }
 }

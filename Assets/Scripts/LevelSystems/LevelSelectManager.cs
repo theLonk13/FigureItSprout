@@ -21,7 +21,7 @@ public class LevelSelectManager : MonoBehaviour
     void Update()
     {
         levelData = levelDataScript.get_level_data();
-        showLevels();
+        //showLevels();
     }
 
     void showLevels()

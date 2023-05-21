@@ -85,6 +85,18 @@ public class LevelManager : MonoBehaviour
             case 12:
                 Crabgrass(row_num, col_num);
                 break;
+            case 13:
+                Shiitake(row_num, col_num);
+                break;
+            case 14:
+                Portabella(row_num, col_num);
+                break;
+            case 15:
+                Shame(row_num, col_num);
+                break;
+            case 16:
+                EpicPlant(row_num, col_num);
+                break;
             default:
                 Debug.Log("What are you doing with your life?");
                 break;
@@ -155,7 +167,7 @@ public class LevelManager : MonoBehaviour
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
     //"Active" plant actions: These actions occur on planting the plant
-    //ID 1: the special mom plant
+    //ID 1: the special mom plant (DAISY)
     void SpecialPlant(int row_num, int col_num)
     {
         foreach(GameObject tile in tiles)
@@ -168,13 +180,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //ID ??: the EPIC special mom plant
+    //ID 16: the EPIC special mom plant (ORCHID)
     void EpicPlant(int row_num, int col_num)
     {
+        MomPlantData mom_plant = GameObject.Find("MomPlantData").GetComponent<MomPlantData>();
         LevelTile tiledata = findTile(row_num, col_num);
-        if(tiledata != null)
+        if(tiledata != null && mom_plant != null)
         {
-            tiledata.curr_score = 10;
+            tiledata.curr_score = mom_plant.plantOrchid(row_num, col_num);
         }
     }
 
@@ -316,7 +329,7 @@ public class LevelManager : MonoBehaviour
         LevelTile curr_tile = null;
         for(int i = 0; i < max_level_size; i++)
         {
-            curr_tile = findTile(row_num, i);
+            curr_tile = findTile(i, col_num);
             if(curr_tile != null)
             {
                 curr_tile.curr_score *= 2;
@@ -442,7 +455,8 @@ public class LevelManager : MonoBehaviour
             curr_tile = findTile(row_num, i);
             if(curr_tile != null && i != col_num)
             {
-                int steal_this = curr_tile.curr_score / 2;
+                int steal_this = ((curr_tile.curr_score + 1) / 2);
+                Debug.Log("Vipergrass stealing " + steal_this);
                 curr_tile.curr_score -= steal_this;
                 viper_tile.curr_score += steal_this;
             }
@@ -462,7 +476,7 @@ public class LevelManager : MonoBehaviour
         foreach(GameObject tile in tiles)
         {
             curr_tile = tile.GetComponent<LevelTile>();
-            if (curr_tile.row == row_num && curr_tile.col != col_num)
+            if (curr_tile.row == row_num && curr_tile.col != col_num && curr_tile.getPlantType() > 0)
             {
                 if (curr_tile.curr_score > 0) curr_tile.curr_score--;
                 crab_tile.curr_score += 2;
@@ -470,28 +484,28 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //ID ??: Shiitake Mushrooms - Worth 0 pts. On plant, any plants worth 0 points
+    //ID 13: Shiitake Mushrooms - Worth 0 pts. On plant, any plants worth 0 points
     //sitting in the tiles directly above, to the left, to the right, and below this plant are now worth 4 points
     void Shiitake(int row_num, int col_num)
     {
         //direct above
         LevelTile curr_tile = findTile(row_num - 1, col_num);
-        if(curr_tile != null && curr_tile.curr_score == 0) { curr_tile.curr_score = 4; }
+        if(curr_tile != null && curr_tile.curr_score == 0 && curr_tile.getPlantType() > 0) { curr_tile.curr_score = 4; }
 
         //left
         curr_tile = findTile(row_num, col_num - 1);
-        if (curr_tile != null && curr_tile.curr_score == 0) { curr_tile.curr_score = 4; }
+        if (curr_tile != null && curr_tile.curr_score == 0 && curr_tile.getPlantType() > 0) { curr_tile.curr_score = 4; }
 
         //right
         curr_tile = findTile(row_num, col_num + 1);
-        if (curr_tile != null && curr_tile.curr_score == 0) { curr_tile.curr_score = 4; }
+        if (curr_tile != null && curr_tile.curr_score == 0 && curr_tile.getPlantType() > 0) { curr_tile.curr_score = 4; }
 
         //direct below
         curr_tile = findTile(row_num + 1, col_num);
-        if (curr_tile != null && curr_tile.curr_score == 0) { curr_tile.curr_score = 4; }
+        if (curr_tile != null && curr_tile.curr_score == 0 && curr_tile.getPlantType() > 0) { curr_tile.curr_score = 4; }
     }
 
-    //ID ??: Portabella Mushrooms - Worth 0 pts. On plant, if a plant in the same row is 0 pts, that plant is now worth 4 pts.
+    //ID 14: Portabella Mushrooms - Worth 0 pts. On plant, if a plant in the same row is 0 pts, that plant is now worth 4 pts.
     //NOTICE: this plant seems liable to redesign
     void Portabella(int row_num, int col_num)
     {
@@ -507,39 +521,47 @@ public class LevelManager : MonoBehaviour
 
 
     //"Setup" plant actions : these actions wait until another action/condition is met
-    //For setup plant actions the row_num and col_num parameters indicate the tile around which to check for setup plant actions,
+    //Setup plants have two actions, the one that occurs when it is planted, and the one that triggers when another condition is met
+    //The "on plant" acttion works as an action plant
+    //For the trigger actions the row_num and col_num parameters indicate the tile around which to check for setup plant actions,
     //not the location of the setup plant to activate
 
-    //ID ??: Shameplant - Worth 5 pts on plant. AFter this plant has been planted, if another plant is plant in the
+    //ID 15: Shameplant - Worth 5 pts on plant. AFter this plant has been planted, if another plant is plant in the
     //tiles directly above, to the left, to the right, or below it, it's point value is reduced to 0
     //This should be checked whenever a plant is planted
-    //TODO : Update this method with the actual plantID of shameplant when thats done
+    void Shame(int row_num, int col_num)
+    {
+        LevelTile shame_tile = findTile(row_num, col_num);
+        shame_tile.toggleShy();
+        shame_tile.curr_score = 5;
+    }
+
     void checkShame(int row_num, int col_num)
     {
         //direct above
         LevelTile curr_tile = findTile(row_num - 1, col_num);
-        if(curr_tile != null && curr_tile.getPlantType() == 999)
+        if(curr_tile != null && curr_tile.getPlantType() == 15)
         {
             curr_tile.curr_score = 0;
         }
 
         //left
         curr_tile = findTile(row_num, col_num - 1);
-        if (curr_tile != null && curr_tile.getPlantType() == 999)
+        if (curr_tile != null && curr_tile.getPlantType() == 15)
         {
             curr_tile.curr_score = 0;
         }
 
         //right
         curr_tile = findTile(row_num, col_num + 1);
-        if (curr_tile != null && curr_tile.getPlantType() == 999)
+        if (curr_tile != null && curr_tile.getPlantType() == 15)
         {
             curr_tile.curr_score = 0;
         }
 
         //direct below
         curr_tile = findTile(row_num + 1, col_num);
-        if (curr_tile != null && curr_tile.getPlantType() == 999)
+        if (curr_tile != null && curr_tile.getPlantType() == 15)
         {
             curr_tile.curr_score = 0;
         }

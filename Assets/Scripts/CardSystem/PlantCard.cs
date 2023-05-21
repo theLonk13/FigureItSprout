@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] int plantID;
 
@@ -12,10 +12,26 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public static GameObject playerHand;
     private Image image;
 
+    //tracks if the mouse is over this card
+    bool hoverThis;
+
     void Awake()
     {
         image = GetComponent<Image>();
         playerHand = GameObject.Find("PlayerHandArea");
+        hoverThis = false;
+    }
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(1) && hoverThis)
+        {
+            BookController book = GameObject.Find("BookPages").GetComponent<BookController>();
+            if(book != null)
+            {
+                book.OpenToPlant(plantID);
+            }
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -41,5 +57,15 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             plot_tile.plantPlant(plantID);
             Destroy(this.gameObject);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        hoverThis = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hoverThis = false;
     }
 }
