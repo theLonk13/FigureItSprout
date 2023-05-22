@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class NewPlantOverlayScript : MonoBehaviour
 {
+    [SerializeField] PlantCard plant;
+
     void OnMouseUp()
     {
-        Destroy(this.gameObject);
+        BookController book = GameObject.Find("BookPages").GetComponent<BookController>();
+        if(book.getBookToggle() < 0)
+        {
+            book.OpenToPlant(plant.getPlantID());
+            Destroy(this.gameObject);
+        }
     }
 }

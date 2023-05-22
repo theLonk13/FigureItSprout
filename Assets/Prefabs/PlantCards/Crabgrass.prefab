@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8182848522893856641}
   - component: {fileID: 2061636061957330730}
   - component: {fileID: 4761794887510905852}
+  - component: {fileID: 1338059709730648975}
   m_Layer: 5
   m_Name: Crabgrass
   m_TagString: PlantCard
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54dc9581cf107948844419279a12a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantID: 12
+  playableCard: 1
+--- !u!114 &1338059709730648975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357845070513464340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b654f303fb3ea489b67490ba3857b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantID: 12

@@ -133,6 +133,11 @@ public class BookController : MonoBehaviour
         book_toggle = -1*book_toggle;
     }
 
+    public int getBookToggle()
+    {
+        return book_toggle;
+    }
+
     //opens the book up to the page of a certain plant
     public void OpenToPlant(int plantID)
     {

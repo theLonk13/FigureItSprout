@@ -187,7 +187,7 @@ public class LevelManager : MonoBehaviour
         LevelTile tiledata = findTile(row_num, col_num);
         if(tiledata != null && mom_plant != null)
         {
-            tiledata.curr_score = mom_plant.plantOrchid(row_num, col_num);
+            tiledata.curr_score = mom_plant.plantOrchid(row_num, col_num, lvNum);
         }
     }
 
@@ -540,29 +540,33 @@ public class LevelManager : MonoBehaviour
     {
         //direct above
         LevelTile curr_tile = findTile(row_num - 1, col_num);
-        if(curr_tile != null && curr_tile.getPlantType() == 15)
+        if(curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)
         {
+            curr_tile.toggleShy();
             curr_tile.curr_score = 0;
         }
 
         //left
         curr_tile = findTile(row_num, col_num - 1);
-        if (curr_tile != null && curr_tile.getPlantType() == 15)
+        if (curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)
         {
+            curr_tile.toggleShy();
             curr_tile.curr_score = 0;
         }
 
         //right
         curr_tile = findTile(row_num, col_num + 1);
-        if (curr_tile != null && curr_tile.getPlantType() == 15)
+        if (curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)
         {
+            curr_tile.toggleShy();
             curr_tile.curr_score = 0;
         }
 
         //direct below
         curr_tile = findTile(row_num + 1, col_num);
-        if (curr_tile != null && curr_tile.getPlantType() == 15)
+        if (curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)
         {
+            curr_tile.toggleShy();
             curr_tile.curr_score = 0;
         }
     }

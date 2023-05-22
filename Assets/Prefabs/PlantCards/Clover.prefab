@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2114389959601185744}
   - component: {fileID: 2755424790934547650}
   - component: {fileID: 4544925055215965584}
+  - component: {fileID: 2444074084922953684}
   m_Layer: 5
   m_Name: Clover
   m_TagString: PlantCard
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54dc9581cf107948844419279a12a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantID: 7
+  playableCard: 1
+--- !u!114 &2444074084922953684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507278436356420849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b654f303fb3ea489b67490ba3857b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantID: 7

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 492457545466871708}
   - component: {fileID: 2437289171344772505}
   - component: {fileID: 2515896684610234090}
+  - component: {fileID: 816678236182297133}
   m_Layer: 5
   m_Name: Parsley
   m_TagString: PlantCard
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54dc9581cf107948844419279a12a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantID: 3
+  playableCard: 1
+--- !u!114 &816678236182297133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599220985986916393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b654f303fb3ea489b67490ba3857b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantID: 3

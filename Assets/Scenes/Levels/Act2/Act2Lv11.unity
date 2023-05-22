@@ -502,6 +502,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2082355982}
     m_Modifications:
+    - target: {fileID: 162474502112777731, guid: 09ba484a09c51424881ffc3c8d5c4069, type: 3}
+      propertyPath: plantID
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761794887510905852, guid: 09ba484a09c51424881ffc3c8d5c4069, type: 3}
+      propertyPath: playableCard
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7115681627708579994, guid: 09ba484a09c51424881ffc3c8d5c4069, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -669,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466022310431888023, guid: 30f3e234a12eff94687f9f165755cb46, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.016846
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4466022310431888023, guid: 30f3e234a12eff94687f9f165755cb46, type: 3}
       propertyPath: m_AnchoredPosition.y

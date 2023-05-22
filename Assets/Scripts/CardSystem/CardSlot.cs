@@ -7,11 +7,11 @@ public class CardSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        PlantCard.LastCardSlot = this.gameObject;
+        DragAndDrop.LastCardSlot = this.gameObject;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        PlantCard.LastCardSlot = GameObject.Find("PlayerHandArea");
+        DragAndDrop.LastCardSlot = GameObject.Find("PlayerHandArea");
     }
 }

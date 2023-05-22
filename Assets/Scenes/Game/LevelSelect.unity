@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: LevelSceneName
-      value: Act2Lv11
+      value: Act2Lv11_remake
       objectReference: {fileID: 0}
     - target: {fileID: 6480829657910146940, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: m_Name
@@ -518,7 +518,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229797290
 GameObject:
@@ -616,7 +616,7 @@ RectTransform:
   - {fileID: 342164773}
   - {fileID: 1783972971}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1362,79 +1362,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2162192489135969658, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
   m_PrefabInstance: {fileID: 746185976}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &936899960
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 798.18054
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 122.55539
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.066137
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576931, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147311695576933, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: m_Name
-      value: PersistentData
-      objectReference: {fileID: 0}
-    - target: {fileID: 245147312209655491, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: numPages
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7064662090204713025, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: numLevels
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8541220875355615326, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: plantedAlfalfa
-      value: 
-      objectReference: {fileID: 21300000, guid: b88dfeafaa572a24fb3cce737844fe37, type: 3}
-    - target: {fileID: 8541220875355615326, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: plantedParsley
-      value: 
-      objectReference: {fileID: 21300000, guid: 1a3cd965f9bfacb4da17989dda871a96, type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
 --- !u!1001 &958810175
 PrefabInstance:
   m_ObjectHideFlags: 0

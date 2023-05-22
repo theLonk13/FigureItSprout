@@ -5,17 +5,6 @@ using UnityEngine.UI;
 
 public class LevelTile : MonoBehaviour
 {
-    /*
-    public LevelTile topLeft;
-    public LevelTile topMid;
-    public LevelTile topRight;
-    public LevelTile midLeft;
-    public LevelTile midRight;
-    public LevelTile botLeft;
-    public LevelTile botMid;
-    public LevelTile botRight;
-    */
-
     public int row, col, curr_score;
     int plantType, turnCounter;
 
@@ -40,6 +29,11 @@ public class LevelTile : MonoBehaviour
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         potted_sprites = GameObject.FindWithTag("PottedSprite").GetComponent<PottedSpriteInfo>();
         thisImage = this.gameObject.GetComponent<Image>();
+    }
+
+    void Update()
+    {
+        displayShy();
     }
 
     public void plantPlant(int plantID)
@@ -68,11 +62,20 @@ public class LevelTile : MonoBehaviour
     void displayShy()
     {
         shy_indicator.SetActive(false);
-        if (shy_toggle > 0) shy_indicator.SetActive(true);
+        if (shy_toggle > 0)
+        {
+            shy_indicator.SetActive(true);
+            thisImage.sprite = potted_sprites.trigger_plant(plantType);
+        }
     }
 
     public void toggleShy()
     {
         shy_toggle = shy_toggle * -1;
+    }
+
+    public int getShyToggle()
+    {
+        return shy_toggle;
     }
 }

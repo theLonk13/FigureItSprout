@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5809552877739765723}
   - component: {fileID: 2545016838727505747}
   - component: {fileID: 6163571964027753968}
+  - component: {fileID: 5645106498143550388}
   m_Layer: 5
   m_Name: SageUI
   m_TagString: PlantCard
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54dc9581cf107948844419279a12a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantID: 2
+  playableCard: 1
+--- !u!114 &5645106498143550388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565171211828466699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b654f303fb3ea489b67490ba3857b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantID: 2

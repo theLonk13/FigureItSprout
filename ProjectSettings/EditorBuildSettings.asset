@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/QuangTestScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Game/TitleScreen.unity
+    guid: df4a702de9c874e4e84dc0897adb9f06
+  - enabled: 1
     path: Assets/Scenes/Game/LevelSelect.unity
     guid: ade2fea511b5a404da83594aeceb4bf1
   - enabled: 1
@@ -41,9 +44,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act1/Act1Lv10.unity
     guid: add7237cffa5d0b4bb6231fafc38657d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Act2/Act2Lv11.unity
     guid: b9bd226aeaa758046b7e5c5a8e6fdcd6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act2/Act2Lv11_remake.unity
+    guid: 609da79d7e3a5384b80e767ca2d17ab9
   - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv12.unity
     guid: 769da910ca714a44dadb861be174b2e0

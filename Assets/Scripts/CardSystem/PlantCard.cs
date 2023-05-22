@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class PlantCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] int plantID;
 
@@ -14,12 +14,19 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     //tracks if the mouse is over this card
     bool hoverThis;
+    [SerializeField] bool playableCard;
 
     void Awake()
     {
-        image = GetComponent<Image>();
-        playerHand = GameObject.Find("PlayerHandArea");
         hoverThis = false;
+        if (!playableCard)
+        {
+            DragAndDrop drag = GetComponent<DragAndDrop>();
+            if (drag != null)
+            {
+                drag.enabled = false;
+            }
+        }
     }
 
     void Update()
@@ -34,31 +41,6 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        transform.SetParent(transform.root);
-        image.raycastTarget = false;
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        Debug.Log("Dragging");
-        this.transform.position = eventData.position;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        transform.SetParent(playerHand.transform);
-        image.raycastTarget = true;
-
-        LevelTile plot_tile = LastCardSlot.GetComponent<LevelTile>();
-        if (plot_tile != null && plot_tile.getPlantType() <= 0)
-        {
-            plot_tile.plantPlant(plantID);
-            Destroy(this.gameObject);
-        }
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         hoverThis = true;
@@ -67,5 +49,10 @@ public class PlantCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnPointerExit(PointerEventData eventData)
     {
         hoverThis = false;
+    }
+
+    public int getPlantID()
+    {
+        return plantID;
     }
 }
