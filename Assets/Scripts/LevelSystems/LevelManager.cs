@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -27,13 +28,30 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
-        goal_score_canvas.SetText("Goal Score: " + goal_score);
+        goal_score_canvas.SetText("Level " + lvNum);
 
+        PrepLevel();
         unlock_level();
         unlock_pages();
 
         //This is for debugging, maybe take out
         UpdateScore();
+    }
+
+    //Preps level based on how many times the player has reset on this level
+    void PrepLevel()
+    {
+        LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
+        if (lvData != null)
+        {
+            if (lvData.getLvResets(lvNum) > 0)
+            {
+                GameObject[] tutorials = GameObject.FindGameObjectsWithTag("Tutorial");
+                GameObject[] newPlants = GameObject.FindGameObjectsWithTag("NewPlant");
+                foreach (GameObject tutorial in tutorials) { Destroy(tutorial); }
+                foreach (GameObject newPlant in newPlants) { Destroy(newPlant); }
+            }
+        }
     }
 
     //performs an action corresponding to the plant on a tile
@@ -137,7 +155,7 @@ public class LevelManager : MonoBehaviour
             total_score += tiledata.curr_score;
         }
         //total_score.SetText(score + "");
-        total_score_canvas.SetText("Total Score: " + total_score);
+        total_score_canvas.SetText("Current Score: " + total_score + "/" + goal_score);
     }
 
     //returns score
@@ -152,6 +170,19 @@ public class LevelManager : MonoBehaviour
         return total_score >= goal_score;
     }
 
+    //increments reset count for this level in LevelData
+    public void ResetLevel()
+    {
+        //Debug.Log("resetting level");
+        LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
+        if(lvData != null)
+        {
+            lvData.resetLv(lvNum);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    //unlocks book pages for new plants encountered on this level
     void unlock_pages()
     {
         UnlockedPlants unlocks = GameObject.Find("PlantUnlocks").GetComponent<UnlockedPlants>();
@@ -159,6 +190,7 @@ public class LevelManager : MonoBehaviour
         unlocks.UnlockPlant(unlock_plant2);
     }
 
+    //unlocks this levels node in the level select screen
     void unlock_level()
     {
         LevelData lv_unlocks = GameObject.Find("LevelData").GetComponent<LevelData>();

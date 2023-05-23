@@ -2071,11 +2071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_margin.x
-      value: 584.04785
+      value: 518.17206
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_margin.z
-      value: 2.120819
+      value: 44.940033
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontColor.b

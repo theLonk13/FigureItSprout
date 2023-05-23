@@ -62,9 +62,13 @@ public class LevelTile : MonoBehaviour
     void displayShy()
     {
         shy_indicator.SetActive(false);
+        if (plantType != 15) { return; }
         if (shy_toggle > 0)
         {
             shy_indicator.SetActive(true);
+        }
+        else
+        {
             thisImage.sprite = potted_sprites.trigger_plant(plantType);
         }
     }

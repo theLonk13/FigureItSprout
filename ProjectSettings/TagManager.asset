@@ -13,6 +13,8 @@ TagManager:
   - PlantUnlocks
   - LevelSelector
   - PottedSprite
+  - Tutorial
+  - NewPlant
   layers:
   - Default
   - TransparentFX

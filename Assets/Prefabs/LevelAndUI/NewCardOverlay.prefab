@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9002394455645584391}
   m_Layer: 5
   m_Name: NewCardOverlay
-  m_TagString: Untagged
+  m_TagString: NewPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d309288c3c97584184497ff5e25a570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  nextScreen: {fileID: 0}
 --- !u!61 &9002394455645584391
 BoxCollider2D:
   m_ObjectHideFlags: 0
