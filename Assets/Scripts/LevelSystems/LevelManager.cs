@@ -182,6 +182,11 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public int GetLevelNum()
+    {
+        return lvNum;
+    }
+
     //unlocks book pages for new plants encountered on this level
     void unlock_pages()
     {

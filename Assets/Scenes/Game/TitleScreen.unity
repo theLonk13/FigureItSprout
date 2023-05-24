@@ -654,5 +654,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PersistentData
       objectReference: {fileID: 0}
+    - target: {fileID: 245147312209655491, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
+      propertyPath: numPages
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 245147312209655491, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
+      propertyPath: playTestMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}

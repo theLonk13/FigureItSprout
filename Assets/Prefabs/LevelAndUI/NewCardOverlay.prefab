@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
   nextScreen: {fileID: 0}
+  OpenBook: 0
 --- !u!61 &9002394455645584391
 BoxCollider2D:
   m_ObjectHideFlags: 0

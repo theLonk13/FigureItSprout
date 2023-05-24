@@ -20,6 +20,11 @@ public class NextLvButton : MonoBehaviour
     {
         if (lvManager.GoalMet())
         {
+            LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
+            if (lvData != null)
+            {
+                lvData.completeLv(lvManager.GetLevelNum());
+            }
             nextLvButton.SetActive(true);
         }
         else

@@ -8,9 +8,17 @@ public class PauseMenu : MonoBehaviour
     //The gameobject that is the parent of the pause menu buttons
     [SerializeField] GameObject menu;
 
+    /*
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && menu.activeSelf) { toggleMenu(); }
+    }
+    */
+
     //turns on/off the pause menu
     public void toggleMenu()
     {
+        Debug.Log("Toggling Pause Menu");
         if(menu == null) { return; }
 
         if(menu.activeSelf)

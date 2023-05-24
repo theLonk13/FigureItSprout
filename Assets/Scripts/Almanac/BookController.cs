@@ -119,7 +119,11 @@ public class BookController : MonoBehaviour
         //show pages that the player has unlocked
         GameObject PlantUnlocks = GameObject.FindWithTag("PlantUnlocks");
         UnlockedPlants unlocks = PlantUnlocks.GetComponent<UnlockedPlants>();
-        int[] plant_unlocks = unlocks.get_plant_unlocks();
+
+        //gets the level number to pass into get_plant_unlocks in case playtesting mode is on
+        LevelManager lvMan = GameObject.Find("LevelUICanvas").GetComponent<LevelManager>();
+        int[] plant_unlocks = unlocks.get_plant_unlocks(lvMan.GetLevelNum());
+
         //Activate pages in book
         for (int i = 0; i < plant_unlocks.Length; i++)
         {

@@ -48,6 +48,15 @@ public class LevelData : MonoBehaviour
         Debug.Log("Level Unlocks:\n" + unlocks);
     }
 
+    public void completeLv(int lvNum)
+    {
+        lvNum--;
+        if(lvNum >= 0 && lvNum < numLevels)
+        {
+            level_resets[lvNum] = 1;
+        }
+    }
+
     public void resetLv(int lvNum)
     {
         lvNum--;
