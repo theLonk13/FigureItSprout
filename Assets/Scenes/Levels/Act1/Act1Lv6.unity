@@ -1406,6 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53935c833ca490a42a6d712680898203, type: 3}
+--- !u!1 &1804038935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1565171211828466699, guid: 53935c833ca490a42a6d712680898203, type: 3}
+  m_PrefabInstance: {fileID: 1804038934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2019422511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1609,6 +1614,18 @@ PrefabInstance:
     - target: {fileID: 5911129274956095161, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: unlock_plant1
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: col1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: plant1
+      value: 
+      objectReference: {fileID: 1804038935}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: numHints
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}

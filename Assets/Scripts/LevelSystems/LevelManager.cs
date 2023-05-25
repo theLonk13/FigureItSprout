@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PingHintSystem();
+
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         goal_score_canvas.SetText("Level " + lvNum);
 
@@ -36,6 +38,23 @@ public class LevelManager : MonoBehaviour
 
         //This is for debugging, maybe take out
         UpdateScore();
+    }
+
+    void Update()
+    {
+        
+    }
+
+    // checks in with hint system to update level info in the script
+    void PingHintSystem()
+    {
+        HintTracker hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
+        if (hintTracker != null) { hintTracker.checkLevel(lvNum); }
+
+        /*
+        HintButton hintButton = GameObject.Find("HintButton").GetComponent<HintButton>();
+        if (hintButton != null) { hintButton.ShowHintButton(); }
+        */
     }
 
     //Preps level based on how many times the player has reset on this level
@@ -129,7 +148,7 @@ public class LevelManager : MonoBehaviour
 
     //Searches the tiles array for a tile in a specific position
     //Returns the LevelTile script attached to the tile if found, null otherwise
-    LevelTile findTile(int row_num, int col_num)
+    public LevelTile findTile(int row_num, int col_num)
     {
         foreach(GameObject tile in tiles)
         {
@@ -182,6 +201,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    //returns the level number of the current level
     public int GetLevelNum()
     {
         return lvNum;
@@ -556,6 +576,15 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    //ID ??: Sunflower - Worth 1 pts. After 2 turns, multiplies current point value by 2
+    //This is the active part, setting point value to 1 pt.
+    //TurnCounter function is implemented below
+    void Sunflower(int row_num, int col_num)
+    {
+        LevelTile curr_tile = findTile(row_num, col_num);
+        curr_tile.curr_score = 1;
+    }
+
 
     //"Setup" plant actions : these actions wait until another action/condition is met
     //Setup plants have two actions, the one that occurs when it is planted, and the one that triggers when another condition is met
@@ -626,6 +655,24 @@ public class LevelManager : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    //ID ??: Sunflower - This is the TurnCounter behaviour for Sunflower
+    void SunflowerTreeCounter(LevelTile fsunflower_data)
+    {
+        if (sunflower_data.incCounter() == 2)
+        {
+            sunflower_data.curr_score *= 2;
+        }
+    }
+
+    //ID ??: Fig Tree - TODO Implement this, should be same as PearTree but with different values, waiting on design team to confirm
+    void FigTreeCounter(LevelTile fig_data)
+    {
+        if(fig_data.incCounter() == 99)
+        {
+            fig_data.curr_score *= 99;
         }
     }
 

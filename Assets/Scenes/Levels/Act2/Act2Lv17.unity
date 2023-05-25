@@ -713,12 +713,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4761794887510905852, guid: d90ef98cae5d60f4a81ed092698c2213, type: 3}
   m_PrefabInstance: {fileID: 717332111}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 717332113}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54dc9581cf107948844419279a12a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &717332113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8357845070513464340, guid: d90ef98cae5d60f4a81ed092698c2213, type: 3}
+  m_PrefabInstance: {fileID: 717332111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &813422318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2133,6 +2138,14 @@ PrefabInstance:
     - target: {fileID: 5911129274986414620, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: plant1
+      value: 
+      objectReference: {fileID: 717332113}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: numHints
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}

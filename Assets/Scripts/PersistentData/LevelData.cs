@@ -80,4 +80,9 @@ public class LevelData : MonoBehaviour
         }
         Debug.Log("Level Resets:\n" + resets);
     }
+
+    public int getNumLevels()
+    {
+        return numLevels;
+    }
 }

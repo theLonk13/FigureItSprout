@@ -13,6 +13,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public static int plantDrag = 0; //type of plant being dragged
     public static bool dragging; //true if currently dragging a card
     public static GameObject playerHand; //the deck holder
+    public static Image dragImage; //Image component attached to the card currently being dragged
 
     private Image image; //used to turn raycast targetting off when dragging
 
@@ -28,6 +29,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         transform.SetParent(transform.root);
         image.raycastTarget = false;
         plantDrag = plantID;
+        dragImage = GetComponent<Image>();
     }
 
     public void OnDrag(PointerEventData eventData)

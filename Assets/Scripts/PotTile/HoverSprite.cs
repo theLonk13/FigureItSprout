@@ -31,6 +31,11 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             Debug.Log("Entered Pot");
             hoverSprite.sprite = potted_sprites.get_potted_sprite(DragAndDrop.plantDrag);
             hoverSprite.enabled = true;
+
+            if(DragAndDrop.dragImage != null)
+            {
+                DragAndDrop.dragImage.enabled = false;
+            }
         }
     }
 
@@ -38,5 +43,10 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         Debug.Log("Exit Pot");
         hoverSprite.enabled = false;
+
+        if(DragAndDrop.dragImage != null)
+        {
+            DragAndDrop.dragImage.enabled = true;
+        }
     }
 }
