@@ -134,6 +134,8 @@ public class LevelManager : MonoBehaviour
             case 16:
                 EpicPlant(row_num, col_num);
                 break;
+            case 17:
+                Sunflower(row_num, col_num); break;
             default:
                 Debug.Log("What are you doing with your life?");
                 break;
@@ -576,7 +578,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //ID ??: Sunflower - Worth 1 pts. After 2 turns, multiplies current point value by 2
+    //ID 17: Sunflower - Worth 1 pts. After 2 turns, multiplies current point value by 2
     //This is the active part, setting point value to 1 pt.
     //TurnCounter function is implemented below
     void Sunflower(int row_num, int col_num)
@@ -649,6 +651,8 @@ public class LevelManager : MonoBehaviour
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
             switch(tiledata.getPlantType()) {
+                case 17:
+                    SunflowerTreeCounter(tiledata); break;
                 case 77: //Pear tree
                     PearTreeCounter(tiledata);
                     break;
@@ -658,8 +662,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //ID ??: Sunflower - This is the TurnCounter behaviour for Sunflower
-    void SunflowerTreeCounter(LevelTile fsunflower_data)
+    //ID 17: Sunflower - This is the TurnCounter behaviour for Sunflower
+    void SunflowerTreeCounter(LevelTile sunflower_data)
     {
         if (sunflower_data.incCounter() == 2)
         {
