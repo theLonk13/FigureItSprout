@@ -662,5 +662,9 @@ PrefabInstance:
       propertyPath: playTestMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7064662090204713025, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
+      propertyPath: numLevels
+      value: 27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}

@@ -25,7 +25,7 @@ public class LevelTile : MonoBehaviour
     {
         plantType = -1;
         //curr_score = 0;
-        turnCounter = 0;
+        turnCounter = -1;
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         potted_sprites = GameObject.FindWithTag("PottedSprite").GetComponent<PottedSpriteInfo>();
         thisImage = this.gameObject.GetComponent<Image>();

@@ -62,6 +62,10 @@ public class HintTracker : MonoBehaviour
 
     public void AcceptHint()
     {
+        if(localFails == 0)
+        {
+            return;
+        }
         hintsAccepted++;
         localFails = 0;
     }

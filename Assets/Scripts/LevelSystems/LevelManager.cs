@@ -322,7 +322,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //ID 6: Thyme - Worth 1 pt. On plant, gains 2 additional pts for each plant in the same row
+    //ID 6: Thyme - Worth 1 pt. On plant, gains 2 additional pts for each plant in the same col
     void Thyme(int row_num, int col_num)
     {
         int total_points = 0;
@@ -330,11 +330,11 @@ public class LevelManager : MonoBehaviour
         foreach (GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
-            if (tiledata != null && tiledata.row == row_num && tiledata.col != col_num)
+            if (tiledata != null && tiledata.row != row_num && tiledata.col == col_num && tiledata.getPlantType() > 0)
             {
                 total_points += 2;
             }
-            else if (tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
+            else if (tiledata != null && tiledata.row == row_num && tiledata.col == col_num && tiledata.getPlantType() > 0)
             {
                 thymeData = tiledata;
             }
@@ -653,6 +653,8 @@ public class LevelManager : MonoBehaviour
             switch(tiledata.getPlantType()) {
                 case 17:
                     SunflowerTreeCounter(tiledata); break;
+                case 18:
+                    CarnationCounter(tiledata); break;
                 case 77: //Pear tree
                     PearTreeCounter(tiledata);
                     break;
@@ -667,16 +669,16 @@ public class LevelManager : MonoBehaviour
     {
         if (sunflower_data.incCounter() == 2)
         {
-            sunflower_data.curr_score *= 2;
+            sunflower_data.curr_score *= 3;
         }
     }
 
-    //ID ??: Fig Tree - TODO Implement this, should be same as PearTree but with different values, waiting on design team to confirm
-    void FigTreeCounter(LevelTile fig_data)
+    //ID 18: Carnation - TODO Implement this, should be same as PearTree but with different values, waiting on design team to confirm
+    void CarnationCounter(LevelTile carnation_data)
     {
-        if(fig_data.incCounter() == 99)
+        if(carnation_data.incCounter() == 3)
         {
-            fig_data.curr_score *= 99;
+            carnation_data.curr_score *= 4;
         }
     }
 

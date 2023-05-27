@@ -51,6 +51,7 @@ public class HintButton : MonoBehaviour
     public void AcceptHint()
     {
         hintTracker.AcceptHint();
+        Destroy(hintButton);
     }
 
     void ShowHints()
