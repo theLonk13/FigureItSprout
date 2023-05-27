@@ -14,9 +14,6 @@ public class HintTracker : MonoBehaviour
     // tracks if the current attempt of the level has been failed
     bool failed = false;
 
-    //tracks if the level was reset as part of a hint trigger
-    bool hintPrimed = false;
-
     //checks if the current level has been failed
     void Update()
     {
@@ -83,8 +80,6 @@ public class HintTracker : MonoBehaviour
         {
             return;
         }
-
-        hintPrimed = true;
         hintsAccepted++;
         localFails = 0;
     }
