@@ -18,6 +18,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Image image; //used to turn raycast targetting off when dragging
     private int lastSiblingIndex;
     private float lastX;
+    private float cutoffY = 140;
 
     void Awake()
     {
@@ -27,6 +28,9 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        //get cutoff height for rearranging cards
+        GetCutoffY();
+
         //info for putting card back in right spot
         lastSiblingIndex = transform.GetSiblingIndex();
         lastX = eventData.position.x;
@@ -77,7 +81,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //calculate new sibling index based on position of card when dragging stops and number of cards present
     void CalcSiblingIndex(float eventX, float eventY)
     {
-        if(eventY > 140) { return; }
+        if(eventY > cutoffY) { return; }
 
         //calc based on amount moved
         //innaccurate
@@ -115,6 +119,13 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (left == right) { lastSiblingIndex = left; }
 
         //debug info
-        Debug.Log("EventData X: " + eventX + "\tEventData Y: " + eventY + "\tLeft: " + left + "\tRight: " + right + "\tLastSiblingIndex: " + lastSiblingIndex);
+        Debug.LogError("EventData X: " + eventX + "\tEventData Y: " + eventY + "\tLeft: " + left + "\tRight: " + right + "\tLastSiblingIndex: " + lastSiblingIndex);
+    }
+
+    void GetCutoffY()
+    {
+        Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        RectTransform rect = gameObject.GetComponent<RectTransform>();
+        cutoffY = (rect.anchorMax.y - rect.anchorMin.y) * Screen.height + rect.sizeDelta.y * canvas.scaleFactor;
     }
 }

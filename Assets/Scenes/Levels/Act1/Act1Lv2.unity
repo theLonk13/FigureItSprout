@@ -2956,7 +2956,7 @@ PrefabInstance:
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_text
       value: To learn more about a plant, you can right click its card to open its
-        almanac page. Try it on the Sage!
+        almanac page. Try it on the Lemongrass!
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontSize
@@ -2968,7 +2968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_margin.x
-      value: 65.25732
+      value: 496.41217
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_margin.y
@@ -2976,7 +2976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_margin.z
-      value: 493.79257
+      value: 46.536438
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontColor.b
@@ -3166,8 +3166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -40, y: 60}
-  m_SizeDelta: {x: 93.4676, y: 120}
+  m_AnchoredPosition: {x: 42.26143, y: 54.63292}
+  m_SizeDelta: {x: 84.5225, y: 109.2658}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009123730
 MonoBehaviour:
@@ -3184,7 +3184,7 @@ MonoBehaviour:
   tutorialOverlay: {fileID: 963257326}
   bookController: {fileID: 820549522}
   nextScreen: {fileID: 635835681}
-  openToPlant: 2
+  openToPlant: 5
 --- !u!114 &2009123731
 MonoBehaviour:
   m_ObjectHideFlags: 0
