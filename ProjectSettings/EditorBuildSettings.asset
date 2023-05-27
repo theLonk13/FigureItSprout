@@ -55,6 +55,9 @@ EditorBuildSettings:
     guid: 3abfb4b30551e0a4a919cfafffe856b1
   - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv14.unity
+    guid: 13650305a118d6b45ad6663622056307
+  - enabled: 0
+    path: Assets/Scenes/Levels/Act2/Act2Lv14_old.unity
     guid: 9230fd0132cbca84aa4d934fe6962427
   - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv15.unity

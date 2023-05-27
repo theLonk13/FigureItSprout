@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HintButton : MonoBehaviour
 {
@@ -27,12 +28,13 @@ public class HintButton : MonoBehaviour
     void Awake()
     {
         hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
-        ShowHintButton();
+        //ShowHintButton();
     }
 
     // Update is called once per frame
     void Update()
     {
+        ShowHintButton();
         ShowHints();
     }
 
@@ -52,6 +54,7 @@ public class HintButton : MonoBehaviour
     {
         hintTracker.AcceptHint();
         Destroy(hintButton);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void ShowHints()

@@ -14,6 +14,9 @@ public class HintTracker : MonoBehaviour
     // tracks if the current attempt of the level has been failed
     bool failed = false;
 
+    //tracks if the level was reset as part of a hint trigger
+    bool hintPrimed = false;
+
     //checks if the current level has been failed
     void Update()
     {
@@ -29,7 +32,21 @@ public class HintTracker : MonoBehaviour
             }
 
             //checks for no tiles remaining
-            //TODO : 
+            GameObject[] tilesLeft = GameObject.FindGameObjectsWithTag("Tile");
+            foreach(GameObject tile in tilesLeft)
+            {
+                LevelTile tiledata = tile.GetComponent<LevelTile>();
+                if(tiledata != null)
+                {
+                    if(tiledata.getPlantType() < 0)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            failed = true;
+            localFails++;
         }
 
         debug_DisplayHintData();
@@ -66,6 +83,8 @@ public class HintTracker : MonoBehaviour
         {
             return;
         }
+
+        hintPrimed = true;
         hintsAccepted++;
         localFails = 0;
     }

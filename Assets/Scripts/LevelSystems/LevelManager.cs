@@ -60,6 +60,7 @@ public class LevelManager : MonoBehaviour
     //Preps level based on how many times the player has reset on this level
     void PrepLevel()
     {
+        // if this is not the player's first time doing the level, destroy tutorial and new card screens
         LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
         if (lvData != null)
         {
@@ -223,6 +224,7 @@ public class LevelManager : MonoBehaviour
         LevelData lv_unlocks = GameObject.Find("LevelData").GetComponent<LevelData>();
         lv_unlocks.ActivateLevel(lvNum);
     }
+
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
     //"Active" plant actions: These actions occur on planting the plant
