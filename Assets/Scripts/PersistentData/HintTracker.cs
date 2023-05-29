@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HintTracker : MonoBehaviour
 {
@@ -74,6 +75,7 @@ public class HintTracker : MonoBehaviour
         return hintsAccepted;
     }
 
+    //player asks for a hint
     public void AcceptHint()
     {
         if(localFails == 0)
@@ -82,6 +84,14 @@ public class HintTracker : MonoBehaviour
         }
         hintsAccepted++;
         localFails = 0;
+    }
+
+    //removes all hints and reloads the level (might change that)
+    public void ResetHints()
+    {
+        hintsAccepted = 0;
+        localFails = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void debug_DisplayHintData()
