@@ -9,12 +9,26 @@ public class LevelSelectManager : MonoBehaviour
     LevelData levelDataScript;
     int[] levelData;
 
+    [SerializeField] ActSwitch actSwitch;
+
     // Start is called before the first frame update
     void Awake()
     {
         levels = GameObject.FindGameObjectsWithTag("LevelSelector");
         GameObject persistent_lvData = GameObject.Find("LevelData");
         levelDataScript = persistent_lvData.GetComponent<LevelData>();
+
+        Debug.Log(levelDataScript.getLastLevel() + "");
+        if(levelDataScript != null && levelDataScript.getLastLevel() < 11)
+        {
+            actSwitch.changeAct(1);
+        }else if(levelDataScript.getLastLevel() < 22)
+        {
+            actSwitch.changeAct(2);
+        }else if( levelDataScript.getLastLevel() < 31)
+        {
+            actSwitch.changeAct(3);
+        }
     }
 
     // Update is called once per frame

@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 8116538697033568609}
   - component: {fileID: 1802229588399475869}
   - component: {fileID: 1014695932576169983}
+  - component: {fileID: 343441235162209866}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -327,14 +328,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1650054, g: 0.3252516, b: 0.8490566, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1059785276, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -400,6 +401,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &343441235162209866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681398526799699779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 1059785276, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  highlight: {fileID: -687282392, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
 --- !u!1 &774323134609265908
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6497380169885935990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -609,7 +624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8921289968101730127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -878,7 +893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5584500192793905725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1009,6 +1024,7 @@ GameObject:
   - component: {fileID: 6127069034838807977}
   - component: {fileID: 3252125540387201893}
   - component: {fileID: 1772063830302003212}
+  - component: {fileID: 3595010121086997854}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: DestroyOnLvComp
@@ -1058,14 +1074,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.745283, g: 0.21514778, b: 0.21514778, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -911443494, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1144,6 +1160,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3595010121086997854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718252559876660997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: -911443494, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  highlight: {fileID: -674680501, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
 --- !u!1 &1860819917035052270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7073497599630875439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1635,6 +1665,7 @@ GameObject:
   - component: {fileID: 4415534972709594915}
   - component: {fileID: 5186784213998789017}
   - component: {fileID: 1066863936667828124}
+  - component: {fileID: 9165006314371950703}
   m_Layer: 5
   m_Name: LevelSelectButton (1)
   m_TagString: LvComplete
@@ -1661,7 +1692,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4415534972709594915
 CanvasRenderer:
@@ -1684,14 +1715,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1668388, g: 0.8584906, b: 0.19564201, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -942498003, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1757,6 +1788,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9165006314371950703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288271927153524199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: -942498003, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  highlight: {fileID: 462330260, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
 --- !u!1 &2517311360332874443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1949,7 @@ GameObject:
   - component: {fileID: 7264275980875536811}
   - component: {fileID: 3331803728875835019}
   - component: {fileID: 2614347629220394066}
+  - component: {fileID: 8928285928069490525}
   m_Layer: 5
   m_Name: LevelSelectButton
   m_TagString: Untagged
@@ -1930,7 +1976,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: 0}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7264275980875536811
 CanvasRenderer:
@@ -1953,14 +1999,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1668388, g: 0.8584906, b: 0.19564201, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -942498003, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2026,6 +2072,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8928285928069490525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2795781995883827679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: -942498003, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  highlight: {fileID: 462330260, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
 --- !u!1 &4425847277569815091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7610243516299485314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3551,14 +3611,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.7364148, b: 0.19608405, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 737041362, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3715,6 +3775,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: DestroyOnLvComp
       objectReference: {fileID: 0}
+    - target: {fileID: 1805004603349598160, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2034273322199669227, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3799,8 +3863,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6957756186817001780, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -430670290, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+    - target: {fileID: 6957756186817001780, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957756186817001780, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957756186817001780, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+--- !u!1 &2822229731829273011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1614817890607257738, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}
+  m_PrefabInstance: {fileID: 3549521149298575673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2880285627066238734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822229731829273011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: -430670290, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  highlight: {fileID: 709394851, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
 --- !u!224 &3276753983777951954 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2034273322199669227, guid: 1cca444d7d3aa8a4cb260bb18a22f28b, type: 3}

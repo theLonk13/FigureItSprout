@@ -19,9 +19,15 @@ public class PottedSpriteInfo : MonoBehaviour
     [SerializeField] Sprite plantedShiitake;
     [SerializeField] Sprite plantedShy;
     [SerializeField] Sprite plantedVipergrass;
+    [SerializeField] Sprite plantedSunflower;
+    [SerializeField] Sprite plantedCarnation;
 
     //Sprites for triggered plants
     [SerializeField] Sprite triggeredShy;
+
+    //Sprites for bloomed plants
+    [SerializeField] Sprite bloomedSunflower;
+    [SerializeField] Sprite bloomedCarnation;
 
     public Sprite get_potted_sprite(int plantID)
     {
@@ -53,6 +59,10 @@ public class PottedSpriteInfo : MonoBehaviour
                 return plantedShy;
             case 16:
                 return plantedOrchid;
+            case 17:
+                return plantedSunflower;
+            case 18:
+                return plantedCarnation;
             default: 
                 return defaultSprite;
         }
@@ -64,6 +74,19 @@ public class PottedSpriteInfo : MonoBehaviour
         {
             case 15:
                 return triggeredShy;
+            default:
+                return defaultSprite;
+        }
+    }
+
+    public Sprite bloom_plant(int plantID)
+    {
+        switch(plantID)
+        {
+            case 17:
+                return bloomedSunflower;
+            case 18:
+                return bloomedCarnation;
             default:
                 return defaultSprite;
         }

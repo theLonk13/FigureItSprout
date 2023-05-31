@@ -157,6 +157,237 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1646
+        width: 450
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955abddeef2a9904fb533e11cb3070a3
+      internalID: 1059785276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_1
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1646
+        width: 450
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789e55594a3b43f479189976cbdb0311
+      internalID: -687282392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1070
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f95b46802e7224687dbf3487691ede
+      internalID: 761800501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_3
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1070
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3629beeb112ae4ca8c75010f7c0251
+      internalID: -1952875702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 690
+        width: 950
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f16646e5b4598b4186dc73dbd9a539d
+      internalID: -942498003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 690
+        width: 948
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c591ec6ae26c8d143b7ef0671014718d
+      internalID: 462330260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 480
+        width: 550
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a6d4adf48e498428f6bf8473774eb6
+      internalID: -911443494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_7
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 480
+        width: 550
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4963409ad652f4346a46df58c9e169e3
+      internalID: -674680501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 325
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227b2193929d1584cb5a25d1166292d2
+      internalID: -430670290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_9
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 325
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297ab675c2db64e4b925b22823720d00
+      internalID: 709394851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1300
+        width: 325
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e3f955a664ee24e86eb5828fde1bdf
+      internalID: 737041362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -168,8 +399,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Misc Buttons_7: -674680501
       Start_Highlight: -338675965
       Start_Idle: -1630605693
+      Misc Buttons_9: 709394851
+      Misc Buttons_10: 737041362
+      Misc Buttons_1: -687282392
+      Misc Buttons_3: -1952875702
+      Misc Buttons_2: 761800501
+      Misc Buttons_5: 462330260
+      Misc Buttons_6: -911443494
+      Misc Buttons_0: 1059785276
+      Misc Buttons_8: -430670290
+      Misc Buttons_4: -942498003
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

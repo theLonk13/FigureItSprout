@@ -10,9 +10,13 @@ public class LevelData : MonoBehaviour
     int[] level_tracker;
     int[] level_resets;
 
+    //last level player was on, used to flip to correct act when moving back to level select
+    int last_level;
+
     // Start is called before the first frame update
     void Start()
     {
+        last_level = -1;
         level_tracker = new int[numLevels];
         level_resets = new int[numLevels];
         level_tracker[0] = 1;
@@ -27,6 +31,7 @@ public class LevelData : MonoBehaviour
     //marks a level as having been visited and for its icon to show in level select
     public void ActivateLevel(int level)
     {
+        last_level = level;
         if (level > 0 && level <= numLevels)
         {
             level_tracker[level - 1] = 1;
@@ -84,5 +89,10 @@ public class LevelData : MonoBehaviour
     public int getNumLevels()
     {
         return numLevels;
+    }
+    
+    public int getLastLevel()
+    {
+        return last_level;
     }
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 public class ActSwitch : MonoBehaviour
 {
     [SerializeField] Transform acts;
-    int currAct;
+    int currAct = 1;
 
     void Start()
     {
-        currAct = 1;
+        //currAct = 1;
     }
 
     void Update()
