@@ -87,6 +87,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Act3/Act3Lv23.unity
     guid: d58f1f3ace012b44d9a692ab1c099d2e
   - enabled: 1
+    path: Assets/Scenes/Levels/Act3/Act3Lv24.unity
+    guid: d31ac61c7890a7945bf8d4ec4fc30590
+  - enabled: 1
     path: Assets/Scenes/Levels/Act3/Act3Lv25.unity
     guid: 8ba4880285b45f64aab93372c01fd9ad
   - enabled: 1
@@ -98,4 +101,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act3/Act3Lv28.unity
     guid: 8dc26147eb44d8641886c878ab141872
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act3/Act3Lv29.unity
+    guid: 09a59cca0d0806f488ce073194b74002
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act3/Act3Lv30.unity
+    guid: b8b9ac1a54fd5c145b7476d3219d39f2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act3/Act3Lv31.unity
+    guid: 282e78533a80672438ed81c5dde281bd
   m_configObjects: {}
