@@ -56,9 +56,9 @@ public class UnlockedPlants : MonoBehaviour
         if (lvNum >= 14) { playtest_unlocks[numUnlocks++] = 8; }
         if (lvNum >= 15) { playtest_unlocks[numUnlocks++] = 13; }
         if (lvNum >= 17) { playtest_unlocks[numUnlocks++] = 15; playtest_unlocks[numUnlocks++] = 16; }
-        if(lvNum >= 22) { plant_unlocks[numUnlocks++] = 6; }
-        if (lvNum >= 26) { plant_unlocks[numUnlocks++] = 17; }
-        if(lvNum >= 28) { plant_unlocks[numUnlocks++]= 18; }
+        if(lvNum >= 22) { playtest_unlocks[numUnlocks++] = 6; }
+        if (lvNum >= 26) { playtest_unlocks[numUnlocks++] = 17; }
+        if(lvNum >= 28) { playtest_unlocks[numUnlocks++]= 18; }
         return playtest_unlocks;
     }
 

@@ -289,6 +289,7 @@ MonoBehaviour:
   plantedVipergrass: {fileID: 21300000, guid: cb4be1b21c4816043add79f52d76a546, type: 3}
   plantedSunflower: {fileID: 21300000, guid: 4e2f6b35c63d8964b8aee7bc11ebb836, type: 3}
   plantedCarnation: {fileID: 21300000, guid: a6842dc10f796124a9a83956801452a5, type: 3}
+  plantedThyme: {fileID: 21300000, guid: 3888b3615b1774b40b60958465987eca, type: 3}
   triggeredShy: {fileID: 21300000, guid: abb30a384e4646a45ba4d6769e8d8be7, type: 3}
   bloomedSunflower: {fileID: 21300000, guid: 59bc10e3fe31e1f4c8b4a07260894ccb, type: 3}
   bloomedCarnation: {fileID: 21300000, guid: 54928e4e5fc46c0468c50ac0ec36c358, type: 3}

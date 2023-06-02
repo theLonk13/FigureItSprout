@@ -21,6 +21,7 @@ public class PottedSpriteInfo : MonoBehaviour
     [SerializeField] Sprite plantedVipergrass;
     [SerializeField] Sprite plantedSunflower;
     [SerializeField] Sprite plantedCarnation;
+    [SerializeField] Sprite plantedThyme;
 
     //Sprites for triggered plants
     [SerializeField] Sprite triggeredShy;
@@ -41,6 +42,8 @@ public class PottedSpriteInfo : MonoBehaviour
                 return plantedParsley;
             case 5:
                 return plantedLemongrass;
+            case 6:
+                return plantedThyme;
             case 7:
                 return plantedClover;
             case 8:

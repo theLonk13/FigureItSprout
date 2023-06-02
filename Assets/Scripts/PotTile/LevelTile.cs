@@ -73,6 +73,12 @@ public class LevelTile : MonoBehaviour
         levelManager.plantAction(row, col, plantID);
         potImage.sprite = potted_sprites.get_potted_sprite(plantID);
 
+        //moving this tile to end of child list
+        //*
+        int numChildren = this.transform.parent.gameObject.transform.childCount;
+        this.transform.SetSiblingIndex(numChildren - 1);
+        //*/
+
         //start pot falling animation
         Color tempColor = potImage.color;
         tempColor.a = Mathf.Min(.5f, 1.0f);
@@ -126,16 +132,18 @@ public class LevelTile : MonoBehaviour
         blossom_indicator.SetActive(true) ;
 
         if(plantType == 17) {
-            blossom_text.SetText(Mathf.Min(2, turnCounter) + ""); 
+            blossom_text.SetText(Mathf.Max(0, 2 - turnCounter) + ""); 
             if(turnCounter >= 2)
             {
+                blossom_indicator.SetActive(false);
                 potImage.sprite = potted_sprites.bloom_plant(plantType);
             }
         }
         else if(plantType == 18) { 
-            blossom_text.SetText(Mathf.Min(3, turnCounter) + "");
+            blossom_text.SetText(Mathf.Max(0, 3 - turnCounter) + "");
             if (turnCounter >= 3)
             {
+                blossom_indicator.SetActive(false);
                 potImage.sprite = potted_sprites.bloom_plant(plantType);
             }
         }
@@ -147,10 +155,10 @@ public class LevelTile : MonoBehaviour
         if(potImage.color.a < 1f)
         {
             Color tempColor = potImage.color;
-            tempColor.a = Mathf.Min(tempColor.a + .005f, 1.0f);
+            tempColor.a = Mathf.Min(tempColor.a + .01f, 1.0f);
             potImage.color = tempColor;
         }
 
-        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - .01f, 1f), Mathf.Max(potImageRect.localScale.y - .01f, 1f), 1f);
+        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - .02f, 1f), Mathf.Max(potImageRect.localScale.y - .02f, 1f), 1f);
     }
 }
