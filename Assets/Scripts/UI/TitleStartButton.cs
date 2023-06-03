@@ -46,4 +46,10 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         SceneManager.LoadScene("Act1Lv1");
     }
+
+    //These methods are for other Title Screen UI elements that did not necessarily require an additional script
+    public void GoToBonus()
+    {
+        SceneManager.LoadScene("BonusRewards");
+    }
 }

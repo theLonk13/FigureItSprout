@@ -192,6 +192,12 @@ public class LevelManager : MonoBehaviour
         return total_score >= goal_score;
     }
 
+    //returns true if the total score is strictly greater than the goal score, false otherwise
+    public bool BonusMet()
+    {
+        return total_score > goal_score;
+    }
+
     //increments reset count for this level in LevelData
     public void ResetLevel()
     {

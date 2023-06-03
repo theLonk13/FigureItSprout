@@ -33,6 +33,9 @@ public class LevelTile : MonoBehaviour
     //Score object
     [SerializeField] GameObject scoreDisplay;
 
+    //animator
+    Animator animator;
+
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class LevelTile : MonoBehaviour
         tileImage = this.gameObject.GetComponent<Image>();
         potImage = potImageObj.GetComponent<Image>();
         potImageRect = potImageObj.GetComponent<RectTransform>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -84,6 +88,9 @@ public class LevelTile : MonoBehaviour
         tempColor.a = Mathf.Min(.5f, 1.0f);
         potImage.color = tempColor;
         potImageRect.localScale = new Vector3(2f, 2f, 1f);
+
+        //set animator to planted
+        animator.SetBool("Planted", true);
     }
 
     //Increments the turn counter of this tile and returns the value of the new turn counter

@@ -35,6 +35,7 @@ Transform:
   - {fileID: 7939186313175644019}
   - {fileID: 7785724827677030570}
   - {fileID: 7557412655353860251}
+  - {fileID: 6128042037038875973}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,6 +97,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTestMode: 0
   numPages: 16
+--- !u!1 &403866116736738945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6128042037038875973}
+  - component: {fileID: 5389903051138055107}
+  m_Layer: 0
+  m_Name: BonusPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6128042037038875973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403866116736738945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245147311695576931}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5389903051138055107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403866116736738945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae3aedb33fa52d4bbe2f1c2a17bddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData: {fileID: 7064662090204713025}
 --- !u!1 &506929967749759848
 GameObject:
   m_ObjectHideFlags: 0

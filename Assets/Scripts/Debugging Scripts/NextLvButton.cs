@@ -12,6 +12,11 @@ public class NextLvButton : MonoBehaviour
     bool viewLevel = true;
     bool lvCompleteTrigger = true;
 
+    //bonus indicator
+    [SerializeField] GameObject bonusIndicator;
+    [SerializeField] GameObject bonusGlow;
+    BonusPoints bonus;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,20 @@ public class NextLvButton : MonoBehaviour
                 {
                     obj.SetActive(true);
                 }
+            }
+
+            //show bonus indicator
+            if (lvManager.BonusMet())
+            {
+                bonusIndicator.SetActive(true);
+                bonusGlow.transform.Rotate(0f, 0f, 1f * Time.deltaTime);
+
+                bonus = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
+                bonus.LevelBonus(lvManager.GetLevelNum());
+            }
+            else
+            {
+                bonusIndicator.SetActive(false);
             }
         }
         else
