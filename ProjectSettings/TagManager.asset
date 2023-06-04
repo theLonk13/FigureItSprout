@@ -17,6 +17,7 @@ TagManager:
   - NewPlant
   - LvComplete
   - DestroyOnLvComp
+  - CutsceneFrame
   layers:
   - Default
   - TransparentFX
