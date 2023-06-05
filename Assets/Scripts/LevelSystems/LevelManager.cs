@@ -24,6 +24,15 @@ public class LevelManager : MonoBehaviour
 
     int total_score = 0;
 
+    /*
+     * time of day for level
+     * 0 = day
+     * 1 = sunset
+     * 2 = night
+     */
+    [SerializeField] int timeOfDay = 0;
+    //switch sprites based on this
+
     // Start is called before the first frame update
     void Start()
     {
@@ -214,6 +223,12 @@ public class LevelManager : MonoBehaviour
     public int GetLevelNum()
     {
         return lvNum;
+    }
+
+    //returns time of day
+    public int GetTimeOfDay()
+    {
+        return timeOfDay;
     }
 
     //unlocks book pages for new plants encountered on this level

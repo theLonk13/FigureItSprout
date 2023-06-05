@@ -32,6 +32,8 @@ Transform:
   - {fileID: 245147312209655492}
   - {fileID: 8074905032958423743}
   - {fileID: 8504727194443860974}
+  - {fileID: 3875751236850220209}
+  - {fileID: 2992630614139106202}
   - {fileID: 7939186313175644019}
   - {fileID: 7785724827677030570}
   - {fileID: 7557412655353860251}
@@ -127,7 +129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5389903051138055107
 MonoBehaviour:
@@ -172,7 +174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5666388611528623499
 MonoBehaviour:
@@ -261,7 +263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &116162893641055306
 MonoBehaviour:
@@ -286,7 +288,7 @@ GameObject:
   - component: {fileID: 8504727194443860974}
   - component: {fileID: 8541220875355615326}
   m_Layer: 0
-  m_Name: PottedSpriteInfo
+  m_Name: DayPottedSpriteInfo
   m_TagString: PottedSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,6 +316,134 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4236951016688526217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479d8ae8e9fde9449931f1ae8cf198f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 7b644f7ddbe70c94b95ff73baf833206, type: 3}
+  plantedDaisy: {fileID: 21300000, guid: e5d7001be6056d341b6bfc1133163958, type: 3}
+  plantedSage: {fileID: 21300000, guid: 8bef6de0107e51b49b7eca3b7dac47eb, type: 3}
+  plantedClover: {fileID: 21300000, guid: ec2744af20d07954e9f08571741bc2cc, type: 3}
+  plantedBasil: {fileID: 21300000, guid: 4dd043a1341666c42b3ce7ccb5d5eed9, type: 3}
+  plantedSunSucc: {fileID: 21300000, guid: e59ac43ee71283d46978ac8e61602522, type: 3}
+  plantedAlfalfa: {fileID: 21300000, guid: b88dfeafaa572a24fb3cce737844fe37, type: 3}
+  plantedParsley: {fileID: 21300000, guid: 1a3cd965f9bfacb4da17989dda871a96, type: 3}
+  plantedCrabgrass: {fileID: 21300000, guid: ed2682742d1738142ab603f985ccf929, type: 3}
+  plantedLemongrass: {fileID: 21300000, guid: 4d41a03994455fb49983747f7a34ae1f, type: 3}
+  plantedOrchid: {fileID: 21300000, guid: b6f96977ebc8f8446b3c99185f971a22, type: 3}
+  plantedShiitake: {fileID: 21300000, guid: 95e3b4c4cbf7d4f41b26e79b2076b08a, type: 3}
+  plantedShy: {fileID: 21300000, guid: a5a1618de00f2e04881ab6143cc9f184, type: 3}
+  plantedVipergrass: {fileID: 21300000, guid: cb4be1b21c4816043add79f52d76a546, type: 3}
+  plantedSunflower: {fileID: 21300000, guid: 4e2f6b35c63d8964b8aee7bc11ebb836, type: 3}
+  plantedCarnation: {fileID: 21300000, guid: a6842dc10f796124a9a83956801452a5, type: 3}
+  plantedThyme: {fileID: 21300000, guid: 3888b3615b1774b40b60958465987eca, type: 3}
+  triggeredShy: {fileID: 21300000, guid: abb30a384e4646a45ba4d6769e8d8be7, type: 3}
+  bloomedSunflower: {fileID: 21300000, guid: 59bc10e3fe31e1f4c8b4a07260894ccb, type: 3}
+  bloomedCarnation: {fileID: 21300000, guid: 54928e4e5fc46c0468c50ac0ec36c358, type: 3}
+--- !u!1 &5823085115655825211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2992630614139106202}
+  - component: {fileID: 3841867743533320629}
+  m_Layer: 0
+  m_Name: NightPottedSpriteInfo
+  m_TagString: PottedSprite
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2992630614139106202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823085115655825211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245147311695576931}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3841867743533320629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823085115655825211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479d8ae8e9fde9449931f1ae8cf198f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 7b644f7ddbe70c94b95ff73baf833206, type: 3}
+  plantedDaisy: {fileID: 21300000, guid: e5d7001be6056d341b6bfc1133163958, type: 3}
+  plantedSage: {fileID: 21300000, guid: 8bef6de0107e51b49b7eca3b7dac47eb, type: 3}
+  plantedClover: {fileID: 21300000, guid: ec2744af20d07954e9f08571741bc2cc, type: 3}
+  plantedBasil: {fileID: 21300000, guid: 4dd043a1341666c42b3ce7ccb5d5eed9, type: 3}
+  plantedSunSucc: {fileID: 21300000, guid: e59ac43ee71283d46978ac8e61602522, type: 3}
+  plantedAlfalfa: {fileID: 21300000, guid: b88dfeafaa572a24fb3cce737844fe37, type: 3}
+  plantedParsley: {fileID: 21300000, guid: 1a3cd965f9bfacb4da17989dda871a96, type: 3}
+  plantedCrabgrass: {fileID: 21300000, guid: ed2682742d1738142ab603f985ccf929, type: 3}
+  plantedLemongrass: {fileID: 21300000, guid: 4d41a03994455fb49983747f7a34ae1f, type: 3}
+  plantedOrchid: {fileID: 21300000, guid: b6f96977ebc8f8446b3c99185f971a22, type: 3}
+  plantedShiitake: {fileID: 21300000, guid: 95e3b4c4cbf7d4f41b26e79b2076b08a, type: 3}
+  plantedShy: {fileID: 21300000, guid: a5a1618de00f2e04881ab6143cc9f184, type: 3}
+  plantedVipergrass: {fileID: 21300000, guid: cb4be1b21c4816043add79f52d76a546, type: 3}
+  plantedSunflower: {fileID: 21300000, guid: 4e2f6b35c63d8964b8aee7bc11ebb836, type: 3}
+  plantedCarnation: {fileID: 21300000, guid: a6842dc10f796124a9a83956801452a5, type: 3}
+  plantedThyme: {fileID: 21300000, guid: 3888b3615b1774b40b60958465987eca, type: 3}
+  triggeredShy: {fileID: 21300000, guid: abb30a384e4646a45ba4d6769e8d8be7, type: 3}
+  bloomedSunflower: {fileID: 21300000, guid: 59bc10e3fe31e1f4c8b4a07260894ccb, type: 3}
+  bloomedCarnation: {fileID: 21300000, guid: 54928e4e5fc46c0468c50ac0ec36c358, type: 3}
+--- !u!1 &6154168043705493859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3875751236850220209}
+  - component: {fileID: 8415062093843487464}
+  m_Layer: 0
+  m_Name: SunsetPottedSpriteInfo
+  m_TagString: PottedSprite
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3875751236850220209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154168043705493859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245147311695576931}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8415062093843487464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154168043705493859}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a479d8ae8e9fde9449931f1ae8cf198f, type: 3}
@@ -369,7 +499,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6490086560460343056
 MonoBehaviour:

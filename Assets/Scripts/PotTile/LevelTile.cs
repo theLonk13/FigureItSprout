@@ -43,7 +43,6 @@ public class LevelTile : MonoBehaviour
         //curr_score = 0;
         turnCounter = -1;
         levelManager = GameObject.FindObjectOfType<LevelManager>();
-        potted_sprites = GameObject.FindWithTag("PottedSprite").GetComponent<PottedSpriteInfo>();
         tileImage = this.gameObject.GetComponent<Image>();
         potImage = potImageObj.GetComponent<Image>();
         potImageRect = potImageObj.GetComponent<RectTransform>();
@@ -52,6 +51,11 @@ public class LevelTile : MonoBehaviour
 
     void Update()
     {
+        if(potted_sprites == null)
+        {
+            LoadSpriteInfo();
+        }
+
         displayShy();
         displayBlossom();
         if(plantType > 0)
@@ -66,6 +70,22 @@ public class LevelTile : MonoBehaviour
         }
 
         fallingPot();
+    }
+
+    void LoadSpriteInfo()
+    {
+        //load correct sprite data for time of day
+        int timeOfDay = levelManager.GetTimeOfDay();
+        if (timeOfDay == 0)
+        {
+            potted_sprites = GameObject.Find("DayPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
+        }else if(timeOfDay == 1)
+        {
+            potted_sprites = GameObject.Find("SunsetPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
+        }else if(timeOfDay == 2)
+        {
+            potted_sprites = GameObject.Find("NightPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
+        }
     }
 
     public void plantPlant(int plantID)

@@ -17,67 +17,35 @@ public class NextLvButton : MonoBehaviour
     [SerializeField] GameObject bonusGlow;
     BonusPoints bonus;
 
+    //flag for finished level
+    bool levelFinish;
+    //flag for showing lv complete screen
+    bool showLvComp;
+
     // Start is called before the first frame update
     void Start()
     {
         nextLvButton = GameObject.FindWithTag("debug_NextLv");
         lvManager = GameObject.FindObjectOfType<LevelManager>();
         lvCompleteObj = GameObject.FindGameObjectsWithTag("LvComplete");
+
+        levelFinish = false;
+        showLvComp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //if level is completed
-        if (lvManager.GoalMet())
+        if (lvManager.GoalMet() && !levelFinish)
         {
-            // Destroy clutter on level complete
-            GameObject[] clutter = GameObject.FindGameObjectsWithTag("DestroyOnLvComp");
-            foreach(GameObject obj in clutter)
-            {
-                Destroy(obj);
-            }
+            levelFinish = true;
 
-            //make sure the lv complete screen objects exist
-            if (lvCompleteTrigger)
-            {
-                lvCompleteTrigger = false;
-                HideLvComplete();
-            }
-
-            //activate lv complete screen
-            LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
-            if (lvData != null)
-            {
-                lvData.completeLv(lvManager.GetLevelNum());
-            }
-            nextLvButton.SetActive(true);
-
-            foreach(GameObject obj in lvCompleteObj)
-            {
-                if (viewLevel)
-                {
-                    obj.SetActive(false);
-                }
-                else
-                {
-                    obj.SetActive(true);
-                }
-            }
-
-            //show bonus indicator
-            if (lvManager.BonusMet())
-            {
-                bonusIndicator.SetActive(true);
-                bonusGlow.transform.Rotate(0f, 0f, 1f * Time.deltaTime);
-
-                bonus = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
-                bonus.LevelBonus(lvManager.GetLevelNum());
-            }
-            else
-            {
-                bonusIndicator.SetActive(false);
-            }
+            Invoke("CompleteLevel", 1);            
+        }
+        else if (showLvComp)
+        {
+            
         }
         else
         {
@@ -93,6 +61,59 @@ public class NextLvButton : MonoBehaviour
             mom_plant.saveOrchid();
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    void CompleteLevel()
+    {
+        showLvComp = true;
+
+        // Destroy clutter on level complete
+        GameObject[] clutter = GameObject.FindGameObjectsWithTag("DestroyOnLvComp");
+        foreach (GameObject obj in clutter)
+        {
+            Destroy(obj);
+        }
+
+        //make sure the lv complete screen objects exist
+        if (lvCompleteTrigger)
+        {
+            lvCompleteTrigger = false;
+            HideLvComplete();
+        }
+
+        //activate lv complete screen
+        LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
+        if (lvData != null)
+        {
+            lvData.completeLv(lvManager.GetLevelNum());
+        }
+        nextLvButton.SetActive(true);
+
+        foreach (GameObject obj in lvCompleteObj)
+        {
+            if (viewLevel)
+            {
+                obj.SetActive(false);
+            }
+            else
+            {
+                obj.SetActive(true);
+            }
+        }
+
+        //show bonus indicator
+        if (lvManager.BonusMet())
+        {
+            bonusIndicator.SetActive(true);
+            bonusGlow.transform.Rotate(0f, 0f, 1f * Time.deltaTime);
+
+            bonus = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
+            bonus.LevelBonus(lvManager.GetLevelNum());
+        }
+        else
+        {
+            bonusIndicator.SetActive(false);
+        }
     }
 
     public void HideLvComplete()

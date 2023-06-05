@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pagesObject: {fileID: 4466022310973077164}
-  speed: 10000
+  speed: 5000
 --- !u!223 &1082881302044498766
 Canvas:
   m_ObjectHideFlags: 0
