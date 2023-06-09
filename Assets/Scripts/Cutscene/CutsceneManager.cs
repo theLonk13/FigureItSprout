@@ -19,13 +19,14 @@ public class CutsceneManager : MonoBehaviour
     {
         frames = GameObject.FindGameObjectsWithTag("CutsceneFrame");
         FindFrame(currFrameNum);
+        AdvanceFrame();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //if(currFrameNum == 0) { AdvanceFrame(); }
     }
 
     //Loads a frame into the currFrame variable based on the given frame number parameter
@@ -63,7 +64,7 @@ public class CutsceneManager : MonoBehaviour
             }
             else
             {
-                Invoke("LoadLevel", 4);
+                Invoke("LoadLevel", 1);
             }
         }
     }

@@ -45,7 +45,7 @@ public class NextLvButton : MonoBehaviour
         }
         else if (showLvComp)
         {
-            
+            CompleteLevel();
         }
         else
         {

@@ -24,6 +24,11 @@ public class LevelManager : MonoBehaviour
 
     int total_score = 0;
 
+    //Book controller for this level
+    BookController bookController;
+    //PauseMenu
+    [SerializeField] PauseMenu pauseMenu;
+
     /*
      * time of day for level
      * 0 = day
@@ -41,6 +46,8 @@ public class LevelManager : MonoBehaviour
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         goal_score_canvas.SetText("Level " + lvNum);
 
+        bookController = GameObject.Find("BookPages").GetComponent<BookController>();
+
         PrepLevel();
         unlock_level();
         unlock_pages();
@@ -51,7 +58,18 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        
+        //escape key behaviour
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(bookController.getBookToggle() > 0)
+            {
+                bookController.ToggleBook();
+            }
+            else
+            {
+                pauseMenu.toggleMenu();
+            }
+        }
     }
 
     // checks in with hint system to update level info in the script

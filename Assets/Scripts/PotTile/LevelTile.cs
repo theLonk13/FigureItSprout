@@ -36,6 +36,11 @@ public class LevelTile : MonoBehaviour
     //animator
     Animator animator;
 
+    //track if this tile is being hovered over
+    public bool hoverThis = false;
+    //book
+    BookController bookController;
+
 
     void Start()
     {
@@ -47,6 +52,7 @@ public class LevelTile : MonoBehaviour
         potImage = potImageObj.GetComponent<Image>();
         potImageRect = potImageObj.GetComponent<RectTransform>();
         animator = GetComponent<Animator>();
+        bookController = GameObject.Find("BookPages").GetComponent<BookController>();
     }
 
     void Update()
@@ -70,6 +76,11 @@ public class LevelTile : MonoBehaviour
         }
 
         fallingPot();
+
+        if (hoverThis && plantType > 0 && Input.GetMouseButtonDown(1))
+        {
+            bookController.OpenToPlant(plantType);
+        }
     }
 
     void LoadSpriteInfo()
@@ -90,6 +101,9 @@ public class LevelTile : MonoBehaviour
 
     public void plantPlant(int plantID)
     {
+        //set animator to planted
+        animator.SetBool("Planted", true);
+
         plantType = plantID;
         //TODO: initialize the current score of this tile to the base score of the plant
         //(I think this is already done in plant actions)
@@ -108,9 +122,6 @@ public class LevelTile : MonoBehaviour
         tempColor.a = Mathf.Min(.5f, 1.0f);
         potImage.color = tempColor;
         potImageRect.localScale = new Vector3(2f, 2f, 1f);
-
-        //set animator to planted
-        animator.SetBool("Planted", true);
     }
 
     //Increments the turn counter of this tile and returns the value of the new turn counter
