@@ -59,13 +59,23 @@ public class HintButton : MonoBehaviour
 
     void ShowHints()
     {
-        if(hintTracker.getHintsAccepted() >= 1 && plant1 != null)
+        ShowHint1();
+        Invoke("ShowHint2", .5f);
+        //ShowHint2();
+    }
+
+    void ShowHint1()
+    {
+        if (hintTracker.getHintsAccepted() >= 1 && plant1 != null)
         {
             LevelTile tile = lvMan.findTile(row1, col1);
             tile.plantPlant(plant1.GetComponent<PlantCard>().getPlantID());
             Destroy(plant1);
         }
+    }
 
+    void ShowHint2()
+    {
         if (hintTracker.getHintsAccepted() >= 2 && plant2 != null)
         {
             LevelTile tile = lvMan.findTile(row2, col2);

@@ -204,7 +204,7 @@ public class LevelManager : MonoBehaviour
             total_score += tiledata.curr_score;
         }
         //total_score.SetText(score + "");
-        total_score_canvas.SetText("Current Score: " + total_score + "/" + goal_score);
+        total_score_canvas.SetText(total_score + "/" + goal_score);
     }
 
     //returns score

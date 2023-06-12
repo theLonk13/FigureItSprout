@@ -44,6 +44,7 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void StartGame()
     {
+        //SceneManager.LoadScene("IntroCutscene");
         SceneManager.LoadScene("Act1Lv1");
     }
 

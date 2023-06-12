@@ -35,6 +35,10 @@ public class LevelTile : MonoBehaviour
 
     //animator
     Animator animator;
+    //falling pot scale
+    float fallScale = 1f;
+    //falling flag
+    bool falling = false;
 
     //track if this tile is being hovered over
     public bool hoverThis = false;
@@ -75,7 +79,10 @@ public class LevelTile : MonoBehaviour
             scoreDisplay.SetActive(false);
         }
 
-        fallingPot();
+        if (falling)
+        {
+            fallingPot();
+        }
 
         if (hoverThis && plantType > 0 && Input.GetMouseButtonDown(1))
         {
@@ -122,6 +129,7 @@ public class LevelTile : MonoBehaviour
         tempColor.a = Mathf.Min(.5f, 1.0f);
         potImage.color = tempColor;
         potImageRect.localScale = new Vector3(2f, 2f, 1f);
+        falling = true;
     }
 
     //Increments the turn counter of this tile and returns the value of the new turn counter
@@ -190,13 +198,16 @@ public class LevelTile : MonoBehaviour
     //"animation" for placing a pot down
     void fallingPot()
     {
+        float time = Time.deltaTime / 2;
         if(potImage.color.a < 1f)
         {
             Color tempColor = potImage.color;
-            tempColor.a = Mathf.Min(tempColor.a + .01f, 1.0f);
+            tempColor.a = Mathf.Min(tempColor.a + (.01f + fallScale) * time, 1.0f);
             potImage.color = tempColor;
         }
 
-        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - .02f, 1f), Mathf.Max(potImageRect.localScale.y - .02f, 1f), 1f);
+        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - (.02f + fallScale) * time, 1f), Mathf.Max(potImageRect.localScale.y - (.02f + fallScale) * time, 1f), 1f);
+
+        fallScale += .3f;
     }
 }

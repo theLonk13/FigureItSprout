@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/QuangTestScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Game/Cutscenes/TestCutscene1.unity
-    guid: c709fa9f650703b41acd9ceb7b28898a
-  - enabled: 1
     path: Assets/Scenes/Game/TitleScreen.unity
     guid: df4a702de9c874e4e84dc0897adb9f06
   - enabled: 1
@@ -20,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/BonusRewards.unity
     guid: b466dcbc401cf6444b944e6a240237d5
+  - enabled: 0
+    path: Assets/Scenes/Game/Cutscenes/IntroCutscene.unity
+    guid: c709fa9f650703b41acd9ceb7b28898a
   - enabled: 1
     path: Assets/Scenes/Levels/Act1/Act1Lv1.unity
     guid: 9e1587af5f577b94f8f83b5399ac281e
@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act1/Act1Lv10.unity
     guid: add7237cffa5d0b4bb6231fafc38657d
+  - enabled: 0
+    path: Assets/Scenes/Game/Cutscenes/StartAct2Cutscene.unity
+    guid: 2a93dcdd6de4c7a499a803b26318a48e
   - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv11_remake.unity
     guid: 609da79d7e3a5384b80e767ca2d17ab9
@@ -86,6 +89,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv21.unity
     guid: 67923612516418f49aa6515a2ab8e510
+  - enabled: 0
+    path: Assets/Scenes/Game/Cutscenes/StartAct3Cutscene.unity
+    guid: c4225668731335647959dbd0b8f7c259
   - enabled: 1
     path: Assets/Scenes/Levels/Act3/Act3Lv22.unity
     guid: 500a2648b4a7ae94aa68fc6d42e21a3e
@@ -116,4 +122,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act3/Act3Lv31.unity
     guid: 282e78533a80672438ed81c5dde281bd
+  - enabled: 0
+    path: Assets/Scenes/Game/Cutscenes/EndCutscene.unity
+    guid: 944c7f046cb091448ac0c4d1d6cae4ba
   m_configObjects: {}
