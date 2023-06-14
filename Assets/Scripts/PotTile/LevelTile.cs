@@ -164,7 +164,7 @@ public class LevelTile : MonoBehaviour
 
     public void toggleShy()
     {
-        potAudio.playShyPlantSound();
+        if(shy_toggle > 0) potAudio.playShyPlantSound();
         shy_toggle = shy_toggle * -1;
     }
 
