@@ -22,6 +22,9 @@ public class LevelTile : MonoBehaviour
     //Empty tile image
     Image tileImage;
 
+    //Pot Audio
+    [SerializeField] PotAudio potAudio;
+
     //Indicator for shy plant activation
     int shy_toggle = -1;
     [SerializeField] GameObject shy_indicator;
@@ -161,6 +164,7 @@ public class LevelTile : MonoBehaviour
 
     public void toggleShy()
     {
+        potAudio.playShyPlantSound();
         shy_toggle = shy_toggle * -1;
     }
 
@@ -209,5 +213,11 @@ public class LevelTile : MonoBehaviour
         potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - (.02f + fallScale) * time, 1f), Mathf.Max(potImageRect.localScale.y - (.02f + fallScale) * time, 1f), 1f);
 
         fallScale += .3f;
+
+        if(potImage.color.a >= 1f && potImageRect.localScale.x <= 1f && potImageRect.localScale.y <= 1f)
+        {
+            falling = false;
+            potAudio.playFallSound();
+        }
     }
 }

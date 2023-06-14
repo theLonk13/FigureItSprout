@@ -12,6 +12,9 @@ public class HintButton : MonoBehaviour
     [SerializeField] int numHints; //total number of available hints for this level
     [SerializeField] int failTolerance; //number of level failures before the hint button is shown
 
+    //audio for button click
+    AudioSource buttonAudio;
+
     //hint info
     //These should be in order, i.e. hint 1 should be the first plant down and hint 2 should be the second plant
     // hint 1 info
@@ -28,6 +31,7 @@ public class HintButton : MonoBehaviour
     void Awake()
     {
         hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
+        buttonAudio = GetComponent<AudioSource>();
         //ShowHintButton();
     }
 
@@ -52,6 +56,7 @@ public class HintButton : MonoBehaviour
 
     public void AcceptHint()
     {
+        buttonAudio.Play();
         hintTracker.AcceptHint();
         Destroy(hintButton);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

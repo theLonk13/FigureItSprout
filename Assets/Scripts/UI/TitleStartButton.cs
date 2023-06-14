@@ -13,11 +13,15 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     [SerializeField] Image startButton;
     bool hoverThis;
 
+    //Audio for button click
+    AudioSource buttonAudio;
+
     void Awake()
     {
         hoverThis = false;
         startIdle = GameObject.Find("UISprites").GetComponent<UISprites>().getStartIdle();
         startHighlight = GameObject.Find("UISprites").GetComponent<UISprites>().getStartHighlight();
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,13 +48,15 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void StartGame()
     {
-        //SceneManager.LoadScene("IntroCutscene");
-        SceneManager.LoadScene("Act1Lv1");
+        buttonAudio.Play();
+        SceneManager.LoadScene("IntroCutscene");
+        //SceneManager.LoadScene("Act1Lv1");
     }
 
     //These methods are for other Title Screen UI elements that did not necessarily require an additional script
     public void GoToBonus()
     {
+        buttonAudio.Play();
         SceneManager.LoadScene("BonusRewards");
     }
 }

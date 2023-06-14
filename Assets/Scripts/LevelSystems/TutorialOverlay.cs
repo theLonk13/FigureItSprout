@@ -13,10 +13,14 @@ public class TutorialOverlay : MonoBehaviour
     //Holds a new card screen object if one should be displayed after tutorial is done
     [SerializeField] GameObject newCard;
 
+    //audio source for button
+    AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         curr_screen = 0;
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class TutorialOverlay : MonoBehaviour
 
     public void Next()
     {
+        buttonAudio.Play();
         if (curr_screen >= numScreens - 1) { ShowNewCard(); }
         else { curr_screen++; }
     }

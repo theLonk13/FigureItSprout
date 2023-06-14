@@ -14,13 +14,16 @@ public class CutsceneManager : MonoBehaviour
     //Level to be played after this scene
     [SerializeField] string lvName;
 
+    //audio for button
+    AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         frames = GameObject.FindGameObjectsWithTag("CutsceneFrame");
         FindFrame(currFrameNum);
+        buttonAudio = GetComponent<AudioSource>();
         AdvanceFrame();
-
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class CutsceneManager : MonoBehaviour
 
     public void AdvanceFrame()
     {
+        buttonAudio.Play();
         //if current frame is not done fading in, either start or quick finish fading in
         if(currFrame.GetFrameState() != 2)
         {

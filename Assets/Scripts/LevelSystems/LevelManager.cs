@@ -29,6 +29,9 @@ public class LevelManager : MonoBehaviour
     //PauseMenu
     [SerializeField] PauseMenu pauseMenu;
 
+    //audiosource for button
+    AudioSource buttonAudio;
+
     /*
      * time of day for level
      * 0 = day
@@ -41,6 +44,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buttonAudio = GetComponent<AudioSource>();
+
         PingHintSystem();
 
         tiles = GameObject.FindGameObjectsWithTag("Tile");
@@ -229,6 +234,8 @@ public class LevelManager : MonoBehaviour
     public void ResetLevel()
     {
         //Debug.Log("resetting level");
+        buttonAudio.Play();
+
         LevelData lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
         if(lvData != null)
         {

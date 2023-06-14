@@ -22,12 +22,16 @@ public class NextLvButton : MonoBehaviour
     //flag for showing lv complete screen
     bool showLvComp;
 
+    //audio for button
+    AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         nextLvButton = GameObject.FindWithTag("debug_NextLv");
         lvManager = GameObject.FindObjectOfType<LevelManager>();
         lvCompleteObj = GameObject.FindGameObjectsWithTag("LvComplete");
+        buttonAudio = GetComponent<AudioSource>();
 
         levelFinish = false;
         showLvComp = false;
@@ -118,6 +122,7 @@ public class NextLvButton : MonoBehaviour
 
     public void HideLvComplete()
     {
+        buttonAudio.Play();
         if (viewLevel)
         {
             viewLevel = false;

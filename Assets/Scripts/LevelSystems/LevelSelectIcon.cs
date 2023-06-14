@@ -13,10 +13,14 @@ public class LevelSelectIcon : MonoBehaviour
     //Level icon button and text
     [SerializeField] TextMeshProUGUI levelText;
 
+    //audio for button
+    AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         levelText.SetText("Level " + lvNum);
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class LevelSelectIcon : MonoBehaviour
 
     public void JumpToLevel()
     {
+        buttonAudio.Play();
         SceneManager.LoadScene(LevelSceneName);
     }
 

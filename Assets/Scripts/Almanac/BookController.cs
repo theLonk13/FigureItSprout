@@ -21,6 +21,9 @@ public class BookController : MonoBehaviour
 
     int[] plant_unlocks;
 
+    //Audio for page flip Sound
+    AudioSource pgFlipAudio;
+
     //Singleton book
     //public static GameObject bookInstance;
 
@@ -32,6 +35,8 @@ public class BookController : MonoBehaviour
         pages = GameObject.FindGameObjectsWithTag("BookPage");
         bookTransform = GetComponent<RectTransform>();
         bookTransform.localPosition = hidePos;
+
+        pgFlipAudio = GetComponent<AudioSource>();
 
         /*
         if (bookInstance != null && bookInstance != this.gameObject)
@@ -82,6 +87,7 @@ public class BookController : MonoBehaviour
     {
         if(curr_pg > 0)
         {
+            pgFlipAudio.Play();
             curr_pg--;
         }
     }
@@ -90,6 +96,7 @@ public class BookController : MonoBehaviour
     {
         if(curr_pg < Mathf.Ceil(pages.Length / 2))
         {
+            pgFlipAudio.Play();
             curr_pg++;
         }
     }
@@ -134,6 +141,7 @@ public class BookController : MonoBehaviour
     public void ToggleBook()
     {
         Debug.Log("Toggling book");
+        pgFlipAudio.Play();
         book_toggle = -1*book_toggle;
     }
 

@@ -10,9 +10,13 @@ public class ActSwitch : MonoBehaviour
     [SerializeField] GameObject prevButton;
     [SerializeField] GameObject nextButton;
 
+    //audio for button
+    AudioSource buttonAudio;
+
     void Start()
     {
         //currAct = 1;
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,11 +45,13 @@ public class ActSwitch : MonoBehaviour
 
     public void nextAct()
     {
+        buttonAudio.Play();
         currAct = Mathf.Min(3, currAct + 1);
     }
 
     public void prevAct()
     {
+        buttonAudio.Play();
         currAct = Mathf.Max(1, currAct - 1);
     }
 }

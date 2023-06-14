@@ -12,9 +12,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject resetHint;
     HintTracker hintTracker;
 
+    //audiosource for button click
+    AudioSource buttonAudio;
+
     void Start()
     {
         hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     //*
@@ -29,6 +33,8 @@ public class PauseMenu : MonoBehaviour
     {
         //Debug.Log("Toggling Pause Menu");
         if(menu == null) { return; }
+
+        buttonAudio.Play();
 
         if(menu.activeSelf)
         {
