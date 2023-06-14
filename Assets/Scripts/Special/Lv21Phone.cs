@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Lv21Phone : MonoBehaviour
 {
+    //flag for if this phone has rung
+    public static bool rang = false;
+
     //Gameobject for phone
     [SerializeField] GameObject phone;
     RectTransform phoneTransform;
@@ -36,6 +39,7 @@ public class Lv21Phone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (rang) { return; }
         phoneTransform = phone.GetComponent<RectTransform>();
         phoneImage = phone.GetComponent<Image>();
         vibrateAudio = GetComponent<AudioSource>();
@@ -59,6 +63,7 @@ public class Lv21Phone : MonoBehaviour
     void PhoneCall()
     {
         calling = true;
+        rang = true;
         phoneImage.sprite = phoneCall;
         VibrateOn();
     }
