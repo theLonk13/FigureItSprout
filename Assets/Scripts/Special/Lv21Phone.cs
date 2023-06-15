@@ -21,6 +21,8 @@ public class Lv21Phone : MonoBehaviour
     [SerializeField] Sprite phoneCall;
     [SerializeField] Sprite phoneCallDecline;
 
+    [SerializeField] Image phoneCallDeclineImage;
+
     //switch for vibration
     bool vibrate = false;
     //vibration audio
@@ -35,6 +37,8 @@ public class Lv21Phone : MonoBehaviour
     bool calling = false;
     //decline flag
     bool declined = false;
+    //sleep flag
+    bool sleep = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,13 @@ public class Lv21Phone : MonoBehaviour
                 Mathf.Sin(Time.time * speed) * amount,
                 phoneTransform.localPosition.y,
                 phoneTransform.localPosition.z);
+        }
+
+        if (sleep)
+        {
+            Color tempColor = phoneCallDeclineImage.color;
+            tempColor.a = Mathf.Max(tempColor.a - .02f, 0f);
+            phoneCallDeclineImage.color = tempColor;
         }
     }
 
@@ -96,11 +107,13 @@ public class Lv21Phone : MonoBehaviour
         calling = false;
         VibrateOff();
         phoneImage.sprite = phoneCallDecline;
+        phoneCallDeclineImage.enabled = true;
         Invoke("PhoneOff", 5);
     }
 
     void PhoneOff()
     {
         phoneImage.sprite = phoneSilent;
+        sleep = true;
     }
 }

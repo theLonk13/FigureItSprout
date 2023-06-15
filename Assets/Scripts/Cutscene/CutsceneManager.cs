@@ -56,6 +56,11 @@ public class CutsceneManager : MonoBehaviour
         {
             currFrame.AdvanceFrame();
         }
+        else if (currFrame.GetHasUntriggeredInteractible())
+        {
+            //if current frame has an interactible, do nothing
+            return;
+        }
         else
         {
             //start fading out current frame

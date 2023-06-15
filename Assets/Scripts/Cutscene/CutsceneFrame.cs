@@ -7,6 +7,16 @@ public class CutsceneFrame : MonoBehaviour
 {
     [SerializeField] int frameNum = 0;
 
+    //interactible object in cutscene frame;
+    [SerializeField] GameObject Interactible;
+    //object triggered by Interactible
+    [SerializeField] GameObject InteractibleTriggered;
+    RectTransform InteractibleRect;
+    bool interactibleTriggered = false;
+
+    Vector3 showPos = new Vector3(0, 0, 0);
+    Vector3 hidePos = new Vector3(0, -1000, 0);
+
     Image frameImage;
     //bool activeFrame = false;
     int frameState = 0;
@@ -26,6 +36,11 @@ public class CutsceneFrame : MonoBehaviour
         Color tempColor = frameImage.color;
         tempColor.a = 0f;
         frameImage.color = tempColor;
+
+        if(InteractibleTriggered != null)
+        {
+            InteractibleRect = InteractibleTriggered.GetComponent<RectTransform>();
+        }
     }
 
     // Update is called once per frame
@@ -55,6 +70,15 @@ public class CutsceneFrame : MonoBehaviour
         {
 
         }
+
+        if (interactibleTriggered && InteractibleTriggered != false)
+        {
+            InteractibleRect.localPosition = Vector3.MoveTowards(InteractibleRect.localPosition, showPos, Time.deltaTime * 4000);
+        }
+        else if (InteractibleRect != null)
+        {
+            InteractibleRect.localPosition = Vector3.MoveTowards(InteractibleRect.localPosition, hidePos, Time.deltaTime * 4000);
+        }
     }
 
     public void AdvanceFrame()
@@ -63,6 +87,16 @@ public class CutsceneFrame : MonoBehaviour
         if(frameState == 0)
         {
             frameState = 1;
+            //moving this frame to end of child list
+            //*
+            int numChildren = this.transform.parent.gameObject.transform.childCount;
+            this.transform.SetSiblingIndex(numChildren - 1);
+            //turn raycast off so nextFrameButton can still be clicked
+            if(Interactible == null)
+            {
+                frameImage.raycastTarget = false;
+            }
+            //*/
         }
         else if(frameState == 1)
         {
@@ -74,8 +108,20 @@ public class CutsceneFrame : MonoBehaviour
             frameState = 2;
         }else if(frameState == 2)
         {
+            //If there is an interactible, do nothing
+            //if (Interactible != null) { return; }
+
             frameState = 0;
         }
+    }
+
+    public void ToggleInteractible()
+    {
+        if(interactibleTriggered == true) { interactibleTriggered = false; }
+        else if(InteractibleTriggered != null && frameState == 2) {
+            interactibleTriggered = true;
+        }
+
     }
 
     public int GetFrameNum()
@@ -86,5 +132,10 @@ public class CutsceneFrame : MonoBehaviour
     public int GetFrameState()
     {
         return frameState;
+    }
+
+    public bool GetHasUntriggeredInteractible()
+    {
+        return Interactible != null && !interactibleTriggered;
     }
 }

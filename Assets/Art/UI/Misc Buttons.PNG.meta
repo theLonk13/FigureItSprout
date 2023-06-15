@@ -388,6 +388,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Misc Buttons_11
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1309
+        width: 344
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de180c17cde1484789cd5e94c9d65bd
+      internalID: -37502251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -410,6 +431,7 @@ TextureImporter:
       Misc Buttons_5: 462330260
       Misc Buttons_6: -911443494
       Misc Buttons_0: 1059785276
+      Misc Buttons_11: -37502251
       Misc Buttons_8: -430670290
       Misc Buttons_4: -942498003
   spritePackingTag: 
