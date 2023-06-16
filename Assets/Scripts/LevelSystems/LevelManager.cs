@@ -244,6 +244,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    //go to title screen
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
     //returns the level number of the current level
     public int GetLevelNum()
     {

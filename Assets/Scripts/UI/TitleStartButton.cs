@@ -26,6 +26,7 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     void Update()
     {
+        /*
         if (hoverThis)
         {
             startButton.sprite = startHighlight;
@@ -34,6 +35,7 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             startButton.sprite = startIdle;
         }
+        */
     }
 
     public void OnPointerEnter(PointerEventData eventData)
