@@ -448,9 +448,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0b497aaec1b53614485cccda7cd5ec93, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -777,13 +777,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f655e45bf147d4e98d0440ac50864f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleMusic: {fileID: 0}
-  act1Cutscene: {fileID: 0}
-  act1Levels: {fileID: 0}
-  act2Cutscene: {fileID: 0}
-  act2Levels: {fileID: 0}
-  act3Cutscene: {fileID: 0}
-  act3Levels: {fileID: 0}
+  titleMusic: {fileID: 4731446675007202009}
+  act1Cutscene: {fileID: 4714909294423843092}
+  act1Levels: {fileID: 994395531313915816}
+  act2Cutscene: {fileID: 3592330263514709222}
+  act2Levels: {fileID: 8195348630428775330}
+  act3Cutscene: {fileID: 2077012196301578169}
+  act3Levels: {fileID: 3800773453272780302}
 --- !u!1 &5684796103620678421
 GameObject:
   m_ObjectHideFlags: 0

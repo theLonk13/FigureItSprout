@@ -355,27 +355,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 148.7
+      value: 281.3144
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 108.12
+      value: 66.5799
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0009222
+      value: 2.7479
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00052547
+      value: -2.3133
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 148.7057
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 108.1177
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -573,6 +573,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
 --- !u!224 &262289215 stripped
@@ -718,23 +730,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 223.8
+      value: 282.0549
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 91.883
+      value: 78.6933
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0011492
+      value: 0.5484
       objectReference: {fileID: 0}
     - target: {fileID: 90193247655305147, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00020123
+      value: -0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 223.7938
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1029,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 5911129274956095143, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418560187110845319, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: musicState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
@@ -2631,14 +2647,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.48825818, b: 0.004592412, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1211859422, guid: 463360e43d92fea44b2f6624534715fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2770,7 +2786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 518.5488
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2074507098363466590, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3003,6 +3019,22 @@ PrefabInstance:
     - target: {fileID: 7206057633178800540, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1211859422, guid: 463360e43d92fea44b2f6624534715fd, type: 3}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593723618314603764, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}

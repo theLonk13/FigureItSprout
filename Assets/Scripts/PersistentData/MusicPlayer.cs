@@ -12,7 +12,18 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] AudioSource act2Levels;
     [SerializeField] AudioSource act3Cutscene;
     [SerializeField] AudioSource act3Levels;
-    
+
+    /*
+     * music player states
+     * 0 - title
+     * 1 - act 1 cutscene
+     * 2 - act 1 levels
+     * 3 - act 2 cutscene
+     * 4 - act 2 levels
+     * 5 - act 3 cutscene
+     * 6 - act 3 levels
+     * */
+    int playerState = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -23,59 +34,93 @@ public class MusicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SceneData currScene = GameObject.Find("SceneData").GetComponent<SceneData>();
+        if(currScene != null) { playerState = currScene.GetMusicState(); }
+        StopAllSound(playerState);
+
+        AudioSource currPlayer = null;
+        //play the appropriate music for the current screen
+        switch(playerState)
+        {
+            case 0:
+                currPlayer = titleMusic; break;
+            case 1:
+                currPlayer = act1Cutscene; break;
+            case 2:
+                currPlayer = act1Levels; break;
+            case 3:
+                currPlayer = act2Cutscene; break;
+            case 4:
+                currPlayer = act2Levels; break;
+            case 5:
+                currPlayer = act3Cutscene; break;
+            case 6:
+                currPlayer = act3Levels; break;
+        }
+
+        if(currPlayer != null && currPlayer.clip != null && !currPlayer.isPlaying)
+        {
+            currPlayer.Play();
+        }
     }
 
-    void StopAllSound()
+    void StopAllSound(int playerState)
     {
-        titleMusic.Stop();
-        act1Cutscene.Stop();
-        act1Levels.Stop();
-        act2Cutscene.Stop();
-        act2Levels.Stop();
-        act3Cutscene.Stop();
-        act3Levels.Stop();
+        if(playerState != 0) { titleMusic.Stop(); }
+        if (playerState != 1) { act1Cutscene.Stop(); }
+        if (playerState != 2) { act1Levels.Stop(); }
+        if (playerState != 3) { act2Cutscene.Stop(); }
+        if (playerState != 4) { act2Levels.Stop(); }
+        if (playerState != 5) { act3Cutscene.Stop(); }
+        if (playerState != 6) { act3Levels.Stop(); }
     }
 
     public void PlayTitle()
     {
-        StopAllSound();
+        StopAllSound(0);
         titleMusic.Play();
+        playerState = 0;
     }
 
     public void PlayAct1Cutscene()
     {
-        StopAllSound();
+        StopAllSound(1);
         act1Cutscene.Play();
+        playerState = 1;
     }
 
     public void PlayAct2Cutscene()
     {
-        StopAllSound();
+        StopAllSound(3);
         act2Cutscene.Play();
+        playerState = 3;
     }
 
     public void PlayAct3Cutscene()
     {
-        StopAllSound();
+        StopAllSound(5);
         act3Cutscene.Play();
+        playerState = 5;
     }
 
     public void PlayAct1Levels()
     {
-        StopAllSound();
+        StopAllSound(2);
         act1Levels.Play();
+        playerState = 2;
     }
 
     public void PlayAct2Levels()
     {
-        StopAllSound();
+        StopAllSound(4);
         act2Levels.Play();
+        playerState = 4;
     }
 
     public void PlayAct3Levvels()
     {
-        StopAllSound();
+        StopAllSound(6);
         act3Levels.Play();
+        playerState = 6;
     }
 }
