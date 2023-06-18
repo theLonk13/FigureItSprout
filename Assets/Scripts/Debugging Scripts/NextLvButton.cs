@@ -16,6 +16,9 @@ public class NextLvButton : MonoBehaviour
     [SerializeField] GameObject bonusIndicator;
     [SerializeField] GameObject bonusGlow;
     BonusPoints bonus;
+    //flag for if a bonus is available
+    [SerializeField] bool BonusAvailable = false;
+    [SerializeField] GameObject bonusAvailableObj;
 
     //flag for finished level
     bool levelFinish;
@@ -41,7 +44,7 @@ public class NextLvButton : MonoBehaviour
     void Update()
     {
         //if level is completed
-        if (lvManager.GoalMet() && !levelFinish)
+        if (lvManager.GoalMet() && lvManager.CheckNoPossibleMoves() && !levelFinish)
         {
             levelFinish = true;
 
@@ -105,9 +108,10 @@ public class NextLvButton : MonoBehaviour
             }
         }
 
-        //show bonus indicator
+        //show bonus indicator if bonus is met
         if (lvManager.BonusMet())
         {
+            bonusAvailableObj.SetActive(false);
             bonusIndicator.SetActive(true);
             bonusGlow.transform.Rotate(0f, 0f, 1f * Time.deltaTime);
 
@@ -117,6 +121,14 @@ public class NextLvButton : MonoBehaviour
         else
         {
             bonusIndicator.SetActive(false);
+            if (BonusAvailable)
+            {
+                bonusAvailableObj.SetActive(true);
+            }
+            else
+            {
+                bonusAvailableObj.SetActive(false);
+            }
         }
     }
 

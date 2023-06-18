@@ -51,8 +51,14 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void StartGame()
     {
         buttonAudio.Play();
+        LevelData levelData = GameObject.Find("LevelData").GetComponent<LevelData>();
+
+        if(levelData != null && levelData.get_level_data()[0] == 1)
+        {
+            SceneManager.LoadScene("LevelSelect");
+            return;
+        }
         SceneManager.LoadScene("IntroCutscene");
-        //SceneManager.LoadScene("Act1Lv1");
     }
 
     //These methods are for other Title Screen UI elements that did not necessarily require an additional script

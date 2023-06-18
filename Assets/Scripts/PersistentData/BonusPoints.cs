@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusPoints : MonoBehaviour
+public class BonusPoints : MonoBehaviour, IDataPersistance
 {
     [SerializeField] LevelData levelData;
     int[] levelStarTracker;
@@ -18,6 +18,11 @@ public class BonusPoints : MonoBehaviour
         levelStarTracker[lvNum - 1] = 1;
     }
 
+    public int[] GetBonusStarData()
+    {
+        return levelStarTracker;
+    }
+
     public int GetStarCount()
     {
         int count = 0;
@@ -26,5 +31,15 @@ public class BonusPoints : MonoBehaviour
             if(level > 0) { count++; }
         }
         return count;
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        levelStarTracker = saveData.BonusStars;
+    }
+
+    public void SaveData(ref SaveData saveData)
+    {
+        saveData.BonusStars = levelStarTracker;
     }
 }

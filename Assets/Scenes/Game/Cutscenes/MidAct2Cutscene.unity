@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 7900421969068884296, guid: 6f42533ba5dc6e947906bbfe3ba4a312, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f05133d7842c96d44ab0cab5495bd74c, type: 3}
+      objectReference: {fileID: 21300000, guid: b94503d5841a325439ffbdda68495dfb, type: 3}
     - target: {fileID: 7900421969068884296, guid: 6f42533ba5dc6e947906bbfe3ba4a312, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -366,7 +366,7 @@ PrefabInstance:
     - target: {fileID: 7900421969068884296, guid: 6f42533ba5dc6e947906bbfe3ba4a312, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f05133d7842c96d44ab0cab5495bd74c, type: 3}
+      objectReference: {fileID: 21300000, guid: 6bb3e0b3dd5ba2c49803f4b402db41d1, type: 3}
     - target: {fileID: 7900421969068884296, guid: 6f42533ba5dc6e947906bbfe3ba4a312, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -920,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: lvName
-      value: Act2Lv11_remake
+      value: Act2Lv17
       objectReference: {fileID: 0}
     - target: {fileID: 6579291074297651357, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_SizeDelta.x

@@ -7,7 +7,9 @@ public class LevelSelectManager : MonoBehaviour
     //holds all gameobjects that are the icons for the different levels
     GameObject[] levels;
     LevelData levelDataScript;
+    BonusPoints bonusPointsScript;
     int[] levelData;
+    int[] bonusPoints;
 
     [SerializeField] ActSwitch actSwitch;
 
@@ -17,6 +19,8 @@ public class LevelSelectManager : MonoBehaviour
         levels = GameObject.FindGameObjectsWithTag("LevelSelector");
         GameObject persistent_lvData = GameObject.Find("LevelData");
         levelDataScript = persistent_lvData.GetComponent<LevelData>();
+        bonusPointsScript = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
+        bonusPoints = bonusPointsScript.GetBonusStarData();
 
         Debug.Log(levelDataScript.getLastLevel() + "");
         if(levelDataScript != null && levelDataScript.getLastLevel() < 11)
@@ -35,7 +39,7 @@ public class LevelSelectManager : MonoBehaviour
     void Update()
     {
         levelData = levelDataScript.get_level_data();
-        //showLevels();
+        showLevels();
     }
 
     void showLevels()
@@ -49,6 +53,14 @@ public class LevelSelectManager : MonoBehaviour
                 if (levelData[lvNum - 1] != 0)
                 {
                     level.SetActive(true);
+                    if (bonusPoints[lvNum - 1] != 0)
+                    {
+                        selectScript.ShowBonusAcquired();
+                    }
+                    else
+                    {
+                        selectScript.ShowBonusNotAcquired();
+                    }
                 }
                 else
                 {

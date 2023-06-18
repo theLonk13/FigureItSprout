@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelData : MonoBehaviour
+public class LevelData : MonoBehaviour, IDataPersistance
 {
     [SerializeField] int numLevels = 1;
 
@@ -17,15 +17,30 @@ public class LevelData : MonoBehaviour
     void Start()
     {
         last_level = -1;
-        level_tracker = new int[numLevels];
+
+        if(level_tracker == null)
+        {
+            level_tracker = new int[numLevels];
+        }
+
         level_resets = new int[numLevels];
-        level_tracker[0] = 1;
+        //level_tracker[0] = 1;
     }
 
     void Update()
     {
         debug_printLvData();
         debug_printLvResets();
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        this.level_tracker = saveData.UnlockedLevels;
+    }
+
+    public void SaveData(ref SaveData saveData)
+    {
+        saveData.UnlockedLevels = this.level_tracker;
     }
 
     //marks a level as having been visited and for its icon to show in level select

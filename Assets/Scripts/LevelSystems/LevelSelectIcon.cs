@@ -13,6 +13,11 @@ public class LevelSelectIcon : MonoBehaviour
     //Level icon button and text
     [SerializeField] TextMeshProUGUI levelText;
 
+    //Bonus Points indicator/flag
+    [SerializeField] bool BonusAvailable = false;
+    [SerializeField] GameObject BonusNotAcquired;
+    [SerializeField] GameObject BonusAcquired;
+
     //audio for button
     AudioSource buttonAudio;
 
@@ -26,7 +31,11 @@ public class LevelSelectIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!BonusAvailable)
+        {
+            BonusNotAcquired.SetActive(false);
+            BonusAcquired.SetActive(false);
+        }
     }
 
     public void JumpToLevel()
@@ -38,5 +47,23 @@ public class LevelSelectIcon : MonoBehaviour
     public int getLvNum()
     {
         return lvNum;
+    }
+
+    public void ShowBonusNotAcquired()
+    {
+        if (BonusAvailable)
+        {
+            BonusNotAcquired.SetActive(true);
+            BonusAcquired.SetActive(false);
+        }
+    }
+
+    public void ShowBonusAcquired()
+    {
+        if (BonusAvailable)
+        {
+            BonusAcquired.SetActive(true);
+            BonusNotAcquired.SetActive(false);
+        }
     }
 }

@@ -75,6 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Act2/Act2Lv16.unity
     guid: 5d4a13140f3dab346a17aa633d1d291a
   - enabled: 1
+    path: Assets/Scenes/Game/Cutscenes/MidAct2Cutscene.unity
+    guid: ac77779d7d4a59a4d936d2da6c32778a
+  - enabled: 1
     path: Assets/Scenes/Levels/Act2/Act2Lv17.unity
     guid: bcb5f7806967a8c499e8a322a437524a
   - enabled: 1
@@ -122,7 +125,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Act3/Act3Lv31.unity
     guid: 282e78533a80672438ed81c5dde281bd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Cutscenes/EndCutscene.unity
     guid: 944c7f046cb091448ac0c4d1d6cae4ba
   m_configObjects: {}

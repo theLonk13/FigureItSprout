@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
 
     //level number for level select
     [SerializeField] int lvNum;
+    //flag for if bonus star is available
+    [SerializeField] bool BonusAvailable = false;
 
     int total_score = 0;
 
@@ -222,6 +224,37 @@ public class LevelManager : MonoBehaviour
     public bool GoalMet()
     {
         return total_score >= goal_score;
+    }
+
+    //check that there are no more possible moves for player
+    //returns false if there are still possible moves, true if player cannot make any other moves
+    public bool CheckNoPossibleMoves()
+    {
+        //flags for available pot space and card
+        bool availableTile = false;
+        bool availableCard = false;
+
+        //check for empty pot space
+        foreach(GameObject tile in tiles)
+        {
+            LevelTile tiledata = tile.GetComponent<LevelTile>();
+            if(tiledata != null && tiledata.getPlantType() <= 0)
+            {
+                availableTile = true;
+            }
+        }
+        if(!availableTile) { return true; }
+
+        //check for any remaining cards
+        if(GameObject.FindGameObjectsWithTag("PlantCard").Length > 0)
+        {
+            availableCard = true;
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     //returns true if the total score is strictly greater than the goal score, false otherwise
