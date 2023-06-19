@@ -10,7 +10,10 @@ public class BonusPoints : MonoBehaviour, IDataPersistance
     // Start is called before the first frame update
     void Start()
     {
-        levelStarTracker = new int[levelData.getNumLevels()];
+        if(levelStarTracker == null)
+        {
+            levelStarTracker = new int[levelData.getNumLevels()];
+        }
     }
 
     public void LevelBonus(int lvNum)

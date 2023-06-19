@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -427,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 4524798828408676537, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
@@ -822,6 +830,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1121,6 +1133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1299,6 +1315,10 @@ PrefabInstance:
     - target: {fileID: 4524798828408676537, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
@@ -1889,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2070,6 +2094,10 @@ PrefabInstance:
     - target: {fileID: 4524798828408676537, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524798828408676538, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: starsRequired
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4524798828408676539, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_Sprite
@@ -2268,7 +2296,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5866543917136307220, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_text
-      value: Some of the miscellaneous objects used to construct the level backgrounds.
+      value: 'The earliest working build of the game, featuring placeholder art.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866543917136307220, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 8775880857894397168, guid: e987e7b5cff8e05488bc6b25b1579a09, type: 3}
       propertyPath: m_IsActive
