@@ -8,6 +8,7 @@ public class SaveData
 {
     public int[] UnlockedLevels;
     public int[] BonusStars;
+    public int[] LevelResets;
 
     public SaveData()
     {
@@ -17,5 +18,6 @@ public class SaveData
 
         this.UnlockedLevels = new int[numLevels];
         this.BonusStars = new int[numLevels];
+        this.LevelResets = new int[numLevels];
     }
 }

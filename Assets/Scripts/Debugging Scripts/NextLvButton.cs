@@ -7,6 +7,7 @@ public class NextLvButton : MonoBehaviour
 {
     GameObject nextLvButton;
     LevelManager lvManager;
+    LevelData lvData;
 
     GameObject[] lvCompleteObj;
     bool viewLevel = true;
@@ -19,6 +20,8 @@ public class NextLvButton : MonoBehaviour
     //flag for if a bonus is available
     [SerializeField] bool BonusAvailable = false;
     [SerializeField] GameObject bonusAvailableObj;
+    //bonus already acquired object
+    [SerializeField] GameObject bonusPrevAcquired;
 
     //flag for finished level
     bool levelFinish;
@@ -33,8 +36,11 @@ public class NextLvButton : MonoBehaviour
     {
         nextLvButton = GameObject.FindWithTag("debug_NextLv");
         lvManager = GameObject.FindObjectOfType<LevelManager>();
+        lvData = GameObject.Find("LevelData").GetComponent<LevelData>();
         lvCompleteObj = GameObject.FindGameObjectsWithTag("LvComplete");
         buttonAudio = GetComponent<AudioSource>();
+
+        bonus = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
 
         levelFinish = false;
         showLvComp = false;
@@ -109,13 +115,17 @@ public class NextLvButton : MonoBehaviour
         }
 
         //show bonus indicator if bonus is met
-        if (lvManager.BonusMet())
+        if (bonus.CheckBonus(lvManager.GetLevelNum()) && bonusPrevAcquired != null)
         {
             bonusAvailableObj.SetActive(false);
             bonusIndicator.SetActive(true);
-            bonusGlow.transform.Rotate(0f, 0f, 1f * Time.deltaTime);
+        }
+        else if (lvManager.BonusMet())
+        {
+            bonusAvailableObj.SetActive(false);
+            bonusIndicator.SetActive(true);
+            bonusGlow.transform.Rotate(new Vector3(0f, 0f, 150f * Time.deltaTime));
 
-            bonus = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
             bonus.LevelBonus(lvManager.GetLevelNum());
         }
         else
@@ -130,6 +140,8 @@ public class NextLvButton : MonoBehaviour
                 bonusAvailableObj.SetActive(false);
             }
         }
+
+        //
     }
 
     public void HideLvComplete()

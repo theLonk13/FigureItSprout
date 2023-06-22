@@ -8,6 +8,8 @@ public class PotAudio : MonoBehaviour
     [SerializeField] int numFallSounds;
     [SerializeField] AudioSource fall1;
     [SerializeField] AudioSource fall2;
+    //Audio for unpotted plant planting
+    [SerializeField] AudioSource unpottedPlant;
 
     //Audio for shy plant shrivel
     [SerializeField] AudioSource shyPlantShrivel;
@@ -45,5 +47,13 @@ public class PotAudio : MonoBehaviour
         shyPlantShrivel.Play();
     }
 
+    public void PlayBlossom()
+    {
+        blossomPlantSound.Play();
+    }
 
+    public void PlayPlantUnpotted()
+    {
+        unpottedPlant.Play();
+    }
 }

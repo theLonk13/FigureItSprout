@@ -36,11 +36,13 @@ public class LevelData : MonoBehaviour, IDataPersistance
     public void LoadData(SaveData saveData)
     {
         this.level_tracker = saveData.UnlockedLevels;
+        this.level_resets = saveData.LevelResets;
     }
 
     public void SaveData(ref SaveData saveData)
     {
         saveData.UnlockedLevels = this.level_tracker;
+        saveData.LevelResets = this.level_resets;
     }
 
     //marks a level as having been visited and for its icon to show in level select
@@ -70,10 +72,17 @@ public class LevelData : MonoBehaviour, IDataPersistance
 
     public void completeLv(int lvNum)
     {
+        Debug.Log("Level " + lvNum + " completed");
         lvNum--;
         if(lvNum >= 0 && lvNum < numLevels)
         {
             level_resets[lvNum] = 1;
+        }
+
+        //activat the next level on level select screen
+        if(lvNum + 1 < numLevels)
+        {
+            level_tracker[lvNum + 1] = 1;
         }
     }
 
@@ -98,7 +107,7 @@ public class LevelData : MonoBehaviour, IDataPersistance
         {
             resets += reset + " ";
         }
-        Debug.Log("Level Resets:\n" + resets);
+        //Debug.Log("Level Resets:\n" + resets);
     }
 
     public int getNumLevels()
@@ -110,4 +119,5 @@ public class LevelData : MonoBehaviour, IDataPersistance
     {
         return last_level;
     }
+   
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class LevelManager : MonoBehaviour
     BookController bookController;
     //PauseMenu
     [SerializeField] PauseMenu pauseMenu;
+    //toggle UI elements
+    GameObject[] toggleUIElements;
 
     //audiosource for button
     AudioSource buttonAudio;
@@ -54,6 +57,7 @@ public class LevelManager : MonoBehaviour
         goal_score_canvas.SetText("Level " + lvNum);
 
         bookController = GameObject.Find("BookPages").GetComponent<BookController>();
+        toggleUIElements = GameObject.FindGameObjectsWithTag("ToggleUI");
 
         PrepLevel();
         unlock_level();
@@ -76,6 +80,12 @@ public class LevelManager : MonoBehaviour
             {
                 pauseMenu.toggleMenu();
             }
+        }
+
+        //Toggles UI elements
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            ToggleUI();
         }
     }
 
@@ -308,6 +318,38 @@ public class LevelManager : MonoBehaviour
     {
         LevelData lv_unlocks = GameObject.Find("LevelData").GetComponent<LevelData>();
         lv_unlocks.ActivateLevel(lvNum);
+    }
+
+    //Toggles UI elements to be visible or not
+    void ToggleUI()
+    {
+        foreach(GameObject uiElement in toggleUIElements)
+        {
+            if (uiElement != null)
+            {
+                if (uiElement.activeSelf)
+                {
+                    uiElement.SetActive(false);
+                }
+                else
+                {
+                    uiElement.SetActive(true);
+                }
+            }
+        }        
+
+        Image deckHolderImg = GameObject.Find("PlayerHandArea").GetComponent<Image>();
+        if(deckHolderImg != null)
+        {
+            if (deckHolderImg.enabled)
+            {
+                deckHolderImg.enabled = false;
+            }
+            else
+            {
+                deckHolderImg.enabled = true;
+            }
+        }
     }
 
 

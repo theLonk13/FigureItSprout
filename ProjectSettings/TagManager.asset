@@ -19,6 +19,7 @@ TagManager:
   - DestroyOnLvComp
   - CutsceneFrame
   - BonusIcon
+  - ToggleUI
   layers:
   - Default
   - TransparentFX

@@ -1841,22 +1841,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910113750}
     m_Modifications:
-    - target: {fileID: 1505575556, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505575556, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 449.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505575556, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505575556, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0012541
-      objectReference: {fileID: 0}
     - target: {fileID: 5911129274956095142, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1948,6 +1932,10 @@ PrefabInstance:
     - target: {fileID: 5911129274956095161, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: lvNum
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911129274956095161, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: timeOfDay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5911129274956095161, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: goal_score

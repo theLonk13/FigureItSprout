@@ -89,6 +89,13 @@ public class DataPersistenceManager : MonoBehaviour
         dataHandler.Save(saveData);
     }
 
+    public void ResetGame()
+    {
+        NewGame();
+        dataHandler.Save(saveData);
+        LoadGame();
+    }
+
     private List<IDataPersistance> FindAllDataPersistanceObjects()
     {
         IEnumerable<IDataPersistance> dataPersistanceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistance>();

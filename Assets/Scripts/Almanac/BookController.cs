@@ -94,7 +94,7 @@ public class BookController : MonoBehaviour
 
     public void PgRight()
     {
-        if(curr_pg < Mathf.Ceil(pages.Length / 2))
+        if(curr_pg < Mathf.Floor((pages.Length / 2) - 1))
         {
             pgFlipAudio.Play();
             curr_pg++;

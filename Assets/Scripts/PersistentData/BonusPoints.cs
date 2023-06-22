@@ -26,6 +26,11 @@ public class BonusPoints : MonoBehaviour, IDataPersistance
         return levelStarTracker;
     }
 
+    public bool CheckBonus(int lvNum)
+    {
+        return levelStarTracker[lvNum - 1] > 0;
+    }
+
     public int GetStarCount()
     {
         int count = 0;

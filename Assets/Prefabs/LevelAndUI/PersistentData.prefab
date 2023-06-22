@@ -34,6 +34,7 @@ Transform:
   - {fileID: 8504727194443860974}
   - {fileID: 3875751236850220209}
   - {fileID: 2992630614139106202}
+  - {fileID: 810180361178433052}
   - {fileID: 7939186313175644019}
   - {fileID: 7785724827677030570}
   - {fileID: 7557412655353860251}
@@ -131,7 +132,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5389903051138055107
 MonoBehaviour:
@@ -176,7 +177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5666388611528623499
 MonoBehaviour:
@@ -363,6 +364,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numLevels: 31
+--- !u!1 &1363151966218872835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810180361178433052}
+  - component: {fileID: 4448750952666291503}
+  m_Layer: 0
+  m_Name: PlantsNoPotSpriteInfo
+  m_TagString: PottedSprite
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810180361178433052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363151966218872835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245147311695576931}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4448750952666291503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363151966218872835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479d8ae8e9fde9449931f1ae8cf198f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 7b644f7ddbe70c94b95ff73baf833206, type: 3}
+  plantedDaisy: {fileID: 21300000, guid: c5b978f6c45c25d459a2526d6f511261, type: 3}
+  plantedSage: {fileID: 21300000, guid: b155ed513af0a5948b94bebce1afa33a, type: 3}
+  plantedClover: {fileID: 21300000, guid: e49729d964d9df444a3ad854a8191942, type: 3}
+  plantedBasil: {fileID: 21300000, guid: a218b7fe3b3a6f948a55be8588da5698, type: 3}
+  plantedSunSucc: {fileID: 21300000, guid: 8224a46f24cfcb141950322bf1bbb57a, type: 3}
+  plantedAlfalfa: {fileID: 21300000, guid: 0096fcd82ce16a645aa1b7c428df6afe, type: 3}
+  plantedParsley: {fileID: 21300000, guid: af7ffb2b88adfe44c8738bcb853db2cf, type: 3}
+  plantedCrabgrass: {fileID: 21300000, guid: 2a1a1346e0c986f4585da39c952f4ffb, type: 3}
+  plantedLemongrass: {fileID: 21300000, guid: 7df57514392fa0041a6e7395fe4215a9, type: 3}
+  plantedOrchid: {fileID: 21300000, guid: 6f7a355f690ed4e429f860e3825e4e2c, type: 3}
+  plantedShiitake: {fileID: 21300000, guid: d6f263caaaa00ec44b5d2861e7c93ff5, type: 3}
+  plantedShy: {fileID: 21300000, guid: 4f2bd057b962142419d04e686f9c65fe, type: 3}
+  plantedVipergrass: {fileID: 21300000, guid: d0f739ab06509a14b8537d847c34127c, type: 3}
+  plantedSunflower: {fileID: 21300000, guid: 675e674ed8a195040853ae012a8d238e, type: 3}
+  plantedCarnation: {fileID: 21300000, guid: 0a08eb6b5a667b849b3795d07d456a62, type: 3}
+  plantedThyme: {fileID: 21300000, guid: 842c9e54c8fe22c4f93a9d61ee8ec742, type: 3}
+  triggeredShy: {fileID: 21300000, guid: b4e65f62feaaf684494ce8a0378ad273, type: 3}
+  bloomedSunflower: {fileID: 21300000, guid: 3551aa4b346414e4fbd2a24d879c2249, type: 3}
+  bloomedCarnation: {fileID: 21300000, guid: e7c923236db57114eb8d120e00c6c0c8, type: 3}
 --- !u!1 &3236501524647978386
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &116162893641055306
 MonoBehaviour:
@@ -764,7 +829,7 @@ Transform:
   - {fileID: 8939172251858026505}
   - {fileID: 46878535975791470}
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7789108467160814201
 MonoBehaviour:
@@ -1455,7 +1520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6490086560460343056
 MonoBehaviour:
@@ -1501,7 +1566,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245147311695576931}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4881980614596880303
 MonoBehaviour:

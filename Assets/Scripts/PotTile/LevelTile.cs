@@ -24,6 +24,8 @@ public class LevelTile : MonoBehaviour
 
     //Pot Audio
     [SerializeField] PotAudio potAudio;
+    //unpotted plant flag
+    bool Unpotted = false;
 
     //Indicator for shy plant activation
     int shy_toggle = -1;
@@ -106,6 +108,10 @@ public class LevelTile : MonoBehaviour
         }else if(timeOfDay == 2)
         {
             potted_sprites = GameObject.Find("NightPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
+        }else if(timeOfDay == 3)
+        {
+            Unpotted = true;
+            potted_sprites = GameObject.Find("PlantsNoPotSpriteInfo").GetComponent<PottedSpriteInfo>();
         }
     }
 
@@ -187,6 +193,7 @@ public class LevelTile : MonoBehaviour
             {
                 blossom_indicator.SetActive(false);
                 potImage.sprite = potted_sprites.bloom_plant(plantType);
+                potAudio.PlayBlossom();
             }
         }
         else if(plantType == 18) { 
@@ -195,6 +202,7 @@ public class LevelTile : MonoBehaviour
             {
                 blossom_indicator.SetActive(false);
                 potImage.sprite = potted_sprites.bloom_plant(plantType);
+                potAudio.PlayBlossom();
             }
         }
     }
@@ -212,12 +220,19 @@ public class LevelTile : MonoBehaviour
 
         potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - (.02f + fallScale) * time, 1f), Mathf.Max(potImageRect.localScale.y - (.02f + fallScale) * time, 1f), 1f);
 
-        fallScale += .3f;
+        fallScale += .2f;
 
         if(potImage.color.a >= 1f && potImageRect.localScale.x <= 1f && potImageRect.localScale.y <= 1f)
         {
             falling = false;
-            potAudio.playFallSound();
+            if (!Unpotted)
+            {
+                potAudio.playFallSound();
+            }
+            else
+            {
+                potAudio.PlayPlantUnpotted();
+            }
         }
     }
 }
