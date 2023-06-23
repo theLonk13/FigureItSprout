@@ -13,6 +13,15 @@ public class CutsceneManager : MonoBehaviour
 
     //Level to be played after this scene
     [SerializeField] string lvName;
+    //GameObject that is the mouse click indicator
+    [SerializeField] GameObject mouseClickObj;
+    //toggle for showing mouse click
+    bool showMouseClick = false;
+    //timer for showing mouse click
+    float timer = 1.0f;
+    //positions for mouse click
+    Vector3 showPos = new Vector3(0, 0, 0);
+    Vector3 hidePos = new Vector3(0, -200, 0);
 
     //audio for button
     AudioSource buttonAudio;
@@ -30,6 +39,29 @@ public class CutsceneManager : MonoBehaviour
     void Update()
     {
         //if(currFrameNum == 0) { AdvanceFrame(); }
+
+        //increment timer
+        timer += Time.deltaTime;
+        if(timer > 4.0f)
+        {
+            showMouseClick = true;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseClickObj.SetActive(false);
+            timer = 0.0f;
+            showMouseClick = false;
+        }
+
+        if(showMouseClick)
+        {
+            mouseClickObj.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(mouseClickObj.GetComponent<RectTransform>().localPosition, showPos, Time.deltaTime * 1000);
+        }
+        else
+        {
+            mouseClickObj.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(mouseClickObj.GetComponent<RectTransform>().localPosition, hidePos, Time.deltaTime * 1000);
+        }
     }
 
     //Loads a frame into the currFrame variable based on the given frame number parameter

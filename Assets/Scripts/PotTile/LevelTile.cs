@@ -38,12 +38,15 @@ public class LevelTile : MonoBehaviour
     //Score object
     [SerializeField] GameObject scoreDisplay;
 
-    //animator
+    //animator for tile
     Animator animator;
     //falling pot scale
     float fallScale = 1f;
     //falling flag
     bool falling = false;
+
+    //animator for point change sprites
+    [SerializeField] Animator pointChangeAnimator;
 
     //track if this tile is being hovered over
     public bool hoverThis = false;
@@ -234,5 +237,15 @@ public class LevelTile : MonoBehaviour
                 potAudio.PlayPlantUnpotted();
             }
         }
+    }
+
+    public void PointIncAnimation()
+    {
+        pointChangeAnimator.SetTrigger("PointIncrease");
+    }
+
+    public void PointDecAnimation()
+    {
+        pointChangeAnimator.SetTrigger("PointDecrease");
     }
 }

@@ -124,7 +124,7 @@ TextureImporter:
         width: 768
         height: 768
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,7 +145,7 @@ TextureImporter:
         width: 759
         height: 759
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,6 +153,27 @@ TextureImporter:
       bones: []
       spriteID: f7f4d6881fee9ec40840dc2076a07aba
       internalID: 832655541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ConfirmDecline_2
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 19
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab6fb8da447d7c498380442950c5fc3
+      internalID: 1674965331
       vertices: []
       indices: 
       edges: []
@@ -169,6 +190,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       ConfirmDecline_0: -1097873832
+      ConfirmDecline_2: 1674965331
       ConfirmDecline_1: 832655541
   spritePackingTag: 
   pSDRemoveMatte: 0

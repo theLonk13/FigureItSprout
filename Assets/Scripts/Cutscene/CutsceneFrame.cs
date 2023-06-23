@@ -55,15 +55,24 @@ public class CutsceneFrame : MonoBehaviour
         }
         else if(frameState == 1)
         {
+            Image interactibleImage = null;
+            if (Interactible != null)
+            {
+                Interactible.SetActive(true);
+                interactibleImage = Interactible.GetComponent<Image>();
+            }
+
             //fading in
             Color tempColor = frameImage.color;
             tempColor.a = Mathf.Min(tempColor.a + .02f, 1.0f);
             frameImage.color = tempColor;
+            if(interactibleImage != null){ interactibleImage.color = tempColor; }
 
             //update state when finished fading in
             if(tempColor.a >= 1.0f)
             {
                 frameState = 2;
+                
             }
         }
         else

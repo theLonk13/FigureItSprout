@@ -968,6 +968,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 2602675694014377174, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 963257327}
+    - target: {fileID: 2602675694014377174, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602675694014377174, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialOverlay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602675694014377174, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429936, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_Name
       value: Screen1

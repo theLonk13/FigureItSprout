@@ -966,14 +966,6 @@ PrefabInstance:
       propertyPath: OpenBook
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -120
-      objectReference: {fileID: 0}
     - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_text
       value: Your Orchid is now worth 7 points

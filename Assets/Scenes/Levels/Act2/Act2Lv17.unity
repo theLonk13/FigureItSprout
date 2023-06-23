@@ -1090,6 +1090,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910113750}
     m_Modifications:
+    - target: {fileID: 4418985819784648401, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 9002394455645584384, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_Name
       value: MomCardOverlay
@@ -1192,7 +1196,19 @@ PrefabInstance:
       objectReference: {fileID: 1624176392}
     - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 313.0446
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.4777
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002394456945343001, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000013828
       objectReference: {fileID: 0}
     - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_text
@@ -1207,6 +1223,10 @@ PrefabInstance:
     - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_fontSizeBase
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
