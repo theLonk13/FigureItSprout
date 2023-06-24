@@ -32,6 +32,7 @@ public class HintButton : MonoBehaviour
     {
         hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
         buttonAudio = GetComponent<AudioSource>();
+        Invoke("ShowHints", .2f);
         //ShowHintButton();
     }
 
@@ -39,7 +40,7 @@ public class HintButton : MonoBehaviour
     void Update()
     {
         ShowHintButton();
-        ShowHints();
+        //ShowHints();
     }
 
     public void ShowHintButton()
@@ -71,6 +72,7 @@ public class HintButton : MonoBehaviour
 
     void ShowHint1()
     {
+        Debug.LogError("Showing Hint 1");
         if (hintTracker.getHintsAccepted() >= 1 && plant1 != null)
         {
             LevelTile tile = lvMan.findTile(row1, col1);
@@ -81,6 +83,7 @@ public class HintButton : MonoBehaviour
 
     void ShowHint2()
     {
+        Debug.LogError("Showing Hint 2");
         if (hintTracker.getHintsAccepted() >= 2 && plant2 != null)
         {
             LevelTile tile = lvMan.findTile(row2, col2);

@@ -27,6 +27,8 @@ public class NextLvButton : MonoBehaviour
     bool levelFinish;
     //flag for showing lv complete screen
     bool showLvComp;
+    //flag for cutscene mode (only lv 21)
+    bool cutsceneMode = false;
 
     //audio for button
     AudioSource buttonAudio;
@@ -55,6 +57,10 @@ public class NextLvButton : MonoBehaviour
             levelFinish = true;
 
             Invoke("CompleteLevel", 1);            
+        }
+        else if (cutsceneMode)
+        {
+
         }
         else if (showLvComp)
         {
@@ -100,6 +106,7 @@ public class NextLvButton : MonoBehaviour
         {
             lvData.completeLv(lvManager.GetLevelNum());
         }
+
         nextLvButton.SetActive(true);
 
         foreach (GameObject obj in lvCompleteObj)
@@ -155,5 +162,10 @@ public class NextLvButton : MonoBehaviour
         {
             viewLevel = true;
         }
+    }
+
+    public void EnterCutscene()
+    {
+        cutsceneMode = true;
     }
 }

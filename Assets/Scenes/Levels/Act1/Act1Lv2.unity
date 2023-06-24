@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -990,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429936, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_Pivot.x
@@ -2487,7 +2487,7 @@ PrefabInstance:
       objectReference: {fileID: 380886193}
     - target: {fileID: 3533664404571499840, guid: 7cf8c818de8fde14697f6f9e03e914ef, type: 3}
       propertyPath: numScreens
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3943024089565958772, guid: 7cf8c818de8fde14697f6f9e03e914ef, type: 3}
       propertyPath: m_Pivot.x
@@ -2747,7 +2747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4352,7 +4352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 2929056011079429943, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4373,7 +4373,7 @@ PrefabInstance:
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_text
       value: To learn more about a plant, you can right click its card to open its
-        almanac page. Try it on the Lemongrass!
+        almanac page. Try it on one of these plants!
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontSize

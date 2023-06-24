@@ -107,7 +107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 230750266, guid: 3e165af427308924ba47053dc31d09be, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -413,6 +413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvName: TitleScreen
   mouseClickObj: {fileID: 6204583199419058768}
+  autoPlay: 0
+  autoPlayDelay: 2
 --- !u!82 &5980549266437843962
 AudioSource:
   m_ObjectHideFlags: 0

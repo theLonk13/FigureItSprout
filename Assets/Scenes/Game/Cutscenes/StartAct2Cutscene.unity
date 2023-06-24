@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fbfe98493c130bc46b9192a0c8c900a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1724822109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8884238258076896953}
         m_TargetAssemblyTypeName: CutsceneFrame, Assembly-CSharp
         m_MethodName: ToggleInteractible
         m_Mode: 1
@@ -1314,16 +1314,20 @@ PrefabInstance:
       value: 0.0000081062
       objectReference: {fileID: 0}
     - target: {fileID: 9221970394821018865, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1674965331, guid: 345ef94fd6082c34da0d89491c7ecd6f, type: 3}
+    - target: {fileID: 9221970394821018865, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9221970394821018865, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9221970394821018865, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}

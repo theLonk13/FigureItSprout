@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActSwitch : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class ActSwitch : MonoBehaviour
         placeActs();
         if(currAct == 1)
         {
-            prevButton.SetActive(false);
+            //prevButton.SetActive(false);
         }else if(currAct == 3) {
             nextButton.SetActive(false);
         }
@@ -52,6 +53,7 @@ public class ActSwitch : MonoBehaviour
     public void prevAct()
     {
         buttonAudio.Play();
+        if(currAct == 1) { SceneManager.LoadScene("TitleScreen"); }
         currAct = Mathf.Max(1, currAct - 1);
     }
 }

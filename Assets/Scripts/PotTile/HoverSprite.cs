@@ -14,7 +14,7 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void Awake()
     {
         thisTile = this.gameObject.GetComponent<LevelTile>();
-        potted_sprites = GameObject.FindWithTag("PottedSprite").GetComponent<PottedSpriteInfo>();
+        potted_sprites = GameObject.Find("DayPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
         hoverSprite = hoverSpriteObj.GetComponent<Image>();
         if (hoverSprite == null) { Debug.LogError("hoverSprite failed to initialize"); }
     }

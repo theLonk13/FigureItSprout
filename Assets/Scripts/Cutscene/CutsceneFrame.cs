@@ -14,6 +14,9 @@ public class CutsceneFrame : MonoBehaviour
     RectTransform InteractibleRect;
     bool interactibleTriggered = false;
 
+    //option to have Interactible fade out
+    [SerializeField] bool InteractibleFadeOut = false;
+
     Vector3 showPos = new Vector3(0, 0, 0);
     Vector3 hidePos = new Vector3(0, -1000, 0);
 
@@ -26,6 +29,8 @@ public class CutsceneFrame : MonoBehaviour
      * 1: Fading in
      * 2: Fully visible
      */
+
+    [SerializeField] float fadeSpeed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +55,16 @@ public class CutsceneFrame : MonoBehaviour
         {
             //fading out
             Color tempColor = frameImage.color;
-            tempColor.a = Mathf.Max(tempColor.a - .02f, 0f);
+            tempColor.a = Mathf.Max(tempColor.a - fadeSpeed, 0f);
             frameImage.color = tempColor;
+
+            Image interactibleImage = null;
+            if (Interactible != null)
+            {
+                Interactible.SetActive(true);
+                interactibleImage = Interactible.GetComponent<Image>();
+            }
+            if (interactibleImage != null && InteractibleFadeOut) { interactibleImage.color = tempColor; }
         }
         else if(frameState == 1)
         {
@@ -64,7 +77,7 @@ public class CutsceneFrame : MonoBehaviour
 
             //fading in
             Color tempColor = frameImage.color;
-            tempColor.a = Mathf.Min(tempColor.a + .02f, 1.0f);
+            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed, 1.0f);
             frameImage.color = tempColor;
             if(interactibleImage != null){ interactibleImage.color = tempColor; }
 
@@ -80,7 +93,7 @@ public class CutsceneFrame : MonoBehaviour
 
         }
 
-        if (interactibleTriggered && InteractibleTriggered != false)
+        if (interactibleTriggered)
         {
             InteractibleRect.localPosition = Vector3.MoveTowards(InteractibleRect.localPosition, showPos, Time.deltaTime * 4000);
         }
@@ -131,6 +144,12 @@ public class CutsceneFrame : MonoBehaviour
             interactibleTriggered = true;
         }
 
+    }
+
+    public void DisableInteractible()
+    {
+        frameImage.raycastTarget = false;
+        Interactible.GetComponent<Image>().raycastTarget = false;
     }
 
     public int GetFrameNum()

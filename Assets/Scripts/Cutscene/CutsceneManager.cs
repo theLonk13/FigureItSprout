@@ -23,6 +23,11 @@ public class CutsceneManager : MonoBehaviour
     Vector3 showPos = new Vector3(0, 0, 0);
     Vector3 hidePos = new Vector3(0, -200, 0);
 
+    //variables for autoplaying cutscene
+    [SerializeField] bool autoPlay = false;
+    [SerializeField] float autoPlayDelay = 2.0f;
+    bool nextAutoPlayReady = false;
+
     //audio for button
     AudioSource buttonAudio;
 
@@ -33,6 +38,7 @@ public class CutsceneManager : MonoBehaviour
         FindFrame(currFrameNum);
         buttonAudio = GetComponent<AudioSource>();
         AdvanceFrame();
+        if (autoPlay) { Invoke("AdvanceFrame", autoPlayDelay); }
     }
 
     // Update is called once per frame
@@ -49,18 +55,24 @@ public class CutsceneManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            mouseClickObj.SetActive(false);
+            //mouseClickObj.SetActive(false);
             timer = 0.0f;
             showMouseClick = false;
         }
 
-        if(showMouseClick)
+        if(showMouseClick && !autoPlay)
         {
             mouseClickObj.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(mouseClickObj.GetComponent<RectTransform>().localPosition, showPos, Time.deltaTime * 1000);
         }
         else
         {
             mouseClickObj.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(mouseClickObj.GetComponent<RectTransform>().localPosition, hidePos, Time.deltaTime * 1000);
+        }
+        
+        if(autoPlay && nextAutoPlayReady)
+        {
+            nextAutoPlayReady = false;
+            Invoke("AdvanceFrame", autoPlayDelay);
         }
     }
 
@@ -102,6 +114,7 @@ public class CutsceneManager : MonoBehaviour
             if(currFrame != null)
             {
                 AdvanceFrame();
+                nextAutoPlayReady = true;
             }
             else
             {

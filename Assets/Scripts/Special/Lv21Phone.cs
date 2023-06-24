@@ -48,7 +48,7 @@ public class Lv21Phone : MonoBehaviour
         phoneImage = phone.GetComponent<Image>();
         vibrateAudio = GetComponent<AudioSource>();
         origX = phoneTransform.localPosition.x;
-        //Invoke("PhoneCall", callDelay);
+        Invoke("PhoneCall", callDelay);
     }
 
     // Update is called once per frame
@@ -73,10 +73,13 @@ public class Lv21Phone : MonoBehaviour
     //start phone call
     public void PhoneCall()
     {
-        calling = true;
-        rang = true;
-        phoneImage.sprite = phoneCall;
-        VibrateOn();
+        if (!calling)
+        {
+            calling = true;
+            rang = true;
+            phoneImage.sprite = phoneCall;
+            VibrateOn();
+        }
     }
 
     void VibrateOn()

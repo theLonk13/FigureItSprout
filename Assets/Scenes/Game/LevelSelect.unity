@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: LevelSceneName
-      value: Act2Lv11_remake
+      value: StartAct2Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 6480829657910146940, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: m_Name
@@ -2849,6 +2849,10 @@ PrefabInstance:
     - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: lvNum
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
+      propertyPath: BonusAvailable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: LevelSceneName
@@ -6183,7 +6187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446998406012445092, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: LevelSceneName
-      value: Act3Lv26
+      value: MidAct3Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 6480829657910146940, guid: 28b239172afd1f44fb9d8e2a4378db07, type: 3}
       propertyPath: m_Name

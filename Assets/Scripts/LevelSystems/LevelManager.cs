@@ -364,7 +364,7 @@ public class LevelManager : MonoBehaviour
             if(tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
             {
                 tiledata.curr_score++;
-                tiledata.PointIncAnimation();
+                //tiledata.PointIncAnimation();
             }
         }
     }
@@ -377,7 +377,7 @@ public class LevelManager : MonoBehaviour
         if(tiledata != null && mom_plant != null)
         {
             tiledata.curr_score = mom_plant.plantOrchid(row_num, col_num, lvNum);
-            tiledata.PointIncAnimation();
+            //tiledata.PointIncAnimation();
         }
     }
 
@@ -390,7 +390,7 @@ public class LevelManager : MonoBehaviour
         {
             //Debug.Log("Sage planted");
             tiledata.curr_score = 1;
-            tiledata.PointIncAnimation();
+            //tiledata.PointIncAnimation();
         }
 
         /*
@@ -413,8 +413,8 @@ public class LevelManager : MonoBehaviour
             LevelTile tiledata = tile.GetComponent<LevelTile>();
             if (tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
             {
-                tiledata.curr_score += 2;
-                tiledata.PointIncAnimation();
+                tiledata.curr_score = 2;
+                //tiledata.PointIncAnimation();
             }
         }
     }
@@ -428,7 +428,7 @@ public class LevelManager : MonoBehaviour
             if (tiledata != null && tiledata.row == row_num && tiledata.col == col_num)
             {
                 tiledata.curr_score += 3;
-                tiledata.PointIncAnimation();
+                //tiledata.PointIncAnimation();
             }
         }
     }
@@ -453,7 +453,7 @@ public class LevelManager : MonoBehaviour
         if(lemonData != null)
         {
             lemonData.curr_score = 1 + total_points;
-            lemonData.PointIncAnimation();
+            if (total_points > 0) { lemonData.PointIncAnimation(); }
         }
     }
 
@@ -490,7 +490,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile directly above
         curr_tile = findTile(row_num, col_num - 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score *= 2;
             curr_tile.PointIncAnimation();
@@ -498,7 +498,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile direct to the left
         curr_tile = findTile(row_num - 1, col_num);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score *= 2;
             curr_tile.PointIncAnimation();
@@ -506,7 +506,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile direct to the right
         curr_tile = findTile(row_num + 1, col_num);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score *= 2;
             curr_tile.PointIncAnimation();
@@ -514,7 +514,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile directly below
         curr_tile = findTile(row_num, col_num + 1);
-        if(curr_tile != null)
+        if(curr_tile != null && curr_tile.getPlantType() > 0)
         {
             curr_tile.curr_score *= 2;
             curr_tile.PointIncAnimation();
@@ -529,7 +529,7 @@ public class LevelManager : MonoBehaviour
         for(int i = 0; i < max_level_size; i++)
         {
             curr_tile = findTile(i, col_num);
-            if(curr_tile != null)
+            if(curr_tile != null && curr_tile.getPlantType() > 0)
             {
                 curr_tile.curr_score *= 2;
                 curr_tile.PointIncAnimation();
@@ -550,7 +550,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile directly above
         curr_tile = findTile(row_num, col_num - 1);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             basil_tile.curr_score += curr_tile.curr_score;
             basil_tile.PointIncAnimation();
@@ -558,7 +558,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile direct to the left
         curr_tile = findTile(row_num - 1, col_num);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             basil_tile.curr_score += curr_tile.curr_score;
             basil_tile.PointIncAnimation();
@@ -566,7 +566,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile direct to the right
         curr_tile = findTile(row_num + 1, col_num);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             basil_tile.curr_score += curr_tile.curr_score;
             basil_tile.PointIncAnimation();
@@ -574,7 +574,7 @@ public class LevelManager : MonoBehaviour
 
         //Tile directly below
         curr_tile = findTile(row_num, col_num + 1);
-        if (curr_tile != null)
+        if (curr_tile != null && curr_tile.getPlantType() > 0)
         {
             basil_tile.curr_score += curr_tile.curr_score;
             basil_tile.PointIncAnimation();
@@ -665,14 +665,18 @@ public class LevelManager : MonoBehaviour
         for(int i = 0; i < max_level_size; i++)
         {
             curr_tile = findTile(row_num, i);
-            if(curr_tile != null && i != col_num)
+            if(curr_tile != null && i != col_num && curr_tile.getPlantType() > 0)
             {
                 int steal_this = ((curr_tile.curr_score + 1) / 2);
                 Debug.Log("Vipergrass stealing " + steal_this);
-                curr_tile.curr_score -= steal_this;
-                curr_tile.PointDecAnimation();
-                viper_tile.curr_score += steal_this;
-                viper_tile.PointIncAnimation();
+
+                if(steal_this > 0)
+                {
+                    curr_tile.curr_score -= steal_this;
+                    curr_tile.PointDecAnimation();
+                    viper_tile.curr_score += steal_this;
+                    viper_tile.PointIncAnimation();
+                }
             }
         }
     }
@@ -696,9 +700,9 @@ public class LevelManager : MonoBehaviour
                 {
                     curr_tile.curr_score--;
                     curr_tile.PointDecAnimation();
+                    crab_tile.PointIncAnimation();
                 }
                 crab_tile.curr_score += 2;
-                crab_tile.PointIncAnimation();
             }
         }
     }
@@ -745,7 +749,7 @@ public class LevelManager : MonoBehaviour
     {
         LevelTile curr_tile = findTile(row_num, col_num);
         curr_tile.curr_score = 1;
-        curr_tile.PointIncAnimation();
+        //curr_tile.PointIncAnimation();
     }
 
 
@@ -763,11 +767,12 @@ public class LevelManager : MonoBehaviour
         LevelTile shame_tile = findTile(row_num, col_num);
         shame_tile.toggleShy();
         shame_tile.curr_score = 5;
-        shame_tile.PointIncAnimation();
+        //shame_tile.PointIncAnimation();
     }
 
     void checkShame(int row_num, int col_num)
     {
+        Debug.LogError("Checking for shyplants around tile " + row_num + ", " + col_num);
         //direct above
         LevelTile curr_tile = findTile(row_num - 1, col_num);
         if(curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)

@@ -29,12 +29,15 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         if(titleMusic != null) titleMusic.Play();
+        Debug.LogError("Force Open dev console");
     }
 
     // Update is called once per frame
     void Update()
     {
-        SceneData currScene = GameObject.Find("SceneData").GetComponent<SceneData>();
+        SceneData currScene = null;
+        GameObject sceneDataObj = GameObject.Find("SceneData");
+        if (sceneDataObj != null) { currScene = sceneDataObj.GetComponent<SceneData>(); }
         if(currScene != null) { playerState = currScene.GetMusicState(); }
         StopAllSound(playerState);
 
