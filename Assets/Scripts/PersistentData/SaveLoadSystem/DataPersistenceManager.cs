@@ -59,6 +59,13 @@ public class DataPersistenceManager : MonoBehaviour
                 unlocks += unlock + " ";
             }
             Debug.Log("Loaded Level Unlocks:\n" + unlocks);
+
+            string stars = "";
+            foreach (int starUnlock in saveData.BonusStars)
+            {
+                stars += starUnlock + " ";
+            }
+            Debug.Log("Loaded Bonus Stars:\n" + stars);
         }
 
         //push loaded data to scripts that need it

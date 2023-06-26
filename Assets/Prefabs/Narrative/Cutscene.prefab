@@ -415,6 +415,7 @@ MonoBehaviour:
   mouseClickObj: {fileID: 6204583199419058768}
   autoPlay: 0
   autoPlayDelay: 2
+  buttonAudio: {fileID: 5980549266437843962}
 --- !u!82 &5980549266437843962
 AudioSource:
   m_ObjectHideFlags: 0

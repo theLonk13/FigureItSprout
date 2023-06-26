@@ -29,21 +29,27 @@ public class CutsceneManager : MonoBehaviour
     bool nextAutoPlayReady = false;
 
     //audio for button
-    AudioSource buttonAudio;
+    [SerializeField] AudioSource buttonAudio;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         frames = GameObject.FindGameObjectsWithTag("CutsceneFrame");
         FindFrame(currFrameNum);
-        buttonAudio = GetComponent<AudioSource>();
-        AdvanceFrame();
-        if (autoPlay) { Invoke("AdvanceFrame", autoPlayDelay); }
+        if (autoPlay) { 
+            //AdvanceFrame();
+            //Invoke("AdvanceFrame", autoPlayDelay);
+        }
+        else
+        {
+            AdvanceFrame();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //buttonAudio = GetComponent<AudioSource>();
         //if(currFrameNum == 0) { AdvanceFrame(); }
 
         //increment timer
@@ -69,11 +75,13 @@ public class CutsceneManager : MonoBehaviour
             mouseClickObj.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(mouseClickObj.GetComponent<RectTransform>().localPosition, hidePos, Time.deltaTime * 1000);
         }
         
+        //*
         if(autoPlay && nextAutoPlayReady)
         {
             nextAutoPlayReady = false;
             Invoke("AdvanceFrame", autoPlayDelay);
         }
+        //*/
     }
 
     //Loads a frame into the currFrame variable based on the given frame number parameter
@@ -94,11 +102,29 @@ public class CutsceneManager : MonoBehaviour
 
     public void AdvanceFrame()
     {
+        if (autoPlay)
+        {
+            Debug.Log("Advance Frame autoplaying");
+            if(currFrame.GetFrameState() != 2)
+            {
+                Invoke("AdvanceFrame", .1f);
+                if(currFrame.GetFrameState() == 0)
+                {
+                    currFrame.AdvanceFrame();
+                }
+            }
+            else
+            {
+                Invoke("AutoAdvanceHelper", autoPlayDelay);
+            }
+            return;
+        }
         buttonAudio.Play();
         //if current frame is not done fading in, either start or quick finish fading in
         if(currFrame.GetFrameState() != 2)
         {
             currFrame.AdvanceFrame();
+            //if(autoPlay) { Invoke("AdvanceFrame", autoPlayDelay); }
         }
         else if (currFrame.GetHasUntriggeredInteractible())
         {
@@ -114,12 +140,33 @@ public class CutsceneManager : MonoBehaviour
             if(currFrame != null)
             {
                 AdvanceFrame();
-                nextAutoPlayReady = true;
             }
             else
             {
                 Invoke("LoadLevel", 1);
             }
+        }
+    }
+
+    public void AutoAdvanceHelper()
+    {
+        currFrame.AdvanceFrame();
+        FindFrame(++currFrameNum);
+        if (currFrame != null)
+        {
+            Debug.Log("Moving to next frame");
+            //nextAutoPlayReady = true;
+            Invoke("AdvanceFrame", 1f);
+            //AdvanceFrame();
+        }
+        else
+        {
+            GameObject phone = GameObject.Find("Phone");
+            if (phone != null)
+            {
+                phone.GetComponent<Lv21Phone>().DelayedDecline();
+            }
+            Invoke("LoadLevel", autoPlayDelay);
         }
     }
 

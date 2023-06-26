@@ -20,7 +20,7 @@ public class CutsceneFrame : MonoBehaviour
     Vector3 showPos = new Vector3(0, 0, 0);
     Vector3 hidePos = new Vector3(0, -1000, 0);
 
-    Image frameImage;
+    [SerializeField] Image frameImage;
     //bool activeFrame = false;
     int frameState = 0;
     //State chart:
@@ -35,7 +35,7 @@ public class CutsceneFrame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        frameImage = GetComponent<Image>();
+        //frameImage = GetComponent<Image>();
 
         //set image to invisible
         Color tempColor = frameImage.color;

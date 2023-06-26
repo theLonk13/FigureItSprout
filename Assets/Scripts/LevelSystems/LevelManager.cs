@@ -123,7 +123,7 @@ public class LevelManager : MonoBehaviour
     //TODO Fill out with the rest of the plants
     public void plantAction(int row_num, int col_num, int plantID)
     {
-        Debug.Log("Attempting to plant a plant of ID " + plantID);
+        //Debug.Log("Attempting to plant a plant of ID " + plantID);
         //Check "Setup" plant actions
         checkShame(row_num, col_num);
 
@@ -350,6 +350,23 @@ public class LevelManager : MonoBehaviour
                 deckHolderImg.enabled = true;
             }
         }
+
+        foreach (GameObject tile in tiles)
+        {
+            Image tileImage = tile.GetComponent<Image>();
+            if (tileImage != null) { 
+                Color tempColor = tileImage.color;
+                if(tempColor.a > .5f) { tempColor.a = 0f; }
+                else { tempColor.a = 1f; }
+                tileImage.color = tempColor;
+            }
+        }
+
+        GameObject[] tutorials = GameObject.FindGameObjectsWithTag("Tutorial");
+        foreach (GameObject tutorial in tutorials)
+        {
+            tutorial.SetActive(!tutorial.activeSelf);
+        }
     }
 
 
@@ -384,7 +401,7 @@ public class LevelManager : MonoBehaviour
     //ID 2: Sage - Worth 1 pt. No special effect
     void Sage(int row_num, int col_num)
     {
-        Debug.Log("Attempting to plant sage");
+        //Debug.Log("Attempting to plant sage");
         LevelTile tiledata = findTile(row_num, col_num);
         if(tiledata != null)
         {
@@ -668,7 +685,7 @@ public class LevelManager : MonoBehaviour
             if(curr_tile != null && i != col_num && curr_tile.getPlantType() > 0)
             {
                 int steal_this = ((curr_tile.curr_score + 1) / 2);
-                Debug.Log("Vipergrass stealing " + steal_this);
+                //Debug.Log("Vipergrass stealing " + steal_this);
 
                 if(steal_this > 0)
                 {
@@ -772,7 +789,7 @@ public class LevelManager : MonoBehaviour
 
     void checkShame(int row_num, int col_num)
     {
-        Debug.LogError("Checking for shyplants around tile " + row_num + ", " + col_num);
+        //Debug.LogError("Checking for shyplants around tile " + row_num + ", " + col_num);
         //direct above
         LevelTile curr_tile = findTile(row_num - 1, col_num);
         if(curr_tile != null && curr_tile.getPlantType() == 15 && curr_tile.getShyToggle() > 0)

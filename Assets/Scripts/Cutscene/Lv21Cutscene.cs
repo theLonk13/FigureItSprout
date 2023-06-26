@@ -13,12 +13,13 @@ public class Lv21Cutscene : MonoBehaviour
     //black bg to fade in/out
     [SerializeField] Image fadeBG;
 
-    //main camera
-    [SerializeField] GameObject mainCamera;
+    //Background
+    [SerializeField] RectTransform levelBackground;
     //Phone
     [SerializeField] Lv21Phone phone;
-    //phone camera
-    [SerializeField] GameObject phoneCamera;
+
+    //next part of the cutscene
+    [SerializeField] GameObject cutscenePart2;
 
     /*
      * state of the cutscene
@@ -84,8 +85,8 @@ public class Lv21Cutscene : MonoBehaviour
 
     void State2()
     {
-        mainCamera.SetActive(false);
-        phoneCamera.SetActive(true);
+        levelBackground.localPosition = new Vector3(-400f, -160f, -5f);
+        levelBackground.localScale = new Vector3(2f, 2f, 2f);
         cutsceneState++;
         Invoke("State3", cutsceneDelay);
     }
@@ -98,7 +99,14 @@ public class Lv21Cutscene : MonoBehaviour
 
     void State4()
     {
-        SceneManager.LoadScene("StartAct3Cutscene");
+        cutscenePart2.SetActive(true);
+        Invoke("AutoPlayCutscene", .2f);
+    }
+
+    void AutoPlayCutscene()
+    {
+        CutsceneManager cutsceneMan = cutscenePart2.GetComponent<CutsceneManager>();
+        if (cutsceneMan != null) { cutsceneMan.AdvanceFrame(); }
     }
 
     void ZoomPhone()
@@ -123,9 +131,6 @@ public class Lv21Cutscene : MonoBehaviour
         }
 
         StopCoroutine(FadeIn());
-        //when black background is up, switch cameras
-        mainCamera.SetActive(false);
-        phoneCamera.SetActive(true);
         StartCoroutine(FadeOut());
     }
 
@@ -167,6 +172,11 @@ public class Lv21Cutscene : MonoBehaviour
             audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
+
+        audioSource.Stop();
+        SceneData sceneData = GameObject.Find("SceneData").GetComponent<SceneData>();
+        sceneData.ChangeMusicState(7);
+        audioSource.volume = 1.0f;
         yield break;
     }
 }

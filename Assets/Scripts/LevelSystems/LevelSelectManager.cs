@@ -13,6 +13,8 @@ public class LevelSelectManager : MonoBehaviour
 
     [SerializeField] ActSwitch actSwitch;
 
+    [SerializeField] bool playTestMode = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -39,7 +41,7 @@ public class LevelSelectManager : MonoBehaviour
     void Update()
     {
         levelData = levelDataScript.get_level_data();
-        //showLevels();
+        if (!playTestMode) { showLevels(); }
     }
 
     void showLevels()

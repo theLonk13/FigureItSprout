@@ -16,9 +16,46 @@ public class SceneData : MonoBehaviour
      * */
     [SerializeField] int musicState;
 
+    void Awake()
+    {
+        MusicPlayer musicPlayer = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+        if(musicPlayer != null)
+        {
+            switch(musicState)
+            {
+                case 0:
+                    musicPlayer.PlayTitle();
+                    break;
+                case 1:
+                    musicPlayer.PlayAct1Cutscene();
+                    break;
+                case 2:
+                    musicPlayer.PlayAct1Levels();
+                    break;
+                case 3:
+                    musicPlayer.PlayAct2Cutscene();
+                    break;
+                case 4:
+                    musicPlayer.PlayAct2Levels();
+                    break;
+                case 5:
+                    musicPlayer.PlayAct3Cutscene();
+                    break;
+                case 6:
+                    musicPlayer.PlayAct3Levels();
+                    break;
+            }
+        }
+    }
+
     //returns the music player state for this screen
     public int GetMusicState()
     {
         return musicState;
+    }
+
+    public void ChangeMusicState(int newState)
+    {
+        musicState = newState;
     }
 }

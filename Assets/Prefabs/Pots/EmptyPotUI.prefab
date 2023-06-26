@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 2762321120989952428}
   m_Layer: 5
   m_Name: TileScoreUI
-  m_TagString: Untagged
+  m_TagString: ToggleUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1299,7 +1299,7 @@ GameObject:
   - component: {fileID: 6649290798908757420}
   m_Layer: 5
   m_Name: TileScoreBG
-  m_TagString: Untagged
+  m_TagString: ToggleUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

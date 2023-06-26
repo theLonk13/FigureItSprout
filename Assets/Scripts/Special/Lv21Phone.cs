@@ -76,7 +76,7 @@ public class Lv21Phone : MonoBehaviour
         if (!calling)
         {
             calling = true;
-            rang = true;
+            declined = false;
             phoneImage.sprite = phoneCall;
             VibrateOn();
         }
@@ -108,10 +108,16 @@ public class Lv21Phone : MonoBehaviour
         if(!calling) return;
         declined = true;
         calling = false;
+        rang = true;
         VibrateOff();
         phoneImage.sprite = phoneCallDecline;
         phoneCallDeclineImage.enabled = true;
         Invoke("PhoneOff", 5);
+    }
+
+    public void DelayedDecline()
+    {
+        declined = true;
     }
 
     void PhoneOff()

@@ -163,7 +163,7 @@ public class LevelTile : MonoBehaviour
         if (plantType != 15) { return; }
         if (shy_toggle > 0)
         {
-            shy_indicator.SetActive(true);
+            shy_indicator.SetActive(true); //UNCOMMENT FOR FULL BUILD
         }
         else
         {

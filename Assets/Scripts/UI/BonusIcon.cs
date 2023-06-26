@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BonusIcon : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class BonusIcon : MonoBehaviour
     [SerializeField] GameObject bonusImageObj;
     Image bonusImage;
     bool showBonus = false;
+
+    [SerializeField] TextMeshProUGUI starsRequiredText;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,8 @@ public class BonusIcon : MonoBehaviour
             tempColor.a = Mathf.Max(tempColor.a - .02f, 0f);
             bonusImage.color = tempColor;
         }
+
+        starsRequiredText.SetText("" + starsRequired);
     }
 
     public void ToggleBonus()

@@ -90,3 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameNum: 0
+  Interactible: {fileID: 0}
+  InteractibleTriggered: {fileID: 0}
+  InteractibleFadeOut: 0
+  frameImage: {fileID: 7900421969068884296}
+  fadeSpeed: 0.01
