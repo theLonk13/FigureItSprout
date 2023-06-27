@@ -1335,6 +1335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910113750}
     m_Modifications:
+    - target: {fileID: 4418985819784648401, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9002394455645584384, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_Name
       value: NewCardOverlay
@@ -3252,6 +3256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1045547954}
     m_Modifications:
+    - target: {fileID: 109201182889289525, guid: 615daa366c200934a9e7fcb993e1a8f6, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1380679596496194957, guid: 615daa366c200934a9e7fcb993e1a8f6, type: 3}
       propertyPath: m_Name
       value: Lemongrass
@@ -3437,6 +3445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 45257122}
     m_Modifications:
+    - target: {fileID: 109201182889289525, guid: 615daa366c200934a9e7fcb993e1a8f6, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1380679596496194957, guid: 615daa366c200934a9e7fcb993e1a8f6, type: 3}
       propertyPath: m_Name
       value: Lemongrass

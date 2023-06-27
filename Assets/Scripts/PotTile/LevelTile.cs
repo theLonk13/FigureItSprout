@@ -244,6 +244,11 @@ public class LevelTile : MonoBehaviour
         pointChangeAnimator.SetTrigger("PointIncrease");
     }
 
+    public void ShiitakePointInc()
+    {
+        Invoke("PointIncAnimation", .5f);
+    }
+
     public void PointDecAnimation()
     {
         pointChangeAnimator.SetTrigger("PointDecrease");

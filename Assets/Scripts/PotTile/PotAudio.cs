@@ -16,6 +16,8 @@ public class PotAudio : MonoBehaviour
 
     //Audio for blossom
     [SerializeField] AudioSource blossomPlantSound;
+    //falg for blossom sound playing
+    bool bloassomSoundPlayed = false;
 
     //flag for playing
     bool fallSoundPlayed = false;
@@ -49,7 +51,12 @@ public class PotAudio : MonoBehaviour
 
     public void PlayBlossom()
     {
-        blossomPlantSound.Play();
+        Debug.Log("Playing Blossom Sound");
+        if (!bloassomSoundPlayed)
+        {
+            bloassomSoundPlayed = true;
+            blossomPlantSound.Play();
+        }
     }
 
     public void PlayPlantUnpotted()

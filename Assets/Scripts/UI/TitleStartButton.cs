@@ -12,7 +12,15 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     [SerializeField] Image startButton;
     bool hoverThis;
+    bool fadeInButton = false;
 
+    //logo
+    [SerializeField] RectTransform logoRect;
+    Vector3 origLogoPos;
+    float timeStamp = 0.0f;
+
+    [SerializeField] Image logoImg;
+    bool fadeIn = false;
     //Audio for button click
     AudioSource buttonAudio;
 
@@ -22,6 +30,20 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         startIdle = GameObject.Find("UISprites").GetComponent<UISprites>().getStartIdle();
         startHighlight = GameObject.Find("UISprites").GetComponent<UISprites>().getStartHighlight();
         buttonAudio = GetComponent<AudioSource>();
+        if(logoRect != null )
+        {
+            origLogoPos = logoRect.localPosition;
+        }
+        if(logoImg != null )
+        {
+            Invoke("FadeInLogo", 1f);
+        }
+        if(startButton != null)
+        {
+            startButton.enabled = false;
+            Invoke("FadeInButton", 2f);
+        }
+
     }
 
     void Update()
@@ -36,6 +58,28 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
             startButton.sprite = startIdle;
         }
         */
+
+        if(logoRect != null)
+        {
+            timeStamp += 1.5f * Time.deltaTime;
+            Vector3 newPos = origLogoPos;
+            newPos.y = newPos.y + 15f * Mathf.Sin(timeStamp);
+            logoRect.localPosition = newPos;
+        }
+
+        if(fadeIn && logoImg != null)
+        {
+            Color temp = logoImg.color;
+            temp.a += 4f * Time.deltaTime;
+            logoImg.color = temp;
+        }
+
+        if(fadeInButton && startButton != null)
+        {
+            Color temp2 = startButton.color;
+            temp2.a += 4f * Time.deltaTime;
+            startButton.color = temp2;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -59,6 +103,17 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
             return;
         }
         SceneManager.LoadScene("IntroCutscene");
+    }
+
+    void FadeInLogo()
+    {
+        fadeIn = true;
+    }
+
+    void FadeInButton()
+    {
+        fadeInButton = true;
+        startButton.enabled = true;
     }
 
     //These methods are for other Title Screen UI elements that did not necessarily require an additional script

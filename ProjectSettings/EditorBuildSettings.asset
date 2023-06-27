@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/QuangTestScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Game/Cutscenes/JenniferAnnScreen.unity
+    guid: 6fa4ca36307844e45b991cbfecede405
+  - enabled: 1
     path: Assets/Scenes/Game/TitleScreen.unity
     guid: df4a702de9c874e4e84dc0897adb9f06
   - enabled: 1

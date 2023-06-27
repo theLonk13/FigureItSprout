@@ -2217,7 +2217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418560187110845319, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: musicState
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: plant1

@@ -3488,7 +3488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: lvName
-      value: Act3Lv22
+      value: StartAct3Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: autoPlay

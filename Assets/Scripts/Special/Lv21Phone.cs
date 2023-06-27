@@ -75,6 +75,8 @@ public class Lv21Phone : MonoBehaviour
     {
         if (!calling)
         {
+            CancelInvoke();
+            phoneCallDeclineImage.enabled = false;
             calling = true;
             declined = false;
             phoneImage.sprite = phoneCall;
