@@ -34,6 +34,11 @@ public class DataPersistenceManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        SaveGame();
+    }
+
     public void NewGame()
     {
         this.saveData = new SaveData();

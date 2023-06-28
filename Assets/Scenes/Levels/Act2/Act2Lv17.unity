@@ -1212,9 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_text
-      value: 'Mom has gifted you an orchid!
-
-        (Thanks Mom!)'
+      value: Mom has gifted you an orchid!
       objectReference: {fileID: 0}
     - target: {fileID: 9002394456945343006, guid: fe34077eecaab8d4ba94702d70557a2c, type: 3}
       propertyPath: m_fontSize

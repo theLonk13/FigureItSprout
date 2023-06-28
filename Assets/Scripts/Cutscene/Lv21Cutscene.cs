@@ -8,7 +8,7 @@ public class Lv21Cutscene : MonoBehaviour
 {
     //delay b/t automatic rames
     [SerializeField] float cutsceneDelay = 3.0f;
-    [SerializeField] float fadeSpeed = .1f;
+    [SerializeField] float fadeSpeed = 40f;
 
     //black bg to fade in/out
     [SerializeField] Image fadeBG;
@@ -46,19 +46,19 @@ public class Lv21Cutscene : MonoBehaviour
         {
             //fade to black 
             Color tempColor = fadeBG.color;
-            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed, 1f);
+            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed * Time.deltaTime, 1f);
             fadeBG.color = tempColor;
         }else if(cutsceneState == 2)
         {
             //fade back in 
             Color tempColor = fadeBG.color;
-            tempColor.a = Mathf.Max(tempColor.a - fadeSpeed, 0f);
+            tempColor.a = Mathf.Max(tempColor.a - fadeSpeed * Time.deltaTime, 0f);
             fadeBG.color = tempColor;
         }else if (cutsceneState == 3)
         {
             //fade to black 
             Color tempColor = fadeBG.color;
-            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed, 1f);
+            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed * Time.deltaTime, 1f);
             fadeBG.color = tempColor;
         }
     }
@@ -70,7 +70,7 @@ public class Lv21Cutscene : MonoBehaviour
         //fade music out
         StartCoroutine(MusicFade(2.0f, 0.0f));
         //ring phone if not ringing
-        phone.PhoneCall();
+        phone.PhoneCall(true);
 
         //set state
         cutsceneState = 0;

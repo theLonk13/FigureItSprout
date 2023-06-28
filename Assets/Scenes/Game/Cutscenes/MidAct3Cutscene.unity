@@ -948,6 +948,14 @@ PrefabInstance:
       propertyPath: lvName
       value: Act3Lv26
       objectReference: {fileID: 0}
+    - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
+      propertyPath: nextLvDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864732795934355674, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
+      propertyPath: fadeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5864732795934355674, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: Interactible
       value: 

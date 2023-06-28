@@ -122,4 +122,9 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         buttonAudio.Play();
         SceneManager.LoadScene("BonusRewards");
     }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
 }

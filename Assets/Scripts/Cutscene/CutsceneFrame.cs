@@ -30,7 +30,7 @@ public class CutsceneFrame : MonoBehaviour
      * 2: Fully visible
      */
 
-    [SerializeField] float fadeSpeed = 0.01f;
+    [SerializeField] float fadeSpeed = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,7 @@ public class CutsceneFrame : MonoBehaviour
         {
             //fading out
             Color tempColor = frameImage.color;
-            tempColor.a = Mathf.Max(tempColor.a - fadeSpeed, 0f);
+            tempColor.a = Mathf.Max(tempColor.a - fadeSpeed * Time.deltaTime, 0f);
             frameImage.color = tempColor;
 
             Image interactibleImage = null;
@@ -77,7 +77,7 @@ public class CutsceneFrame : MonoBehaviour
 
             //fading in
             Color tempColor = frameImage.color;
-            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed, 1.0f);
+            tempColor.a = Mathf.Min(tempColor.a + fadeSpeed * Time.deltaTime, 1.0f);
             frameImage.color = tempColor;
             if(interactibleImage != null){ interactibleImage.color = tempColor; }
 

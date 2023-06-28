@@ -31,6 +31,9 @@ public class CutsceneManager : MonoBehaviour
     //audio for button
     [SerializeField] AudioSource buttonAudio;
 
+    //delay for moving to level after scene
+    [SerializeField] float nextLvDelay = 1.0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -143,7 +146,7 @@ public class CutsceneManager : MonoBehaviour
             }
             else
             {
-                Invoke("LoadLevel", 1);
+                Invoke("LoadLevel", nextLvDelay);
             }
         }
     }

@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: autoPlay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5864732795934355674, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
+      propertyPath: fadeSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5886001668588529786, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_IsActive
       value: 0

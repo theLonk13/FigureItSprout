@@ -84,6 +84,29 @@ public class Lv21Phone : MonoBehaviour
         }
     }
 
+    public void PhoneCall(bool cutscene = false)
+    {
+        Debug.Log("Attempting to call");
+        if (cutscene)
+        {
+            phoneImage.raycastTarget = false;
+        }
+        else
+        {
+            phoneImage.raycastTarget = true;
+        }
+
+        if (!calling)
+        {
+            CancelInvoke();
+            phoneCallDeclineImage.enabled = false;
+            calling = true;
+            declined = false;
+            phoneImage.sprite = phoneCall;
+            VibrateOn();
+        }
+    }
+
     void VibrateOn()
     {
         if (declined) return;
