@@ -31,6 +31,8 @@ public class TutorialOverlay : MonoBehaviour
             0,
             0
         );
+
+
     }
 
     public void Back()

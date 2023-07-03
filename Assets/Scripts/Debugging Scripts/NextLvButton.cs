@@ -107,7 +107,10 @@ public class NextLvButton : MonoBehaviour
             lvData.completeLv(lvManager.GetLevelNum());
         }
 
-        nextLvButton.SetActive(true);
+        if(nextLvButton != null)
+        {
+            nextLvButton.SetActive(true);
+        }
 
         foreach (GameObject obj in lvCompleteObj)
         {
@@ -166,6 +169,8 @@ public class NextLvButton : MonoBehaviour
 
     public void EnterCutscene()
     {
+        Debug.Log("NextLvButton Entering Cutscene");
+
         cutsceneMode = true;
     }
 }
