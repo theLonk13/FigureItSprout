@@ -10,9 +10,9 @@ public class Lv21Phone : MonoBehaviour
 
     //Gameobject for phone
     [SerializeField] GameObject phone;
-    RectTransform phoneTransform;
+    [SerializeField] RectTransform phoneTransform;
     //Image for the phone
-    Image phoneImage;
+    [SerializeField] Image phoneImage;
 
     //delay before call
     [SerializeField] float callDelay = 20;
@@ -26,7 +26,7 @@ public class Lv21Phone : MonoBehaviour
     //switch for vibration
     bool vibrate = false;
     //vibration audio
-    AudioSource vibrateAudio;
+    [SerializeField] AudioSource vibrateAudio;
     //vibration parameters
     [SerializeField] float speed = 1.0f;
     [SerializeField] float amount = 1.0f;
@@ -44,9 +44,9 @@ public class Lv21Phone : MonoBehaviour
     void Start()
     {
         if (rang) { return; }
-        phoneTransform = phone.GetComponent<RectTransform>();
-        phoneImage = phone.GetComponent<Image>();
-        vibrateAudio = GetComponent<AudioSource>();
+        //phoneTransform = phone.GetComponent<RectTransform>();
+        //phoneImage = phone.GetComponent<Image>();
+        //vibrateAudio = GetComponent<AudioSource>();
         origX = phoneTransform.localPosition.x;
         Invoke("PhoneCall", callDelay);
     }

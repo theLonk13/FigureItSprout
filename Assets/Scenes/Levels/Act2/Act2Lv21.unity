@@ -2916,11 +2916,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phone: {fileID: 1794393036}
+  phoneTransform: {fileID: 1794393037}
+  phoneImage: {fileID: 1794393038}
   callDelay: 20
   phoneSilent: {fileID: 21300000, guid: 39e5228bb4dbff54c9d26d8306407851, type: 3}
   phoneCall: {fileID: 21300000, guid: bf414eb79873f534085f289b7d923b6c, type: 3}
   phoneCallDecline: {fileID: 21300000, guid: 0379c4d6b491c9b46b9d0880a9fe99ec, type: 3}
   phoneCallDeclineImage: {fileID: 1812417605}
+  vibrateAudio: {fileID: 1990069901}
   speed: 100
   amount: 4
 --- !u!82 &1990069901
