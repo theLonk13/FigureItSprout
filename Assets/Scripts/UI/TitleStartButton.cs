@@ -123,6 +123,12 @@ public class TitleStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         SceneManager.LoadScene("BonusRewards");
     }
 
+    public void GoToCredits()
+    {
+        buttonAudio.Play();
+        SceneManager.LoadScene("Credits");
+    }
+
     public void quit()
     {
         Application.Quit();
