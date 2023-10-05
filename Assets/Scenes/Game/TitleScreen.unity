@@ -1407,8 +1407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947c5e3dd03c45e41990ecdbf65b4af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idle: {fileID: -1630605693, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
-  highlight: {fileID: -338675965, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  idle: {fileID: 464430015, guid: 0d3b218b974cee3479587aca8071a9ae, type: 3}
+  highlight: {fileID: 188054112, guid: 0d3b218b974cee3479587aca8071a9ae, type: 3}
 --- !u!82 &1140834061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1630605693, guid: 664b04524c775e945a4fd350dc61c98a, type: 3}
+  m_Sprite: {fileID: 464430015, guid: 0d3b218b974cee3479587aca8071a9ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

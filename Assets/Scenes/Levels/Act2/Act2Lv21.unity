@@ -2861,6 +2861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6abec08d966b64da0aec04aa932795, type: 3}
+--- !u!1 &1987247141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8357845070513464340, guid: 4d6abec08d966b64da0aec04aa932795, type: 3}
+  m_PrefabInstance: {fileID: 1987247140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1990069898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,11 +3735,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: col3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: row1
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: row2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: row3
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
@@ -3746,8 +3759,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1445267456}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: plant3
+      value: 
+      objectReference: {fileID: 1987247141}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: numHints
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8886346505598368350, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
