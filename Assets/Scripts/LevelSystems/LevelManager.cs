@@ -369,6 +369,15 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void playAllLvCompParticles()
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tiledata = tile.GetComponent<LevelTile>();
+            tiledata.playLvCompParticles();
+        }
+    }
+
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
     //"Active" plant actions: These actions occur on planting the plant

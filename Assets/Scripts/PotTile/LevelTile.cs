@@ -47,6 +47,8 @@ public class LevelTile : MonoBehaviour
 
     //animator for point change sprites
     [SerializeField] Animator pointChangeAnimator;
+    //particle system for lv complete
+    [SerializeField] ParticleSystem lvCompParticles;
 
     //track if this tile is being hovered over
     public bool hoverThis = false;
@@ -252,5 +254,10 @@ public class LevelTile : MonoBehaviour
     public void PointDecAnimation()
     {
         pointChangeAnimator.SetTrigger("PointDecrease");
+    }
+
+    public void playLvCompParticles()
+    {
+        lvCompParticles.Play();
     }
 }
