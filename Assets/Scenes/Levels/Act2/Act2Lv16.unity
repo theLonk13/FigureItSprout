@@ -1272,6 +1272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53935c833ca490a42a6d712680898203, type: 3}
+--- !u!1 &1257893908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1565171211828466699, guid: 53935c833ca490a42a6d712680898203, type: 3}
+  m_PrefabInstance: {fileID: 1257893907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1335986803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,8 +2032,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: col3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: row2
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: row3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: plant1
@@ -2039,8 +2052,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1661738261}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: plant3
+      value: 
+      objectReference: {fileID: 1257893908}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: numHints
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}

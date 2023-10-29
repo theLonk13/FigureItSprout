@@ -857,6 +857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d63b305dacd7be4bb9d243bf06826c7, type: 3}
+--- !u!1 &291213338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8357845070513464340, guid: 2d63b305dacd7be4bb9d243bf06826c7, type: 3}
+  m_PrefabInstance: {fileID: 291213337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &315356011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2239,12 +2244,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: col3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: row1
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: row2
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: row3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: plant1
@@ -2255,8 +2268,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1002787187}
     - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: plant3
+      value: 
+      objectReference: {fileID: 291213338}
+    - target: {fileID: 8327347671056934232, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: numHints
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}

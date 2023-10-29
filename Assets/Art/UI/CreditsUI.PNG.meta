@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e63c6150f3fde9d43ab6f8ee8f6a2817
+guid: 0d3b218b974cee3479587aca8071a9ae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Point Display_0
+      name: CreditsUI_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 732
-        width: 1750
-        height: 1768
+        x: 466
+        y: 0
+        width: 565
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe861aec530b4cf4d81a44a46fdc6036
-      internalID: 2011111809
+      spriteID: 5a80bd7aa94065545a8c0e9ede278362
+      internalID: 464430015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsUI_1
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 51
+        width: 565
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c411282a82565e4689288d341f3789b
+      internalID: 188054112
       vertices: []
       indices: 
       edges: []
@@ -140,14 +161,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Point Display_0: 2011111809
+      CreditsUI_0: 464430015
+      CreditsUI_1: 188054112
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
