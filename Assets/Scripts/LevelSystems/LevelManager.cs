@@ -120,15 +120,13 @@ public class LevelManager : MonoBehaviour
 
     //performs an action corresponding to the plant on a tile
     //Also used to advance a turn
-    //TODO Fill out with the rest of the plants
     public void plantAction(int row_num, int col_num, int plantID)
     {
         //Debug.Log("Attempting to plant a plant of ID " + plantID);
         //Check "Setup" plant actions
         checkShame(row_num, col_num);
 
-        //Perform "Active" plant actions
-        //TODO Update this with other plants as IDs are finalized
+        //Perform "Active" plant actions based on the ID of the plant and tile location
         switch (plantID)
         {
             case 1:
@@ -371,6 +369,7 @@ public class LevelManager : MonoBehaviour
 
     public void playAllLvCompParticles()
     {
+        Debug.Log("Attempting to play all level complete particles");
         foreach (GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 973922433565838411}
   - component: {fileID: 973922433565838410}
   - component: {fileID: 972478813897727908}
+  - component: {fileID: 3117294672346587521}
   m_Layer: 5
   m_Name: MessageBG
   m_TagString: Untagged
@@ -91,6 +92,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 973922433966862861}
+  messageAnim: {fileID: 3117294672346587521}
+--- !u!95 &3117294672346587521
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973922433565838412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26a1944643460ca40a0dfa602ffaea1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &973922433966862863
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

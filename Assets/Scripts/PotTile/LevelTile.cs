@@ -49,6 +49,7 @@ public class LevelTile : MonoBehaviour
     [SerializeField] Animator pointChangeAnimator;
     //particle system for lv complete
     [SerializeField] ParticleSystem lvCompParticles;
+    bool lvCompleteParticlesPlayed = false;
 
     //track if this tile is being hovered over
     public bool hoverThis = false;
@@ -67,6 +68,7 @@ public class LevelTile : MonoBehaviour
         potImageRect = potImageObj.GetComponent<RectTransform>();
         animator = GetComponent<Animator>();
         bookController = GameObject.Find("BookPages").GetComponent<BookController>();
+        lvCompleteParticlesPlayed = false;
     }
 
     void Update()
@@ -258,6 +260,11 @@ public class LevelTile : MonoBehaviour
 
     public void playLvCompParticles()
     {
-        lvCompParticles.Play();
+        if (!lvCompleteParticlesPlayed)
+        {
+            lvCompleteParticlesPlayed = true;
+            Debug.Log("Attempting to play level complete particles for tile : Col " + col + " Row " + row);
+            lvCompParticles.Play();
+        }
     }
 }

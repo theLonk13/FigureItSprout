@@ -46,7 +46,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        //load saved data via file data handler (not yet created)
+        //load saved data via file data handler
         this.saveData = dataHandler.Load();
 
         //if no data is found, initialize new game
@@ -54,23 +54,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             Debug.Log("No save data found, initializing new game");
             NewGame();
-        }
-        else
-        {
-            Debug.Log("Save data found, loading level unlocks");
-            string unlocks = "";
-            foreach (int unlock in saveData.UnlockedLevels)
-            {
-                unlocks += unlock + " ";
-            }
-            Debug.Log("Loaded Level Unlocks:\n" + unlocks);
-
-            string stars = "";
-            foreach (int starUnlock in saveData.BonusStars)
-            {
-                stars += starUnlock + " ";
-            }
-            Debug.Log("Loaded Bonus Stars:\n" + stars);
         }
 
         //push loaded data to scripts that need it
@@ -87,15 +70,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistanceObj.SaveData(ref saveData);
         }
-
-        //debugging
-        string unlocks = "";
-        foreach (int unlock in saveData.UnlockedLevels)
-        {
-            unlocks += unlock + " ";
-        }
-        Debug.Log("Saving Level Unlocks:\n" + unlocks);
-
 
         //save data to a file using file data handler (not yet created)
         dataHandler.Save(saveData);
@@ -119,3 +93,35 @@ public class DataPersistenceManager : MonoBehaviour
         SaveGame();
     }
 }
+
+/*
+          else
+        {
+            //load the found save data
+            Debug.Log("Save data found, loading level unlocks");
+            string unlocks = "";
+            foreach (int unlock in saveData.UnlockedLevels)
+            {
+                unlocks += unlock + " ";
+            }
+            Debug.Log("Loaded Level Unlocks:\n" + unlocks); //load unlocked levels
+
+            string stars = "";
+            foreach (int starUnlock in saveData.BonusStars)
+            {
+                stars += starUnlock + " ";
+            }
+            Debug.Log("Loaded Bonus Stars:\n" + stars); //load levels player has unlocked bonus stars in
+        }
+
+
+
+
+        //debugging
+        string unlocks = "";
+        foreach (int unlock in saveData.UnlockedLevels)
+        {
+            unlocks += unlock + " ";
+        }
+        Debug.Log("Saving Level Unlocks:\n" + unlocks);
+*/
