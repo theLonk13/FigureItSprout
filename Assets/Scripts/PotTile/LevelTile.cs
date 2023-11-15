@@ -270,7 +270,7 @@ public class LevelTile : MonoBehaviour
         if (!lvCompleteParticlesPlayed)
         {
             lvCompleteParticlesPlayed = true;
-            Debug.Log("Attempting to play level complete particles for tile : Col " + col + " Row " + row);
+            //Debug.Log("Attempting to play level complete particles for tile : Col " + col + " Row " + row);
             lvCompParticles.Play();
         }
     }

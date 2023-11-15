@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
-public class PhoneMessageScript : MonoBehaviour
+public class PhonePhotoScript : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI messageText;
     [SerializeField] Animator messageAnim;
     [SerializeField] Image messageBG;
 
@@ -22,23 +20,13 @@ public class PhoneMessageScript : MonoBehaviour
         
     }
 
-    public TextMeshProUGUI GetMessageBox()
-    {
-        return messageText;
-    }
-
     public Animator GetMsgAnimator()
     {
         return messageAnim;
     }
 
-    public Image GetMsgBG()
+    public void SetSprite(Sprite photo)
     {
-        return messageBG;
-    }
-
-    public void ClearText()
-    {
-        messageText.text = "";
+        messageBG.sprite = photo;
     }
 }

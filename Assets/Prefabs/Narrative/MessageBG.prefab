@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageText: {fileID: 973922433966862861}
   messageAnim: {fileID: 3117294672346587521}
+  messageBG: {fileID: 973922433565838410}
 --- !u!95 &3117294672346587521
 Animator:
   serializedVersion: 4

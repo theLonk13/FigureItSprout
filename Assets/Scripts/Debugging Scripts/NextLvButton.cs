@@ -54,10 +54,11 @@ public class NextLvButton : MonoBehaviour
         //if level is completed
         if (lvManager.GoalMet() && lvManager.CheckNoPossibleMoves() && !levelFinish)
         {
+            lvManager.playAllLvCompParticles();
             levelFinish = true;
             //lvManager.playAllLvCompParticles();
 
-            Invoke("CompleteLevel", 1);            
+            Invoke("CompleteLevel", 2.5f);
         }
         else if (cutsceneMode)
         {
@@ -66,7 +67,7 @@ public class NextLvButton : MonoBehaviour
         else if (showLvComp)
         {
             CompleteLevel();
-            lvManager.playAllLvCompParticles();
+            //Invoke("CompleteLevel", 1.0f);
         }
         else
         {
