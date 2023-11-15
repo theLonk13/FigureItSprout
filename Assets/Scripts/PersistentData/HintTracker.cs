@@ -78,10 +78,12 @@ public class HintTracker : MonoBehaviour
     //player asks for a hint
     public void AcceptHint()
     {
+        /*
         if(localFails == 0)
         {
             return;
         }
+        */
         hintsAccepted++;
         localFails = 0;
     }

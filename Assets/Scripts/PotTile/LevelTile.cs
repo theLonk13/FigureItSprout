@@ -56,6 +56,9 @@ public class LevelTile : MonoBehaviour
     //book
     BookController bookController;
 
+    //hint button for disabling hints after player has planted a plant
+    HintButton hints;
+
 
     void Start()
     {
@@ -69,6 +72,7 @@ public class LevelTile : MonoBehaviour
         animator = GetComponent<Animator>();
         bookController = GameObject.Find("BookPages").GetComponent<BookController>();
         lvCompleteParticlesPlayed = false;
+        hints = GameObject.Find("Hint").GetComponent<HintButton>();
     }
 
     void Update()
@@ -124,6 +128,9 @@ public class LevelTile : MonoBehaviour
 
     public void plantPlant(int plantID)
     {
+        //tell hint system a player has planted
+        hints.PlayerPlanted();
+
         //set animator to planted
         animator.SetBool("Planted", true);
 
