@@ -42,6 +42,7 @@ Transform:
   - {fileID: 7288333086990800061}
   - {fileID: 5295776674628036062}
   - {fileID: 8896697614581749852}
+  - {fileID: 7725279231931274097}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,6 +149,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 7064662090204713025}
+--- !u!1 &403956255039070694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7725279231931274097}
+  - component: {fileID: 2047003130593298347}
+  m_Layer: 0
+  m_Name: PlantCardSprites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7725279231931274097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403956255039070694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245147311695576931}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047003130593298347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403956255039070694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1317b4ef66a861438885499277aff17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 0}
+  daisyCard: {fileID: 21300000, guid: fb56d89df50659d47a210d5b78ff2111, type: 3}
+  sageCard: {fileID: 21300000, guid: 0841de2b4974bb04d8ebb3b17263c15d, type: 3}
+  cloverCard: {fileID: 21300000, guid: d57a491f3d0d84a41af345a06cc6d8d1, type: 3}
+  basilCard: {fileID: 21300000, guid: b7c3b4850d804c54fa0657690afb1311, type: 3}
+  sunSuccCard: {fileID: 21300000, guid: 0060d4cab86591d4cb6786209dd13046, type: 3}
+  alfalfaCard: {fileID: 21300000, guid: eab744c0f1cc19343924b734c99d7d79, type: 3}
+  parsleyCard: {fileID: 21300000, guid: 85767b5237c36244fbbc23750a68fec6, type: 3}
+  crabgrassCard: {fileID: 21300000, guid: 76408d81fc0bb8b4a94b445e4b097c0b, type: 3}
+  lemongrassCard: {fileID: 21300000, guid: e44895b85483a9e41a0c7b39e577915e, type: 3}
+  orchid10Card: {fileID: 21300000, guid: a93a07b393d03fc48a390f241d4e9338, type: 3}
+  orchid9Card: {fileID: 21300000, guid: a016fed9b77242041a54d75901564ce3, type: 3}
+  orchid7Card: {fileID: 21300000, guid: 0ee3c795629681d4a8719478377fab3b, type: 3}
+  orchid4Card: {fileID: 21300000, guid: 456f98120b74e1e479faf4ed21699298, type: 3}
+  orchid2Card: {fileID: 21300000, guid: 3323aa285527076449e983edde97d7cc, type: 3}
+  shiitakeCard: {fileID: 21300000, guid: 13cba0ba6d0adec4d8534945e3f9db4e, type: 3}
+  shyCard: {fileID: 21300000, guid: dea25aa2f55177e478a96b5f53a515aa, type: 3}
+  vipergrassCard: {fileID: 21300000, guid: 05b37d0c02047cb48afbf1ca2cb76290, type: 3}
+  sunflowerCard: {fileID: 21300000, guid: cae7295100f28bc47a7d4813d73358eb, type: 3}
+  carnationCard: {fileID: 21300000, guid: 8d815fd3f0c50034c87dab29e367b112, type: 3}
+  thymeCard: {fileID: 21300000, guid: 0e9bdb42750509f4fb95d4062e457753, type: 3}
 --- !u!1 &506929967749759848
 GameObject:
   m_ObjectHideFlags: 0

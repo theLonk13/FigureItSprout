@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Lv21Phone : MonoBehaviour
 {
     //flag for if this phone has rung
-    public static bool rang = false;
+    public static bool rang = true;
 
     //Gameobject for phone
     [SerializeField] GameObject phone;

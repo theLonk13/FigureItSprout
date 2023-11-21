@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class LevelTile : MonoBehaviour
+public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int row, col, curr_score;
     int plantType, turnCounter;
@@ -53,6 +54,8 @@ public class LevelTile : MonoBehaviour
 
     //track if this tile is being hovered over
     public bool hoverThis = false;
+    //mouseFollow script
+    FollowMouseScript followMouse;
     //book
     BookController bookController;
 
@@ -73,6 +76,7 @@ public class LevelTile : MonoBehaviour
         bookController = GameObject.Find("BookPages").GetComponent<BookController>();
         lvCompleteParticlesPlayed = false;
         hints = GameObject.Find("Hint").GetComponent<HintButton>();
+        followMouse = GameObject.Find("FollowMouse").GetComponent<FollowMouseScript>();
     }
 
     void Update()
@@ -103,6 +107,11 @@ public class LevelTile : MonoBehaviour
         if (hoverThis && plantType > 0 && Input.GetMouseButtonDown(1))
         {
             bookController.OpenToPlant(plantType);
+        }
+
+        if(hoverThis && plantType > 0)
+        {
+            followMouse.SetPlant(plantType);
         }
     }
 
@@ -273,5 +282,15 @@ public class LevelTile : MonoBehaviour
             //Debug.Log("Attempting to play level complete particles for tile : Col " + col + " Row " + row);
             lvCompParticles.Play();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        followMouse.IncHover(plantType);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        followMouse.DecHover();
     }
 }
