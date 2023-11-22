@@ -10,6 +10,8 @@ public class LevelData : MonoBehaviour, IDataPersistance
     int[] level_tracker;
     int[] level_resets;
 
+    int[] act_skips = new int[3];
+
     //last level player was on, used to flip to correct act when moving back to level select
     int last_level;
 
@@ -37,12 +39,14 @@ public class LevelData : MonoBehaviour, IDataPersistance
     {
         this.level_tracker = saveData.UnlockedLevels;
         this.level_resets = saveData.LevelResets;
+        this.act_skips = saveData.ActSkips;
     }
 
     public void SaveData(ref SaveData saveData)
     {
         saveData.UnlockedLevels = this.level_tracker;
         saveData.LevelResets = this.level_resets;
+        saveData.ActSkips = this.act_skips;
     }
 
     //marks a level as having been visited and for its icon to show in level select
@@ -118,6 +122,16 @@ public class LevelData : MonoBehaviour, IDataPersistance
     public int getLastLevel()
     {
         return last_level;
+    }
+
+    public void UnlockAct(int actNum)
+    {
+        act_skips[actNum - 1] = 1;
+    }
+
+    public int[] GetActSkips()
+    {
+        return act_skips;
     }
    
 }

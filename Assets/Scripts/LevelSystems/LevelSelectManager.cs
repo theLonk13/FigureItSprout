@@ -9,6 +9,7 @@ public class LevelSelectManager : MonoBehaviour
     LevelData levelDataScript;
     BonusPoints bonusPointsScript;
     int[] levelData;
+    int[] actSkipData;
     int[] bonusPoints;
 
     [SerializeField] ActSwitch actSwitch;
@@ -41,7 +42,9 @@ public class LevelSelectManager : MonoBehaviour
     void Update()
     {
         levelData = levelDataScript.get_level_data();
+        actSkipData = levelDataScript.GetActSkips();
         if (!playTestMode) { showLevels(); }
+        debug_ShowActSkipData();
     }
 
     void showLevels()
@@ -52,7 +55,7 @@ public class LevelSelectManager : MonoBehaviour
             if (selectScript != null)
             {
                 int lvNum = selectScript.getLvNum();
-                if (levelData[lvNum - 1] != 0)
+                if (levelData[lvNum - 1] != 0 || (GetLevelActNum(lvNum) != -1 && actSkipData[GetLevelActNum(lvNum) - 1] != 0))
                 {
                     level.SetActive(true);
                     if (bonusPoints[lvNum - 1] != 0)
@@ -70,5 +73,30 @@ public class LevelSelectManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    int GetLevelActNum(int lvNum)
+    {
+        if(lvNum > 0 && lvNum <= 10)
+        {
+            return 1;
+        }else if(lvNum <= 21)
+        {
+            return 2;
+        }else if(lvNum <= 31)
+        {
+            return 3;
+        }
+        return -1;
+    }
+
+    void debug_ShowActSkipData()
+    {
+        string actSkipString = "";
+        foreach(int act in actSkipData)
+        {
+            actSkipString += act + " ";
+        }
+        Debug.Log(actSkipString);
     }
 }

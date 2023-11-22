@@ -1191,6 +1191,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 615509965}
     m_Modifications:
+    - target: {fileID: 3525108483269680881, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525108483269680881, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525108483269680894, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
+      propertyPath: m_text
+      value: "Dear Ms. Green,\r\n\r\nAfter close consideration of your request, and
+        given your unique situation, management has decided to greenlight the rooftop
+        garden project you proposed.\r\n\r\nIn fact, we will be opening the space
+        to all residents interested in growing their own gardens. We thank you for
+        this contribution to our community and have already made preparations for
+        your use on the rooftop space.\r\n\r\nAs an aside, our building landscaper
+        has asked that I remind you that you reap what you sow, Ms. Green. So, thank
+        you for investing in your community\u2019s health and growth.\r\n\r\nSincerely,\r\nLe
+        Plant Apartment Management \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525108483269680894, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 3525108483991223392, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
       propertyPath: m_Name
       value: PlaintTextOverlay
@@ -1278,6 +1302,10 @@ PrefabInstance:
     - target: {fileID: 3525108483991223393, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525108484315934226, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d2ca2f4934d846b2d8c9205dce8ea, type: 3}
