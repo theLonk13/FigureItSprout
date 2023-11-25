@@ -10,5 +10,6 @@ public class Dialogue
 
     [TextArea(3, 10)]
     public string[] sentences; //sentences in dialogue
+    public int[] senderIDs;
 
 }

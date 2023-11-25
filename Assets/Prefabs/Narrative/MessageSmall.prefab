@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 972478813897727908}
   - component: {fileID: 3117294672346587521}
   m_Layer: 5
-  m_Name: MessageBG
+  m_Name: MessageSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 973922433565838412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 973922433966862860}
@@ -63,15 +63,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3a237a4508d025f4bb51f805a81105a5, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -94,6 +94,18 @@ MonoBehaviour:
   messageText: {fileID: 973922433966862861}
   messageAnim: {fileID: 3117294672346587521}
   messageBG: {fileID: 973922433565838410}
+  selfMsgSmall: {fileID: 21300000, guid: 7c1ac8ec60e67944c99d60f5f038ea75, type: 3}
+  selfMsgMed: {fileID: 21300000, guid: 07e16bb25c5a8cc4399ef181d378fca1, type: 3}
+  selfMsgBig: {fileID: 21300000, guid: b16ec39ab34acbf40bda1efcfc6ebc29, type: 3}
+  otherMsgSmall: {fileID: 21300000, guid: 3a237a4508d025f4bb51f805a81105a5, type: 3}
+  otherMsgMed: {fileID: 21300000, guid: f2c50d0304ed8424db01d1f53aeda3c2, type: 3}
+  otherMsgBig: {fileID: 21300000, guid: 2d70b5347f7998946b66b2223228b718, type: 3}
+  smallSize: 20
+  medSize: 30
+  bigSize: 40
+  maggieColor: {r: 0.42303312, g: 0.9622642, b: 0.61669666, a: 1}
+  momColor: {r: 0.41395518, g: 0.8057192, b: 0.9622642, a: 1}
+  dadColor: {r: 0.8867924, g: 0.4316839, b: 0.4316839, a: 1}
 --- !u!95 &3117294672346587521
 Animator:
   serializedVersion: 4
@@ -139,14 +151,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973922433966862863}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 973922433565838413}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -174,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -10,6 +10,23 @@ public class PhoneMessageScript : MonoBehaviour
     [SerializeField] Animator messageAnim;
     [SerializeField] Image messageBG;
 
+    //sprites for the message bubble for self and others
+    [SerializeField] Sprite selfMsgSmall;
+    [SerializeField] Sprite selfMsgMed;
+    [SerializeField] Sprite selfMsgBig;
+    [SerializeField] Sprite otherMsgSmall;
+    [SerializeField] Sprite otherMsgMed;
+    [SerializeField] Sprite otherMsgBig;
+
+    [SerializeField] float smallSize; // size 0
+    [SerializeField] float medSize; // size 1
+    [SerializeField] float bigSize; // size 2
+
+    //colors for different ppl
+    [SerializeField] Color maggieColor; //id 0
+    [SerializeField] Color momColor; //id 1
+    [SerializeField] Color dadColor; //id 2
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +37,63 @@ public class PhoneMessageScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetMsgProps(int id, int size)
+    {
+        //Debug.Log("Setting msg sender to id : " + id);
+        Debug.Log(messageBG.sprite);
+        switch (id)
+        {
+            case 0:
+                messageBG.color = maggieColor;
+                break;
+            case 1:
+                messageBG.color = momColor;
+                break;
+            case 2:
+                messageBG.color = dadColor;
+                break;
+        }
+        if(id == 0)
+        {
+            switch (size)
+            {
+                case 0:
+                    messageBG.sprite = selfMsgSmall;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, smallSize);
+                    break;
+                case 1:
+                    messageBG.sprite = selfMsgMed;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, medSize);
+                    break;
+                case 2:
+                    messageBG.sprite = selfMsgBig;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, bigSize);
+                    break;
+            }
+            messageText.alignment = TextAlignmentOptions.Right;
+        }
+        else
+        {
+            switch (size)
+            {
+                case 0:
+                    messageBG.sprite = otherMsgSmall;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, smallSize);
+                    break;
+                case 1:
+                    messageBG.sprite = otherMsgMed;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, medSize);
+                    break;
+                case 2:
+                    messageBG.sprite = otherMsgBig;
+                    this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, bigSize);
+                    break;
+            }
+            messageText.alignment = TextAlignmentOptions.Left;
+        }
+        Debug.Log(messageBG.sprite);
     }
 
     public TextMeshProUGUI GetMessageBox()
