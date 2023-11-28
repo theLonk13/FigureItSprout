@@ -20,6 +20,7 @@ public class Lv21Cutscene : MonoBehaviour
 
     //next part of the cutscene
     [SerializeField] GameObject cutscenePart2;
+    [SerializeField] GameObject cutscenePart3;
 
     /*
      * state of the cutscene
@@ -101,7 +102,15 @@ public class Lv21Cutscene : MonoBehaviour
 
     void State4()
     {
+        //this should be the text msg
+        phone.DeclineCall();
         cutscenePart2.SetActive(true);
+        
+    }
+
+    public void State5()
+    {
+        cutscenePart3.SetActive(true);
         Invoke("AutoPlayCutscene", .2f);
     }
 

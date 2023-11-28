@@ -369,7 +369,7 @@ public class LevelManager : MonoBehaviour
 
     public void playAllLvCompParticles()
     {
-        Debug.Log("Attempting to play all level complete particles");
+        //Debug.Log("Attempting to play all level complete particles");
         foreach (GameObject tile in tiles)
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();

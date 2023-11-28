@@ -2070,7 +2070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: lvName
-      value: Act2Lv17
+      value: 16to17TextMsgScene
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: nextLvDelay

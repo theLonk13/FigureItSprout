@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator currDialogue;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sentences = new Queue<string>();
         //slime = GameObject.Find("Slime").GetComponent<SlimeState>();
@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         //animator.SetBool("IsOpen", true);
         //slime.ToggleInDialogue(true);
 
+        if(sentences == null) { sentences = new Queue<string>(); }
         sentences.Clear();
         //nameText.text = dialogue.name;
 

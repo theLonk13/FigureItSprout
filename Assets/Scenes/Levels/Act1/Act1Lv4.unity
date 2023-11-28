@@ -706,14 +706,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 910113750}
     m_Modifications:
     - target: {fileID: 5737102510091900042, guid: ef1acfd9d85a04e4aa58a2ee6eb3aaef, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737102510091900042, guid: ef1acfd9d85a04e4aa58a2ee6eb3aaef, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737102510091900042, guid: ef1acfd9d85a04e4aa58a2ee6eb3aaef, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
@@ -1244,6 +1236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910113750}
     m_Modifications:
+    - target: {fileID: 2253338667655621192, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5911129274956095142, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1347,6 +1343,10 @@ PrefabInstance:
     - target: {fileID: 7418560187110845319, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
       propertyPath: musicState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332822373956338656, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0a276248761f244b877bacaf5c7c2e, type: 3}

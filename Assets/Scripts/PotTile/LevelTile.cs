@@ -49,7 +49,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     //animator for point change sprites
     [SerializeField] Animator pointChangeAnimator;
     //particle system for lv complete
-    [SerializeField] ParticleSystem lvCompParticles;
+    [SerializeField] ParticleSystem[] lvCompParticles;
     bool lvCompleteParticlesPlayed = false;
 
     //track if this tile is being hovered over
@@ -276,11 +276,14 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void playLvCompParticles()
     {
-        if (!lvCompleteParticlesPlayed)
+        if (!lvCompleteParticlesPlayed && plantType != -1)
         {
             lvCompleteParticlesPlayed = true;
             //Debug.Log("Attempting to play level complete particles for tile : Col " + col + " Row " + row);
-            lvCompParticles.Play();
+            foreach(ParticleSystem particles in lvCompParticles)
+            {
+                particles.Play();
+            }
         }
     }
 

@@ -54,10 +54,9 @@ public class NextLvButton : MonoBehaviour
         //if level is completed
         if (lvManager.GoalMet() && lvManager.CheckNoPossibleMoves() && !levelFinish)
         {
-            lvManager.playAllLvCompParticles();
             levelFinish = true;
-            //lvManager.playAllLvCompParticles();
 
+            Invoke("DelayedParticles", 1.0f);
             Invoke("CompleteLevel", 2.5f);
         }
         else if (cutsceneMode)
@@ -83,6 +82,11 @@ public class NextLvButton : MonoBehaviour
             mom_plant.saveOrchid();
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    void DelayedParticles()
+    {
+        if (lvManager != null) { lvManager.playAllLvCompParticles(); }
     }
 
     void CompleteLevel()

@@ -26,6 +26,7 @@ public class PhoneMessageScript : MonoBehaviour
     [SerializeField] Color maggieColor; //id 0
     [SerializeField] Color momColor; //id 1
     [SerializeField] Color dadColor; //id 2
+    [SerializeField] Color cassColor; //id 3
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,12 @@ public class PhoneMessageScript : MonoBehaviour
                 break;
             case 2:
                 messageBG.color = dadColor;
+                break;
+            case 3:
+                messageBG.color = cassColor;
+                break;
+            default:
+                messageBG.color = maggieColor;
                 break;
         }
         if(id == 0)

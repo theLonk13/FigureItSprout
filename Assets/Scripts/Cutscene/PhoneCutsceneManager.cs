@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PhoneCutsceneManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class PhoneCutsceneManager : MonoBehaviour
     [SerializeField] GameObject messageContainer;
     [SerializeField] GameObject messagePrefab;
     [SerializeField] GameObject messagePhotoPrefab;
+
+    [SerializeField] string nextScene;
+    [SerializeField] Animator fadeAnim;
+    [SerializeField] Lv21Cutscene lv21cutscene;
 
     [SerializeField] Animator currMsgAnimator;
 
@@ -35,11 +40,21 @@ public class PhoneCutsceneManager : MonoBehaviour
     bool mouseDown = false;
     float mouseDownTimer = 0f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Invoke("DelayedStart", .2f);
+    }
+
+    void DelayedStart()
+    {
+        fadeAnim.SetBool("ShowPhone", true);
         //dialogueStart.TriggerDialogue();
         GetNextMessage();
-        currMsgAnimator.SetBool("ShowMsg", true);
+        //AdvanceDialogue();
+        if (currMsgAnimator != null)
+        {
+            currMsgAnimator.SetBool("ShowMsg", true);
+        }
         msgShown = true;
 
         RectTransform msgContainerRect = messageContainer.GetComponent<RectTransform>();
@@ -55,7 +70,7 @@ public class PhoneCutsceneManager : MonoBehaviour
             mouseDown = true;
         }else if (Input.GetMouseButtonUp(0))
         {
-            if(mouseDownTimer < .15f)
+            if(mouseDownTimer < .2f)
             {
                 AdvanceDialogue();
             }
@@ -133,6 +148,15 @@ public class PhoneCutsceneManager : MonoBehaviour
     {
         if(nextMessage >= messageQueue.Length) {
             Debug.Log("No more messages");
+            fadeAnim.SetBool("ShowPhone", false);
+            if(lv21cutscene != null)
+            {
+                Invoke("Lv21Helper", 3f);
+            }
+            else
+            {
+                Invoke("LoadNextScene", 3f);
+            }
             return;
         }
 
@@ -156,11 +180,10 @@ public class PhoneCutsceneManager : MonoBehaviour
             currMsgAnimator = msgScript.GetMsgAnimator();
 
             currMsgAnimator.SetBool("ShowMsg", true);
+            nextMsg.GetComponent<DialogueTrigger>().TriggerDialogue();
             dialogueMan.DisplayNextSentence();
 
             msgShown = true;
-
-            nextMsg.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
         else if(nextMsg.GetComponent<Image>() != null)
         {
@@ -172,7 +195,7 @@ public class PhoneCutsceneManager : MonoBehaviour
             msgShown = true;
 
             RectTransform msgContainerRect = messageContainer.GetComponent<RectTransform>();
-            if (msgContainerRect != null)
+            if (msgContainerRect != null && currMsg > 1)
             {
                 msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 100);
                 msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
@@ -219,5 +242,18 @@ public class PhoneCutsceneManager : MonoBehaviour
             }
 
         }
+    }
+
+    void LoadNextScene()
+    {
+        if(nextScene != "")
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+    }
+
+    void Lv21Helper()
+    {
+        lv21cutscene.State5();
     }
 }

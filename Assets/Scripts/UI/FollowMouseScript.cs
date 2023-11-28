@@ -13,12 +13,20 @@ public class FollowMouseScript : MonoBehaviour
     int numHover = 0;
     [SerializeField] Image plantImage;
 
+    //timing variables
+    [SerializeField] float showPlantDelay;
+    float showPlantTimer = 0f;
+
     PlantCardSprites cardSprites;
+
+    GameObject[] tiles;
 
     // Start is called before the first frame update
     void Start()
     {
-        cardSprites = GameObject.Find("PlantCardSprites").GetComponent<PlantCardSprites>();   
+        cardSprites = GameObject.Find("PlantCardSprites").GetComponent<PlantCardSprites>();
+
+        tiles = GameObject.FindGameObjectsWithTag("Tile");
     }
 
     // Update is called once per frame
@@ -27,10 +35,16 @@ public class FollowMouseScript : MonoBehaviour
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10) ;
         followMouse.position = Vector3.MoveTowards(followMouse.position, mousePosition, moveSpeed * Time.deltaTime);
 
+        CheckHover();
+        UpdateShowTimer();
+        ToggleShowPlant(showPlant);
+
+        /*
         if(numHover == 0)
         {
             ToggleShowPlant(false);
         }
+        */
     }
 
     public void SetPlant(int plantID)
@@ -79,7 +93,39 @@ public class FollowMouseScript : MonoBehaviour
 
     public void ToggleShowPlant(bool show)
     {
-        showPlant = show;
-        followMouseAnim.SetBool("ShowPlant", showPlant);
+        if(!show || showPlantTimer >= showPlantDelay)
+        {
+            followMouseAnim.SetBool("ShowPlant", showPlant);
+        }
+    }
+
+    void CheckHover()
+    {
+        bool currHover = false;
+        foreach (GameObject tile in tiles)
+        {
+            if (tile != null)
+            {
+                LevelTile tiledata = tile.GetComponent<LevelTile>();
+                if (tiledata != null && tiledata.hoverThis && tiledata.getPlantType() != -1 && !Input.GetMouseButton(0))
+                {
+                    currHover = true;
+                }
+            }
+        }
+
+        showPlant = currHover;
+    }
+
+    void UpdateShowTimer()
+    {
+        if(!showPlant && showPlantTimer > 0f)
+        {
+            showPlantTimer -= Time.deltaTime;
+        }
+        else
+        {
+            showPlantTimer += Time.deltaTime;
+        }
     }
 }
