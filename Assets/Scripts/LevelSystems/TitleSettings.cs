@@ -43,6 +43,7 @@ public class TitleSettings : MonoBehaviour
         if (lvData != null) { actSkips = lvData.GetActSkips(); }
         UpdateUnlockButtonSprites();
         UpdateUnlockConfirmScreens();
+
     }
 
     public void ToggleSettings()
@@ -91,7 +92,8 @@ public class TitleSettings : MonoBehaviour
 
     public void ToggleUnlockConfirm(int actNum)
     {
-        if(actNum < confirmScreens.Length)
+        //Debug.Log("Trying to unlock " + actNum);
+        if(actNum <= confirmScreens.Length)
         {
             confirmScreens[actNum - 1] = !confirmScreens[actNum - 1];
         }

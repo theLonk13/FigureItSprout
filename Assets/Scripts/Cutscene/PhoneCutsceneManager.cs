@@ -12,10 +12,13 @@ public class PhoneCutsceneManager : MonoBehaviour
     [SerializeField] GameObject messageContainer;
     [SerializeField] GameObject messagePrefab;
     [SerializeField] GameObject messagePhotoPrefab;
+    [SerializeField] GameObject messageNameSpacerPrefab;
 
     [SerializeField] string nextScene;
     [SerializeField] Animator fadeAnim;
     [SerializeField] Lv21Cutscene lv21cutscene;
+    [SerializeField] Animator nextButtonAnim;
+    bool endOfDialogue = false;
 
     [SerializeField] Animator currMsgAnimator;
 
@@ -33,6 +36,7 @@ public class PhoneCutsceneManager : MonoBehaviour
     [SerializeField] int[] msgSizes;
     int currMsg = 0;
     int lastMsgSize = 0;
+    int lastSenderID = -1;
 
     bool msgShown = false;
 
@@ -70,7 +74,7 @@ public class PhoneCutsceneManager : MonoBehaviour
             mouseDown = true;
         }else if (Input.GetMouseButtonUp(0))
         {
-            if(mouseDownTimer < .2f)
+            if(mouseDownTimer < .23f)
             {
                 AdvanceDialogue();
             }
@@ -80,7 +84,7 @@ public class PhoneCutsceneManager : MonoBehaviour
         if(mouseDown)
         {
             mouseDownTimer += Time.deltaTime;
-            Debug.Log(mouseDownTimer);
+            //Debug.Log(mouseDownTimer);
         }
     }
 
@@ -104,13 +108,24 @@ public class PhoneCutsceneManager : MonoBehaviour
         {
             Debug.Log("Check 3");
             Debug.Log("Continuing current dialogue");
+
+            //insert name spacer if next sender is different
+            if(currMsg < msgSenderIDs.Length)
+            {
+                if(lastSenderID != msgSenderIDs[currMsg])
+                {
+                    GameObject spacer = Instantiate(messageNameSpacerPrefab, messageContainer.transform);
+                }
+            }
+
             GameObject newMessage = Instantiate(messagePrefab, messageContainer.transform);
             PhoneMessageScript msgScript = newMessage.GetComponent<PhoneMessageScript>();
 
             if(currMsg < msgSenderIDs.Length)
             {
-                msgScript.SetMsgProps(msgSenderIDs[currMsg], msgSizes[currMsg]);
+                msgScript.SetMsgProps(msgSenderIDs[currMsg], msgSizes[currMsg], lastSenderID != msgSenderIDs[currMsg]);
                 lastMsgSize = msgSizes[currMsg];
+                lastSenderID = msgSenderIDs[currMsg];
                 currMsg++;
             }
 
@@ -136,6 +151,10 @@ public class PhoneCutsceneManager : MonoBehaviour
                 msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
                 */
             }
+            if(dialogueMan.CheckSentencesLeft() == 0 && nextMessage >= messageQueue.Length)
+            {
+                Invoke("ShowNextSceneButton", 2f);
+            }
         }
         else
         {
@@ -147,16 +166,7 @@ public class PhoneCutsceneManager : MonoBehaviour
     void GetNextMessage()
     {
         if(nextMessage >= messageQueue.Length) {
-            Debug.Log("No more messages");
-            fadeAnim.SetBool("ShowPhone", false);
-            if(lv21cutscene != null)
-            {
-                Invoke("Lv21Helper", 3f);
-            }
-            else
-            {
-                Invoke("LoadNextScene", 3f);
-            }
+            endOfDialogue = true;
             return;
         }
 
@@ -166,12 +176,22 @@ public class PhoneCutsceneManager : MonoBehaviour
         if(nextMsg.GetComponent<DialogueTrigger>() != null)
         {
             Debug.Log("Creating new text message");
+            //insert name spacer if next sender is different
+            if (currMsg < msgSenderIDs.Length)
+            {
+                if (lastSenderID != msgSenderIDs[currMsg])
+                {
+                    GameObject spacer = Instantiate(messageNameSpacerPrefab, messageContainer.transform);
+                }
+            }
+
             GameObject newMessage = Instantiate(messagePrefab, messageContainer.transform);
             PhoneMessageScript msgScript = newMessage.GetComponent<PhoneMessageScript>();
 
             if (currMsg < msgSenderIDs.Length)
             {
-                msgScript.SetMsgProps(msgSenderIDs[currMsg], msgSizes[currMsg]);
+                msgScript.SetMsgProps(msgSenderIDs[currMsg], msgSizes[currMsg], lastSenderID != msgSenderIDs[currMsg]);
+                lastSenderID = msgSenderIDs[currMsg];
                 currMsg++;
             }
 
@@ -195,7 +215,7 @@ public class PhoneCutsceneManager : MonoBehaviour
             msgShown = true;
 
             RectTransform msgContainerRect = messageContainer.GetComponent<RectTransform>();
-            if (msgContainerRect != null && currMsg > 1)
+            if (msgContainerRect != null && currMsg > 0)
             {
                 msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 100);
                 msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
@@ -215,6 +235,18 @@ public class PhoneCutsceneManager : MonoBehaviour
                 return 30;
             case 2:
                 return 40;
+            case 3:
+                return 55;
+            case 4:
+                return 65;
+            case 5:
+                return 75;
+            case 6:
+                return 85;
+            case 7:
+                return 95;
+            case 8:
+                return 105;
             default:
                 return 25;
         }
@@ -239,8 +271,50 @@ public class PhoneCutsceneManager : MonoBehaviour
                     msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 40);
                     msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
                     break;
+                case 3:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 50);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
+                case 4:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 60);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
+                case 5:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 70);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
+                case 6:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 80);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
+                case 7:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 90);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
+                case 8:
+                    msgContainerRect.offsetMax = new Vector2(msgContainerRect.offsetMax.x, msgContainerRect.offsetMax.y + 100);
+                    msgContainerRect.offsetMin = new Vector2(msgContainerBottom.x, msgContainerBottom.y);
+                    break;
             }
 
+        }
+    }
+
+    void ShowNextSceneButton()
+    {
+        nextButtonAnim.SetBool("ShowNextButton", true);
+    }
+
+    public void EndOfMessages()
+    {
+        fadeAnim.SetBool("ShowPhone", false);
+        if (lv21cutscene != null)
+        {
+            Invoke("Lv21Helper", 3f);
+        }
+        else
+        {
+            Invoke("LoadNextScene", 3f);
         }
     }
 

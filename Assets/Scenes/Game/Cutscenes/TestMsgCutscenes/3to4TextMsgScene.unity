@@ -411,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[3]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[4]
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[9]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: messageQueue.Array.size
@@ -601,6 +601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4285365972502167506, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c831027e3ed689f4cbb3a021b350e01b, type: 3}
     - target: {fileID: 4285365973324198868, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

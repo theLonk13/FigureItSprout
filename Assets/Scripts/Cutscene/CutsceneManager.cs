@@ -40,7 +40,7 @@ public class CutsceneManager : MonoBehaviour
         frames = GameObject.FindGameObjectsWithTag("CutsceneFrame");
         FindFrame(currFrameNum);
         if (autoPlay) { 
-            //AdvanceFrame();
+            AdvanceFrame();
             //Invoke("AdvanceFrame", autoPlayDelay);
         }
         else

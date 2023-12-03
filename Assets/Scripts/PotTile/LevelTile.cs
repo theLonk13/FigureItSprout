@@ -241,12 +241,13 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             potImage.color = tempColor;
         }
 
-        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - (.02f + fallScale) * time, 1f), Mathf.Max(potImageRect.localScale.y - (.02f + fallScale) * time, 1f), 1f);
+        potImageRect.localScale = new Vector3(Mathf.Max(potImageRect.localScale.x - (.01f + fallScale) * time, 1f), Mathf.Max(potImageRect.localScale.y - (.01f + fallScale) * time, 1f), 1f);
 
         fallScale += .2f;
 
         if(potImage.color.a >= 1f && potImageRect.localScale.x <= 1f && potImageRect.localScale.y <= 1f)
         {
+            Debug.Log("Pot falled");
             falling = false;
             if (!Unpotted)
             {

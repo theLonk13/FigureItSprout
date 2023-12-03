@@ -36,6 +36,8 @@ public class LevelManager : MonoBehaviour
 
     //audiosource for button
     AudioSource buttonAudio;
+    [SerializeField] AudioSource lvCompleteSound;
+    [SerializeField] AudioSource lvCompleteLeavesSound;
 
     /*
      * time of day for level
@@ -369,6 +371,14 @@ public class LevelManager : MonoBehaviour
 
     public void playAllLvCompParticles()
     {
+        if(lvCompleteSound != null)
+        {
+            lvCompleteSound.Play();
+        }
+        if(lvCompleteLeavesSound != null)
+        {
+            lvCompleteLeavesSound.Play();
+        }
         //Debug.Log("Attempting to play all level complete particles");
         foreach (GameObject tile in tiles)
         {

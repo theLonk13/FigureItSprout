@@ -42,6 +42,7 @@ public class Lv21Cutscene : MonoBehaviour
     {
         if(cutsceneState == 0)
         {
+            fadeBG.raycastTarget = true;
             //phone ringing, wide shot of lv 21
         }else if(cutsceneState == 1)
         {

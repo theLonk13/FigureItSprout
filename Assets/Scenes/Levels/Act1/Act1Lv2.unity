@@ -3812,7 +3812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.3529412
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontColor.g
@@ -3820,7 +3820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.36078432
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4423809882911842028, guid: 8c2570441b3507c4fbd4f19019d73df3, type: 3}
       propertyPath: m_fontSizeBase
@@ -4002,7 +4002,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4284153692
-  m_fontColor: {r: 0.36078432, g: 1, b: 0.3529412, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4271,7 +4271,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.36078432, g: 1, b: 0.3529412, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
