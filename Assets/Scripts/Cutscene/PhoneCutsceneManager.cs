@@ -40,6 +40,10 @@ public class PhoneCutsceneManager : MonoBehaviour
 
     bool msgShown = false;
 
+    //audio
+    [SerializeField] AudioSource textMsgSound;
+    [SerializeField] AudioSource clickSound;
+
     //mouse click/drag handling stuff
     bool mouseDown = false;
     float mouseDownTimer = 0f;
@@ -70,6 +74,10 @@ public class PhoneCutsceneManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if(clickSound != null)
+            {
+                clickSound.Play();
+            }
             mouseDownTimer = 0f;
             mouseDown = true;
         }else if (Input.GetMouseButtonUp(0))
@@ -120,6 +128,10 @@ public class PhoneCutsceneManager : MonoBehaviour
 
             GameObject newMessage = Instantiate(messagePrefab, messageContainer.transform);
             PhoneMessageScript msgScript = newMessage.GetComponent<PhoneMessageScript>();
+            if(textMsgSound != null)
+            {
+                textMsgSound.Play();
+            }
 
             if(currMsg < msgSenderIDs.Length)
             {
@@ -187,6 +199,10 @@ public class PhoneCutsceneManager : MonoBehaviour
 
             GameObject newMessage = Instantiate(messagePrefab, messageContainer.transform);
             PhoneMessageScript msgScript = newMessage.GetComponent<PhoneMessageScript>();
+            if (textMsgSound != null)
+            {
+                textMsgSound.Play();
+            }
 
             if (currMsg < msgSenderIDs.Length)
             {
