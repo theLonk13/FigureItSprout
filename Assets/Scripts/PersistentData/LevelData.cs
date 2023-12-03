@@ -31,8 +31,8 @@ public class LevelData : MonoBehaviour, IDataPersistance
 
     void Update()
     {
-        debug_printLvData();
-        debug_printLvResets();
+        //debug_printLvData();
+        //debug_printLvResets();
     }
 
     public void LoadData(SaveData saveData)

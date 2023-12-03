@@ -33,6 +33,7 @@ public class CutsceneManager : MonoBehaviour
 
     //delay for moving to level after scene
     [SerializeField] float nextLvDelay = 1.0f;
+    bool nextLevelInvokeTriggered = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -124,12 +125,12 @@ public class CutsceneManager : MonoBehaviour
         }
         buttonAudio.Play();
         //if current frame is not done fading in, either start or quick finish fading in
-        if(currFrame.GetFrameState() != 2)
+        if(currFrame != null && currFrame.GetFrameState() != 2)
         {
             currFrame.AdvanceFrame();
             //if(autoPlay) { Invoke("AdvanceFrame", autoPlayDelay); }
         }
-        else if (currFrame.GetHasUntriggeredInteractible())
+        else if (currFrame != null && currFrame.GetHasUntriggeredInteractible())
         {
             //if current frame has an interactible, do nothing
             return;
@@ -137,7 +138,10 @@ public class CutsceneManager : MonoBehaviour
         else
         {
             //start fading out current frame
-            currFrame.AdvanceFrame();
+            if(currFrame != null)
+            {
+                currFrame.AdvanceFrame();
+            }
             //if current frame was fully faded in, move to next scene and start fading
             FindFrame(++currFrameNum);
             if(currFrame != null)
@@ -146,7 +150,11 @@ public class CutsceneManager : MonoBehaviour
             }
             else
             {
-                Invoke("LoadLevel", nextLvDelay);
+                if(!nextLevelInvokeTriggered)
+                {
+                    Invoke("LoadLevel", nextLvDelay);
+                    nextLevelInvokeTriggered = true;
+                }
             }
         }
     }

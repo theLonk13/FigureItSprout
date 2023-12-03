@@ -67,6 +67,11 @@ public class PhoneCutsceneManager : MonoBehaviour
 
         RectTransform msgContainerRect = messageContainer.GetComponent<RectTransform>();
         msgContainerBottom = msgContainerRect.offsetMin;
+
+        if(messageQueue.Length == 0)
+        {
+            Invoke("ShowNextSceneButton", 2f);
+        }
     }
 
     // Update is called once per frame

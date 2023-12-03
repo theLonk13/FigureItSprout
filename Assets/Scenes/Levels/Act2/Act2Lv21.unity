@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4285365973352516744, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: deb15f4574fff7a47b139689cf16fd04, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
 --- !u!224 &411385389 stripped
@@ -4069,7 +4073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: lvName
-      value: StartAct3Cutscene
+      value: 21to22DadMissedCalls
       objectReference: {fileID: 0}
     - target: {fileID: 4943266668498004340, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: autoPlay

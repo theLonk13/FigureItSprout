@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] PauseMenu pauseMenu;
     //toggle UI elements
     GameObject[] toggleUIElements;
+    //fadeBG for level fading
+    [SerializeField] Animator fadeAnim;
 
     //audiosource for button
     AudioSource buttonAudio;
@@ -64,6 +66,16 @@ public class LevelManager : MonoBehaviour
         PrepLevel();
         unlock_level();
         unlock_pages();
+
+        GameObject fadeObj = GameObject.Find("FadeBG");
+        if(fadeObj != null)
+        {
+            fadeAnim = fadeObj.GetComponent<Animator>();
+        }
+        if(fadeAnim != null)
+        {
+            fadeAnim.SetBool("ShowLevel", true);
+        }
 
         //This is for debugging, maybe take out
         UpdateScore();

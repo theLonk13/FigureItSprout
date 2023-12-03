@@ -12,6 +12,10 @@ public class NextLvButton : MonoBehaviour
     GameObject[] lvCompleteObj;
     bool viewLevel = true;
     bool lvCompleteTrigger = true;
+    [SerializeField] Animator toggleUIAnim;
+    [SerializeField] Animator levelCompleteAnim;
+    [SerializeField] Animator fadeAnim;
+    [SerializeField] GameObject[] lvCompleteCleanup;
 
     //bonus indicator
     [SerializeField] GameObject bonusIndicator;
@@ -81,12 +85,46 @@ public class NextLvButton : MonoBehaviour
         {
             mom_plant.saveOrchid();
         }
+
+        if (fadeAnim != null)
+        {
+            GameObject fadeObj = GameObject.Find("FadeBG");
+            if (fadeObj != null)
+            {
+                fadeAnim = fadeObj.GetComponent<Animator>();
+            }
+            fadeAnim.SetBool("ShowLevel", false);
+        }
+        Invoke("NextSceneHelper", 2f);
+    }
+
+    void NextSceneHelper()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void DelayedParticles()
     {
+        LevelCompleteCleanup();
         if (lvManager != null) { lvManager.playAllLvCompParticles(); }
+    }
+
+    void LevelCompleteCleanup()
+    {
+        //hides ui
+        if (toggleUIAnim != null)
+        {
+            toggleUIAnim.SetBool("LevelComplete", true);
+        }
+        GameObject playerHand = GameObject.Find("PlayerHandArea");
+        Animator playerHandAnim = null;
+        if (playerHand != null) { playerHandAnim = playerHand.GetComponent<Animator>(); }
+        if (playerHandAnim != null) { playerHandAnim.SetBool("LevelComplete", true); }
+
+        foreach(GameObject obj in lvCompleteCleanup)
+        {
+            Destroy(obj);
+        }
     }
 
     void CompleteLevel()
@@ -94,11 +132,15 @@ public class NextLvButton : MonoBehaviour
         showLvComp = true;
 
         // Destroy clutter on level complete
+        //TODO adjust so the ui elements move out instead of disappearing
+        //NOTE behaviour moved to DelatedParticles()
+        /*
         GameObject[] clutter = GameObject.FindGameObjectsWithTag("DestroyOnLvComp");
         foreach (GameObject obj in clutter)
         {
             Destroy(obj);
         }
+        */
 
         //make sure the lv complete screen objects exist
         if (lvCompleteTrigger)
@@ -114,9 +156,17 @@ public class NextLvButton : MonoBehaviour
             lvData.completeLv(lvManager.GetLevelNum());
         }
 
+        //shows interface with options
+        //TODO adjust to have a slide in
+        
         if(nextLvButton != null)
         {
             nextLvButton.SetActive(true);
+        }
+        
+        if(levelCompleteAnim != null)
+        {
+            levelCompleteAnim.SetBool("LevelComplete", true);
         }
 
         foreach (GameObject obj in lvCompleteObj)

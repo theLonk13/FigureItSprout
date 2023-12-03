@@ -47,7 +47,7 @@ public class HintTracker : MonoBehaviour
             localFails++;
         }
 
-        debug_DisplayHintData();
+        //debug_DisplayHintData();
     }
 
     //checks if the current hint counter is for this level

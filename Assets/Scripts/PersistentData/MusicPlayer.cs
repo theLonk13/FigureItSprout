@@ -13,6 +13,10 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] AudioSource act3Cutscene;
     [SerializeField] AudioSource act3Levels;
 
+    [SerializeField] float act1ResetVol = 1.0f;
+    [SerializeField] float act2ResetVol = .6f;
+    [SerializeField] float act3ResetVol = .8f;
+
     /*
      * music player states
      * 0 - title
@@ -84,14 +88,14 @@ public class MusicPlayer : MonoBehaviour
     void StopAllSound(int playerState)
     {
         if(playerState != 0 && titleMusic.isPlaying) {
-            StartCoroutine(MusicFade(titleMusic, 2.0f, 0f));
+            StartCoroutine(MusicFade(titleMusic, 2.0f, 0f, 1f));
         }
-        if (playerState != 1 && act1Cutscene.isPlaying) { StartCoroutine(MusicFade(act1Cutscene, 2.0f, 0f)); }
-        if (playerState != 2 && act1Levels.isPlaying) { StartCoroutine(MusicFade(act1Levels, 2.0f, 0f)); }
-        if (playerState != 3 && act2Cutscene.isPlaying) { StartCoroutine(MusicFade(act2Cutscene, 2.0f, 0f)); }
-        if (playerState != 4 && act2Levels.isPlaying) { StartCoroutine(MusicFade(act2Levels, 2.0f, 0f)); }
-        if (playerState != 5 && act3Cutscene.isPlaying) { StartCoroutine(MusicFade(act3Cutscene, 2.0f, 0f)); }
-        if (playerState != 6 && act3Levels.isPlaying) { StartCoroutine(MusicFade(act3Levels, 2.0f, 0f)); }
+        if (playerState != 1 && act1Cutscene.isPlaying) { StartCoroutine(MusicFade(act1Cutscene, 2.0f, 0f, 1f)); }
+        if (playerState != 2 && act1Levels.isPlaying) { StartCoroutine(MusicFade(act1Levels, 2.0f, 0f, act1ResetVol)); }
+        if (playerState != 3 && act2Cutscene.isPlaying) { StartCoroutine(MusicFade(act2Cutscene, 2.0f, 0f, 1f)); }
+        if (playerState != 4 && act2Levels.isPlaying) { StartCoroutine(MusicFade(act2Levels, 2.0f, 0f, act2ResetVol)); }
+        if (playerState != 5 && act3Cutscene.isPlaying) { StartCoroutine(MusicFade(act3Cutscene, 2.0f, 0f, 1f)); }
+        if (playerState != 6 && act3Levels.isPlaying) { StartCoroutine(MusicFade(act3Levels, 2.0f, 0f, act3ResetVol)); }
     }
 
     public void PlayTitle()
@@ -164,7 +168,7 @@ public class MusicPlayer : MonoBehaviour
         playerState = 6;
     }
 
-    IEnumerator MusicFade(AudioSource audioSource, float duration, float targetVolume)
+    IEnumerator MusicFade(AudioSource audioSource, float duration, float targetVolume, float resetVolume)
     {
         float currentTime = 0;
         float start = audioSource.volume;
@@ -178,7 +182,7 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Stop();
         //SceneData sceneData = GameObject.Find("SceneData").GetComponent<SceneData>();
         //sceneData.ChangeMusicState(7);
-        audioSource.volume = 1.0f;
+        audioSource.volume = resetVolume;
         yield break;
     }
 }

@@ -22,7 +22,7 @@ public class UnlockedPlants : MonoBehaviour
     void Update()
     {
         //Debug.Log(plant_unlocks);
-        debug_ShowAllUnlocks();
+        //debug_ShowAllUnlocks();
     }
 
     //adds a plant to the unlocked list if not already on it
