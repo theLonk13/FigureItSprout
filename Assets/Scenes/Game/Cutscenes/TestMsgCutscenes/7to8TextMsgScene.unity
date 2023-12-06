@@ -411,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[0]
@@ -431,27 +431,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[4]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[5]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[6]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[7]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[8]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[9]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: messageQueue.Array.size
@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[10]
@@ -503,11 +503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[4]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[5]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[6]
@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[7]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[8]
@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[10]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSenderIDs.Array.data[11]
@@ -627,39 +627,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Wow! Look at all that greenery! What a great way to stay motivated!
+      value: Take a look!
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Lol thanks mom.
+      value: Wow! Look at all that greenery! What a great way to stay motivated!
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: Seeing the pots you got me slowly fill out, and knowing that I raised
-        these little guys from seeds to sprouts actually makes me really proud.
+      value: "Lol thanks mom \u2665"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Aw, honey
+      value: "Aw, honey (o\u02D8v\u02D8o)Seeing the pots you got me slowly fill out,
+        and knowing that I raised these little guys from seeds to sprouts actually
+        makes me really proud."
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: Thats exactly how your father and I feel seeing you
+      value: "Aw, honey (o\u02D8v\u02D8o)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: We love you, honey!
+      value: "Thats exactly how your father and I feel seeing you \u2665(;u;)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[6]
-      value: Thanks mom
+      value: "We love you, honey! \u2665\u2665\u2665"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[7]
+      value: "Thanks mom \u2665"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285365972419056235, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
+      propertyPath: dialogue.sentences.Array.data[8]
       value: I learned from the best
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972502167506, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
@@ -697,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: "Hahaha I\u2019d love to"
+      value: "Hahaha I\u2019d love to (.\u2665v\u2665.)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]

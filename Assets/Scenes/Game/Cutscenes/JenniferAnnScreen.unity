@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6356892565839350649, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6579291074297651357, guid: 751369c3fd4fcdb428224c3fb668e311, type: 3}
       propertyPath: m_SizeDelta.x
       value: 800

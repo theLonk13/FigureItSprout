@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[7]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[8]
@@ -792,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[7]
-      value: Lolol thanks for trying dad <3
+      value: "Lolol thanks for trying dad \u2665"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[8]

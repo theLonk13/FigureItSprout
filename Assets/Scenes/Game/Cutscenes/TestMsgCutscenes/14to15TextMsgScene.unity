@@ -419,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[2]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[3]
@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Hello honeysuckle <3 how is the patio set up treating you?
+      value: "Hello honeysuckle \u2665 how is the patio set up treating you?"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
@@ -708,7 +708,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: Honestly, this has been a lot more complicated to maintain than I thought
+      value: 'Honestly, this has been a lot more complicated to maintain than I thought
+
+        (T-T)'
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
@@ -720,11 +722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: I guess I was more used to my indoor routine than I thought
+      value: I guess I was more used to my indoor routine than I thought (TnT)
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[6]
-      value: Oh dear.
+      value: "Oh dear. (U \u2022\u0301 .\u032B \u2022\u0300 U)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[7]
@@ -742,7 +744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[10]
-      value: Any time, honey
+      value: "Any time, honey \u2665(o\u02D8v\u02D8o)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[11]

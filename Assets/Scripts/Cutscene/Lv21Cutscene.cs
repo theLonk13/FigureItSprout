@@ -67,7 +67,7 @@ public class Lv21Cutscene : MonoBehaviour
 
     public void StartCutscene()
     {
-        Debug.Log("Lv21Cutscene Starting Cutscene");
+        //Debug.Log("Lv21Cutscene Starting Cutscene");
 
         //Destroy lv complete screen
         Destroy(GameObject.FindWithTag("debug_NextLv"));

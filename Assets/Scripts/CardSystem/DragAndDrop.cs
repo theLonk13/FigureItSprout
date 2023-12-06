@@ -45,12 +45,12 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         dragImage = GetComponent<Image>();
 
         //debug info
-        Debug.Log("LastX : " + lastX + "\tLastSiblingIndex : " + lastSiblingIndex);
+        //Debug.Log("LastX : " + lastX + "\tLastSiblingIndex : " + lastSiblingIndex);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
+        //Debug.Log("Dragging");
         this.transform.position = eventData.position;
     }
 
@@ -119,7 +119,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (left == right) { lastSiblingIndex = left; }
 
         //debug info
-        Debug.LogError("EventData X: " + eventX + "\tEventData Y: " + eventY + "\tLeft: " + left + "\tRight: " + right + "\tLastSiblingIndex: " + lastSiblingIndex);
+        //Debug.LogError("EventData X: " + eventX + "\tEventData Y: " + eventY + "\tLeft: " + left + "\tRight: " + right + "\tLastSiblingIndex: " + lastSiblingIndex);
     }
 
     void GetCutoffY()

@@ -25,7 +25,7 @@ public class LevelSelectManager : MonoBehaviour
         bonusPointsScript = GameObject.Find("BonusPoints").GetComponent<BonusPoints>();
         bonusPoints = bonusPointsScript.GetBonusStarData();
 
-        Debug.Log(levelDataScript.getLastLevel() + "");
+        //Debug.Log(levelDataScript.getLastLevel() + "");
         if(levelDataScript != null && levelDataScript.getLastLevel() < 11)
         {
             actSwitch.changeAct(1);
@@ -44,7 +44,7 @@ public class LevelSelectManager : MonoBehaviour
         levelData = levelDataScript.get_level_data();
         actSkipData = levelDataScript.GetActSkips();
         if (!playTestMode) { showLevels(); }
-        debug_ShowActSkipData();
+        //debug_ShowActSkipData();
     }
 
     void showLevels()

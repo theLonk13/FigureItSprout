@@ -76,7 +76,7 @@ public class LevelData : MonoBehaviour, IDataPersistance
 
     public void completeLv(int lvNum)
     {
-        Debug.Log("Level " + lvNum + " completed");
+        //Debug.Log("Level " + lvNum + " completed");
         lvNum--;
         if(lvNum >= 0 && lvNum < numLevels)
         {

@@ -770,7 +770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: "I\u2019m glad to hear that"
+      value: "I\u2019m glad to hear that (\xB4 V ` *)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]

@@ -140,7 +140,7 @@ public class BookController : MonoBehaviour
 
     public void ToggleBook()
     {
-        Debug.Log("Toggling book");
+        //Debug.Log("Toggling book");
         pgFlipAudio.Play();
         book_toggle = -1*book_toggle;
     }

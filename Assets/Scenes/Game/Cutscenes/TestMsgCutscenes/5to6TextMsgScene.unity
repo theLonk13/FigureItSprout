@@ -431,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[5]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4285365972255444840, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: msgSizes.Array.data[6]
@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Hahaha yes you are! Goodness, that looks delicious!
+      value: Hahaha yes you are! (^-^) Goodness, that looks delicious!
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
@@ -652,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: My baby is all grown up
+      value: "(;u;) (;u;) (;u;)\nMy baby is all grown up \u2665"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[6]

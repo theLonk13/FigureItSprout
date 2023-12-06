@@ -86,13 +86,13 @@ public class NextLvButton : MonoBehaviour
             mom_plant.saveOrchid();
         }
 
+        GameObject fadeObj = GameObject.Find("FadeBG");
+        if (fadeObj != null)
+        {
+            fadeAnim = fadeObj.GetComponent<Animator>();
+        }
         if (fadeAnim != null)
         {
-            GameObject fadeObj = GameObject.Find("FadeBG");
-            if (fadeObj != null)
-            {
-                fadeAnim = fadeObj.GetComponent<Animator>();
-            }
             fadeAnim.SetBool("ShowLevel", false);
         }
         Invoke("NextSceneHelper", 2f);

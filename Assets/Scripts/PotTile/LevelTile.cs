@@ -247,7 +247,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         if(potImage.color.a >= 1f && potImageRect.localScale.x <= 1f && potImageRect.localScale.y <= 1f)
         {
-            Debug.Log("Pot falled");
+            //Debug.Log("Pot falled");
             falling = false;
             if (!Unpotted)
             {

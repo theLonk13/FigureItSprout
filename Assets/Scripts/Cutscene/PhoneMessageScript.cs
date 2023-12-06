@@ -177,7 +177,7 @@ public class PhoneMessageScript : MonoBehaviour
             }
             messageText.alignment = TextAlignmentOptions.Left;
         }
-        Debug.Log(messageBG.sprite);
+        //Debug.Log(messageBG.sprite);
     }
 
     public TextMeshProUGUI GetMessageBox()

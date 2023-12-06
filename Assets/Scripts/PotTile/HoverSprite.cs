@@ -26,7 +26,7 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Entered Pot");
+        //Debug.Log("Entered Pot");
         if (DragAndDrop.dragging && thisTile.getPlantType() <= 0)
         {
             hoverSprite.sprite = potted_sprites.get_potted_sprite(DragAndDrop.plantDrag);
@@ -43,7 +43,7 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Exit Pot");
+        //Debug.Log("Exit Pot");
         hoverSprite.enabled = false;
 
         if(DragAndDrop.dragImage != null)

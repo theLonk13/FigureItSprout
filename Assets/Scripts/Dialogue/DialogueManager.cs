@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.name);
+        //Debug.Log("Starting conversation with " + dialogue.name);
         //animator.SetBool("IsOpen", true);
         //slime.ToggleInDialogue(true);
 
@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        //Debug.Log("End of conversation");
         //animator.SetBool("IsOpen", false);
 
 

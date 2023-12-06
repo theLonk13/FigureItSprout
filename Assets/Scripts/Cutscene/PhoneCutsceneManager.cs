@@ -105,11 +105,11 @@ public class PhoneCutsceneManager : MonoBehaviour
     {
         if(dialogueMan != null && dialogueMan.CheckCurrDialogue())
         {
-            Debug.Log("Check 1");
+            //Debug.Log("Check 1");
             dialogueMan.DisplayNextSentence();
         }
         else if(!msgShown){
-            Debug.Log("Check 2");
+            //Debug.Log("Check 2");
             if(currMsgAnimator != null)
             {
                 currMsgAnimator.SetBool("ShowMsg", true);
@@ -119,8 +119,8 @@ public class PhoneCutsceneManager : MonoBehaviour
         }
         else if(dialogueMan.CheckSentencesLeft() != 0)
         {
-            Debug.Log("Check 3");
-            Debug.Log("Continuing current dialogue");
+            //Debug.Log("Check 3");
+            //Debug.Log("Continuing current dialogue");
 
             //insert name spacer if next sender is different
             if(currMsg < msgSenderIDs.Length)
@@ -175,7 +175,7 @@ public class PhoneCutsceneManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Check 4");
+            //Debug.Log("Check 4");
             GetNextMessage() ;
         }
     }
@@ -192,7 +192,7 @@ public class PhoneCutsceneManager : MonoBehaviour
 
         if(nextMsg.GetComponent<DialogueTrigger>() != null)
         {
-            Debug.Log("Creating new text message");
+            //Debug.Log("Creating new text message");
             //insert name spacer if next sender is different
             if (currMsg < msgSenderIDs.Length)
             {
@@ -228,7 +228,7 @@ public class PhoneCutsceneManager : MonoBehaviour
         }
         else if(nextMsg.GetComponent<Image>() != null)
         {
-            Debug.Log("Creating new photo message");
+            //Debug.Log("Creating new photo message");
             GameObject newMessage = Instantiate(messagePhotoPrefab, messageContainer.transform);
             PhonePhotoScript msgScript = newMessage.GetComponent<PhonePhotoScript>();
             //dialogueMan.SetDialogueBox(msgScript.GetMessageBox());

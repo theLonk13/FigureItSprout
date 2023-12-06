@@ -37,7 +37,7 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         if(titleMusic != null) titleMusic.Play();
-        Debug.LogError("Force Open dev console");
+        //Debug.LogError("Force Open dev console");
     }
 
     // Update is called once per frame

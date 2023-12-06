@@ -821,8 +821,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[12]
-      value: "My doctor wanted a second opinion before we got checked into the hospital
-        but\r it looks like the specialist agrees with his recommendation.\r\n"
+      value: "My doctor wanted a second opinion before we got checked into the hospital.
+        It looks like the specialist agrees with his recommendation.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[13]
@@ -858,7 +858,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[21]
-      value: "Don\u2019t worry honey, I\u2019ll be back up on my feet in no time"
+      value: "Don\u2019t worry honey, I\u2019ll be back up on my feet in no time
+        (^-^)"
       objectReference: {fileID: 0}
     - target: {fileID: 4285365973340512799, guid: 64e78aff5685ee347ab9b2f30d0a44ac, type: 3}
       propertyPath: dialogue.sentences.Array.data[22]

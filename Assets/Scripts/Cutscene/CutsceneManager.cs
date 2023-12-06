@@ -108,7 +108,7 @@ public class CutsceneManager : MonoBehaviour
     {
         if (autoPlay)
         {
-            Debug.Log("Advance Frame autoplaying");
+            //Debug.Log("Advance Frame autoplaying");
             if(currFrame.GetFrameState() != 2)
             {
                 Invoke("AdvanceFrame", .1f);
@@ -165,7 +165,7 @@ public class CutsceneManager : MonoBehaviour
         FindFrame(++currFrameNum);
         if (currFrame != null)
         {
-            Debug.Log("Moving to next frame");
+            //Debug.Log("Moving to next frame");
             //nextAutoPlayReady = true;
             Invoke("AdvanceFrame", 1f);
             //AdvanceFrame();
