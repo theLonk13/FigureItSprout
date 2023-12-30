@@ -194,26 +194,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 0}
-  daisyCard: {fileID: 21300000, guid: fb56d89df50659d47a210d5b78ff2111, type: 3}
-  sageCard: {fileID: 21300000, guid: 0841de2b4974bb04d8ebb3b17263c15d, type: 3}
-  cloverCard: {fileID: 21300000, guid: d57a491f3d0d84a41af345a06cc6d8d1, type: 3}
-  basilCard: {fileID: 21300000, guid: b7c3b4850d804c54fa0657690afb1311, type: 3}
-  sunSuccCard: {fileID: 21300000, guid: 0060d4cab86591d4cb6786209dd13046, type: 3}
-  alfalfaCard: {fileID: 21300000, guid: eab744c0f1cc19343924b734c99d7d79, type: 3}
-  parsleyCard: {fileID: 21300000, guid: 85767b5237c36244fbbc23750a68fec6, type: 3}
-  crabgrassCard: {fileID: 21300000, guid: 76408d81fc0bb8b4a94b445e4b097c0b, type: 3}
-  lemongrassCard: {fileID: 21300000, guid: e44895b85483a9e41a0c7b39e577915e, type: 3}
-  orchid10Card: {fileID: 21300000, guid: a93a07b393d03fc48a390f241d4e9338, type: 3}
-  orchid9Card: {fileID: 21300000, guid: a016fed9b77242041a54d75901564ce3, type: 3}
-  orchid7Card: {fileID: 21300000, guid: 0ee3c795629681d4a8719478377fab3b, type: 3}
-  orchid4Card: {fileID: 21300000, guid: 456f98120b74e1e479faf4ed21699298, type: 3}
-  orchid2Card: {fileID: 21300000, guid: 3323aa285527076449e983edde97d7cc, type: 3}
-  shiitakeCard: {fileID: 21300000, guid: 13cba0ba6d0adec4d8534945e3f9db4e, type: 3}
-  shyCard: {fileID: 21300000, guid: dea25aa2f55177e478a96b5f53a515aa, type: 3}
-  vipergrassCard: {fileID: 21300000, guid: 05b37d0c02047cb48afbf1ca2cb76290, type: 3}
-  sunflowerCard: {fileID: 21300000, guid: cae7295100f28bc47a7d4813d73358eb, type: 3}
-  carnationCard: {fileID: 21300000, guid: 8d815fd3f0c50034c87dab29e367b112, type: 3}
-  thymeCard: {fileID: 21300000, guid: 0e9bdb42750509f4fb95d4062e457753, type: 3}
+  daisyCard: {fileID: 21300000, guid: c9cfff5e5c268eb48ba351c20961fa01, type: 3}
+  sageCard: {fileID: 21300000, guid: cbf64c951ac32d047b5745c323c889e1, type: 3}
+  cloverCard: {fileID: 21300000, guid: 50ad3b75840bebb45a33c5744b79bb92, type: 3}
+  basilCard: {fileID: 21300000, guid: d1fe658390dcb7141820ef655d53ff8d, type: 3}
+  sunSuccCard: {fileID: 21300000, guid: cbc920430c5b60d4c80326bfa26fb8d6, type: 3}
+  alfalfaCard: {fileID: 21300000, guid: ac93a175673d61743b739ffdb1408024, type: 3}
+  parsleyCard: {fileID: 21300000, guid: 34ec37fb228c8454f94a24d8036dd477, type: 3}
+  crabgrassCard: {fileID: 21300000, guid: 3eb6d9d4aca4ced4d92946c1e8c6b055, type: 3}
+  lemongrassCard: {fileID: 21300000, guid: f7c458d16d8e84e4f8524e31cf463800, type: 3}
+  orchid10Card: {fileID: 21300000, guid: b646b3c872a14ef478fb640925c935e5, type: 3}
+  orchid9Card: {fileID: 21300000, guid: 686f61c97315a9e43a5fe1bcf9414e57, type: 3}
+  orchid7Card: {fileID: 21300000, guid: fe6367e3d953a084c92889545fd7488b, type: 3}
+  orchid4Card: {fileID: 21300000, guid: 47a66decc5fd7464db517859f0fce73a, type: 3}
+  orchid2Card: {fileID: 21300000, guid: 12b4ccd22d4f70e48a883f109257dbe9, type: 3}
+  shiitakeCard: {fileID: 21300000, guid: fe8ccf891c4088844a88aea67c1a5313, type: 3}
+  shyCard: {fileID: 21300000, guid: 35d5e8a2a8f69d242a70c1c1c092d490, type: 3}
+  vipergrassCard: {fileID: 21300000, guid: fa313b55d55b9bf459182747f275cdcd, type: 3}
+  sunflowerCard: {fileID: 21300000, guid: 7a0d52fb18826ea47bde499a7fcea15b, type: 3}
+  carnationCard: {fileID: 21300000, guid: 53769b521aef77846a71f0ac3377cdb3, type: 3}
+  thymeCard: {fileID: 21300000, guid: 13039499c18960c48bfcb51508bd3c69, type: 3}
 --- !u!1 &506929967749759848
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +917,9 @@ MonoBehaviour:
   act2Levels: {fileID: 8195348630428775330}
   act3Cutscene: {fileID: 2077012196301578169}
   act3Levels: {fileID: 3800773453272780302}
+  act1ResetVol: 1
+  act2ResetVol: 0.6
+  act3ResetVol: 0.8
 --- !u!1 &5684796103620678421
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,18 +13,26 @@ public class PauseMenu : MonoBehaviour
     HintTracker hintTracker;
 
     //audiosource for button click
-    AudioSource buttonAudio;
+    [SerializeField] AudioSource buttonAudio;
 
     void Start()
     {
         hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
-        buttonAudio = GetComponent<AudioSource>();
+        //buttonAudio = GetComponent<AudioSource>();
+        if(menu != null)
+        {
+            menu.SetActive(false);
+        }
     }
 
     //*
     void Update()
     {
-        
+        if(hintTracker != null)
+        {
+            Debug.Log("Searching for  hinttracker");
+            hintTracker = GameObject.Find("HintTracker").GetComponent<HintTracker>();
+        }
     }
     //*/
 
@@ -34,18 +42,18 @@ public class PauseMenu : MonoBehaviour
         //Debug.Log("Toggling Pause Menu");
         if(menu == null) { return; }
 
-        buttonAudio.Play();
-
         if(menu.activeSelf)
         {
+            buttonAudio.Play();
             menu.SetActive(false);
         }
         else
         {
             menu.SetActive(true);
+            buttonAudio.Play();
         }
 
-        Debug.Log(hintTracker.getHintsAccepted());
+        //Debug.Log(hintTracker.getHintsAccepted());
         if (hintTracker != null && hintTracker.getHintsAccepted() > 0) 
         { 
             resetHint.SetActive(true); 

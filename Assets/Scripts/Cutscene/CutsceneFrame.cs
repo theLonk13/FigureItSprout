@@ -79,7 +79,7 @@ public class CutsceneFrame : MonoBehaviour
             Color tempColor = frameImage.color;
             tempColor.a = Mathf.Min(tempColor.a + fadeSpeed * Time.deltaTime, 1.0f);
             frameImage.color = tempColor;
-            if(interactibleImage != null){ interactibleImage.color = tempColor; }
+            if(interactibleImage != null){ interactibleImage.color = new Color(1f, 1f, 1f, tempColor.a); }
 
             //update state when finished fading in
             if(tempColor.a >= 1.0f)

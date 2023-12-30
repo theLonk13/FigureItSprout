@@ -33,6 +33,8 @@ public class MusicPlayer : MonoBehaviour
     //current player
     AudioSource currPlayer = null;
 
+    bool muted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,29 @@ public class MusicPlayer : MonoBehaviour
             currPlayer.Play();
         }
         */
+
+        if (muted)
+        {
+            currPlayer.volume = 0f;
+        }
+        else
+        {
+            switch (playerState)
+            {
+                case 2:
+                    currPlayer.volume = act1ResetVol;
+                    break;
+                case 4:
+                    currPlayer.volume = act2ResetVol;
+                    break;
+                case 6:
+                    currPlayer.volume = act3ResetVol;
+                    break;
+                default:
+                    currPlayer.volume = 1f;
+                    break;
+            }
+        }
     }
 
     void StopAllSound(int playerState)
@@ -98,6 +123,17 @@ public class MusicPlayer : MonoBehaviour
         if (playerState != 6 && act3Levels.isPlaying) { StartCoroutine(MusicFade(act3Levels, 2.0f, 0f, act3ResetVol)); }
     }
 
+    public void ToggleMuteMusic()
+    {
+        muted = !muted;
+        
+    }
+
+    public bool GetIsMuted()
+    {
+        return muted;
+    }
+
     public void PlayTitle()
     {
         StopAllSound(0);
@@ -105,6 +141,7 @@ public class MusicPlayer : MonoBehaviour
         {
             titleMusic.Play();
         }
+        currPlayer = titleMusic;
         playerState = 0;
     }
 
@@ -115,6 +152,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act1Cutscene.Play();
         }
+        currPlayer = act1Cutscene;
         playerState = 1;
     }
 
@@ -125,6 +163,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act2Cutscene.Play();
         }
+        currPlayer = act2Cutscene;
         playerState = 3;
     }
 
@@ -135,6 +174,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act3Cutscene.Play();
         }
+        currPlayer = act3Cutscene;
         playerState = 5;
     }
 
@@ -145,6 +185,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act1Levels.Play();
         }
+        currPlayer = act1Levels;
         playerState = 2;
     }
 
@@ -155,6 +196,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act2Levels.Play();
         }
+        currPlayer= act2Levels;
         playerState = 4;
     }
 
@@ -165,6 +207,7 @@ public class MusicPlayer : MonoBehaviour
         {
             act3Levels.Play();
         }
+        currPlayer = act3Levels;
         playerState = 6;
     }
 

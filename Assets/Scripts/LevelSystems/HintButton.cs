@@ -63,17 +63,17 @@ public class HintButton : MonoBehaviour
         {
             hintButton.color = new Color(68f / 255f, 68f / 255f, 68f / 255f, 255f / 255f);
             numHintsDisplay.color = new Color(68f / 255f, 68f / 255f, 68f / 255f, 255f / 255f);
-            displayNumHints.color = new Color(68f / 255f, 68f / 255f, 68f / 255f, 255f / 255f);
+            //displayNumHints.color = new Color(68f / 255f, 68f / 255f, 68f / 255f, 255f / 255f);
             enableButton.enabled = false;
-            hoverScript.enabled = false;
+            //hoverScript.enabled = false;
         }
         else
         {
             hintButton.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
             numHintsDisplay.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
-            displayNumHints.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
+            //displayNumHints.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
             enableButton.enabled = true;
-            hoverScript.enabled = true;
+            //hoverScript.enabled = true;
         }
         displayNumHints.text = "" + (Mathf.Max(0, numHints - hintsAccepted));
     }

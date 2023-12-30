@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203a451ec489f9644a4a705013d07393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookToggleImage: {fileID: 6957756186817001780}
+  bookOpenSprite: {fileID: 21300000, guid: 14e1780d8dff0604caea660b958587a8, type: 3}
+  bookClosedSprite: {fileID: 21300000, guid: 2c8cb846f4b3f1d4f85c84c4ed0fe5be, type: 3}
 --- !u!1 &1805004603349598160
 GameObject:
   m_ObjectHideFlags: 0

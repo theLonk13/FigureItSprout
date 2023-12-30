@@ -9,6 +9,9 @@ public class BookController : MonoBehaviour
     RectTransform pgTransform;
     GameObject[] pages;
 
+    [SerializeField] GameObject leftButton;
+    [SerializeField] GameObject rightButton;
+
     //book transform
     RectTransform bookTransform;
     //locations for the book being toggled or not
@@ -80,6 +83,24 @@ public class BookController : MonoBehaviour
             bookTransform.localPosition = Vector3.MoveTowards(bookTransform.localPosition, hidePos, Time.deltaTime * speed);
         }
 
+        if(curr_pg == 0)
+        {
+            leftButton.SetActive(false);
+        }
+        else
+        {
+            leftButton.SetActive(true);
+        }
+
+        if (curr_pg < Mathf.Floor((pages.Length / 2) - 1))
+        {
+            rightButton.SetActive(true);
+        }
+        else
+        {
+            rightButton.SetActive(false);
+        }
+
         ActivatePages();
     }
 
@@ -143,6 +164,17 @@ public class BookController : MonoBehaviour
         //Debug.Log("Toggling book");
         pgFlipAudio.Play();
         book_toggle = -1*book_toggle;
+
+        GameObject lvUICanvas = GameObject.Find("LevelUICanvas");
+        LevelManager lvMan = null;
+        if (lvUICanvas != null)
+        {
+            lvMan = lvUICanvas.GetComponent<LevelManager>();
+        }
+        if (lvMan != null)
+        {
+            lvMan.ToggleUIBook();
+        }
     }
 
     public int getBookToggle()

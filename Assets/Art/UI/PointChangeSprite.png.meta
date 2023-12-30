@@ -83,12 +83,12 @@ TextureImporter:
       name: PointChangeSprite_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 56
-        width: 745
-        height: 921
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -104,12 +104,12 @@ TextureImporter:
       name: PointChangeSprite_1
       rect:
         serializedVersion: 2
-        x: 1146
-        y: 83
-        width: 741
-        height: 894
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

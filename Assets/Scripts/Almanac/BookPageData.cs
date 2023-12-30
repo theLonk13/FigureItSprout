@@ -14,7 +14,7 @@ public class BookPageData : MonoBehaviour
         int csPgNumber = pgNumber - 1;
         pgTransform = GetComponent<RectTransform>();
         pgTransform.localPosition = new Vector3(
-            -11 + 50 * (csPgNumber / 2) + 22 * (csPgNumber % 2),
+            -11.5f + 50f * (csPgNumber / 2) + 23f * (csPgNumber % 2),
             1,
             0
         );

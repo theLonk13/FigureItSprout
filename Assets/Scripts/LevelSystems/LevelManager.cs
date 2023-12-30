@@ -29,10 +29,13 @@ public class LevelManager : MonoBehaviour
 
     //Book controller for this level
     BookController bookController;
+    bool toggleUIBook = false;
+    [SerializeField] Animator toggleUIAnim;
     //PauseMenu
     [SerializeField] PauseMenu pauseMenu;
     //toggle UI elements
     GameObject[] toggleUIElements;
+    float toggleCD = 0f;
     //fadeBG for level fading
     [SerializeField] Animator fadeAnim;
 
@@ -97,10 +100,11 @@ public class LevelManager : MonoBehaviour
         }
 
         //Toggles UI elements
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl) && toggleCD > 5f)
         {
             ToggleUI();
         }
+        toggleCD += .1f;
     }
 
     // checks in with hint system to update level info in the script
@@ -379,6 +383,17 @@ public class LevelManager : MonoBehaviour
         {
             tutorial.SetActive(!tutorial.activeSelf);
         }
+
+        toggleCD = 0f;
+    }
+
+    public void ToggleUIBook()
+    {
+        toggleUIBook = !toggleUIBook;
+        toggleUIAnim.SetBool("ShowBook", toggleUIBook); GameObject playerHand = GameObject.Find("PlayerHandArea");
+        Animator playerHandAnim = null;
+        if (playerHand != null) { playerHandAnim = playerHand.GetComponent<Animator>(); }
+        if (playerHandAnim != null) { playerHandAnim.SetBool("LevelComplete", toggleUIBook); }
     }
 
     public void playAllLvCompParticles()
