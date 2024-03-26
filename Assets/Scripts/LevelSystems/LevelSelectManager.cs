@@ -29,10 +29,10 @@ public class LevelSelectManager : MonoBehaviour
         if(levelDataScript != null && levelDataScript.getLastLevel() < 11)
         {
             actSwitch.changeAct(1);
-        }else if(levelDataScript.getLastLevel() < 22)
+        }else if(levelDataScript.getLastLevel() < 23)
         {
             actSwitch.changeAct(2);
-        }else if( levelDataScript.getLastLevel() <= 31)
+        }else if( levelDataScript.getLastLevel() <= 32)
         {
             actSwitch.changeAct(3);
         }
@@ -83,7 +83,7 @@ public class LevelSelectManager : MonoBehaviour
         }else if(lvNum <= 21)
         {
             return 2;
-        }else if(lvNum <= 31)
+        }else if(lvNum <= 32)
         {
             return 3;
         }

@@ -161,7 +161,8 @@ public class CutsceneManager : MonoBehaviour
 
     public void AutoAdvanceHelper()
     {
-        currFrame.AdvanceFrame();
+        if(currFrame != null) { currFrame.AdvanceFrame(); }
+        //currFrame.AdvanceFrame();
         FindFrame(++currFrameNum);
         if (currFrame != null)
         {

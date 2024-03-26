@@ -15,7 +15,7 @@ public class SaveData
     {
         //LevelData levelData = GameObject.Find("LevelData").GetComponent<LevelData>();
         //int numLevels = levelData.getNumLevels();
-        int numLevels = 31;
+        int numLevels = 32;
 
         this.UnlockedLevels = new int[numLevels];
         this.BonusStars = new int[numLevels];
