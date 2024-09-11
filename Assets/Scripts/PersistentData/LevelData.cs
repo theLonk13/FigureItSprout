@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Steamworks;
 
 public class LevelData : MonoBehaviour, IDataPersistance
 {
@@ -14,6 +15,9 @@ public class LevelData : MonoBehaviour, IDataPersistance
 
     //last level player was on, used to flip to correct act when moving back to level select
     int last_level;
+
+    [SerializeField] int Act1CheevoLv;
+    [SerializeField] int Act2CheevoLv;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,26 @@ public class LevelData : MonoBehaviour, IDataPersistance
         if (level > 0 && level <= numLevels)
         {
             level_tracker[level - 1] = 1;
+        }
+        CheckAchievement();
+    }
+
+    //Check Steam Achievements for completing acts
+    void CheckAchievement()
+    {
+        if (level_tracker[Act1CheevoLv - 1] == 1)
+        {
+            //Check and set "COMPLETE ACT 1" achievement here
+        }
+
+        if (level_tracker[Act2CheevoLv - 1] == 1)
+        {
+            //Check and set "COMPLETE ACT 2" achievement here
+        }
+
+        if (level_tracker[numLevels - 1] == 1)
+        {
+            //Check and set "COMPLETE THE WHOLE GAME" achievement here
         }
     }
 

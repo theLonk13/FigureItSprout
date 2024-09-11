@@ -7,6 +7,11 @@ public class BonusPoints : MonoBehaviour, IDataPersistance
     [SerializeField] LevelData levelData;
     int[] levelStarTracker;
 
+    //milestones for bonus stars
+    [SerializeField] int BonusStarMilestone1 = 2;
+    [SerializeField] int BonusStarMilestone2 = 3;
+    [SerializeField] int MaxBonusStars = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,25 @@ public class BonusPoints : MonoBehaviour, IDataPersistance
     public void LevelBonus(int lvNum)
     {
         levelStarTracker[lvNum - 1] = 1;
+    }
+
+    //Check if player has enough stars for achievement
+    void CheckBonusAchievement()
+    {
+        int playerStars = GetStarCount();
+        if(playerStars >= MaxBonusStars)
+        {
+
+        }else if(playerStars >= BonusStarMilestone2)
+        {
+
+        }else if(playerStars >= BonusStarMilestone1)
+        {
+            
+        }else if(playerStars >= 1)
+        {
+
+        }
     }
 
     public int[] GetBonusStarData()
