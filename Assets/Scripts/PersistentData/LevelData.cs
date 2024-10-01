@@ -61,7 +61,7 @@ public class LevelData : MonoBehaviour, IDataPersistance
         {
             level_tracker[level - 1] = 1;
         }
-        CheckAchievement();
+        //CheckAchievement();
     }
 
     //Check Steam Achievements for completing acts

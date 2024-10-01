@@ -47,11 +47,11 @@ public class BookToggle : MonoBehaviour
     {
         bookOpen = bookController.getBookToggle();
 
-        if(bookOpen < 0)
+        if(bookOpen < 0 && bookClosedSprite != null)
         {
             bookToggleImage.sprite = bookClosedSprite;
         }
-        else
+        else if(bookOpenSprite != null)
         {
             bookToggleImage.sprite = bookOpenSprite;
         }
