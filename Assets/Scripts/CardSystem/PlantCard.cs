@@ -12,12 +12,16 @@ public class PlantCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public static GameObject playerHand;
     private Image image;
 
+    //FollowMouseScript
+    private FollowMouseScript followMouse = null;
+
     //tracks if the mouse is over this card
     bool hoverThis;
     [SerializeField] bool playableCard;
 
     void Awake()
     {
+        followMouse = GameObject.Find("FollowMouse").GetComponent<FollowMouseScript>();
         hoverThis = false;
         if (!playableCard)
         {
@@ -43,16 +47,23 @@ public class PlantCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        followMouse.IncHover(plantID);
         hoverThis = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        followMouse.DecHover();
         hoverThis = false;
     }
 
     public int getPlantID()
     {
         return plantID;
+    }
+
+    public bool getHoverThis()
+    {
+        return hoverThis;
     }
 }

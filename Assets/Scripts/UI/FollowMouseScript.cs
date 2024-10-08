@@ -20,6 +20,7 @@ public class FollowMouseScript : MonoBehaviour
     PlantCardSprites cardSprites;
 
     GameObject[] tiles;
+    GameObject[] plantCards;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,19 @@ public class FollowMouseScript : MonoBehaviour
         cardSprites = GameObject.Find("PlantCardSprites").GetComponent<PlantCardSprites>();
 
         tiles = GameObject.FindGameObjectsWithTag("Tile");
+        plantCards = GameObject.FindGameObjectsWithTag("PlantCard");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10) ;
+        float xPos = Input.mousePosition.x;
+        float yPos = Input.mousePosition.y;
+        xPos = Mathf.Clamp(xPos, 2*followMouse.rect.width, Screen.width);
+        yPos = Mathf.Clamp(yPos, 0f, Screen.height - 2*followMouse.rect.height);
+        //xPos = Mathf.Clamp(xPos, 350, 450);
+        
+        Vector3 mousePosition = new Vector3(xPos, yPos, -10) ;
         followMouse.position = Vector3.MoveTowards(followMouse.position, mousePosition, moveSpeed * Time.deltaTime);
 
         CheckHover();
@@ -73,6 +81,7 @@ public class FollowMouseScript : MonoBehaviour
         if (plantID > 0)
         {
             ToggleShowPlant(true);
+            Debug.Log("FollowMouse now showing plant ID : " + plantID);
         }
         else
         {
@@ -85,7 +94,7 @@ public class FollowMouseScript : MonoBehaviour
     public void DecHover()
     {
         numHover--;
-        if(numHover == 0)
+        if(numHover <= 0)
         {
             ToggleShowPlant(false);
         }
@@ -110,11 +119,30 @@ public class FollowMouseScript : MonoBehaviour
                 if (tiledata != null && tiledata.hoverThis && tiledata.getPlantType() != -1 && !Input.GetMouseButton(0))
                 {
                     currHover = true;
+                    break;
                 }
             }
         }
 
-        showPlant = currHover;
+        foreach(GameObject card in plantCards)
+        {
+            if (currHover) { break; }
+
+            if(card != null)
+            {
+                PlantCard plantCardScript = card.GetComponent<PlantCard>();
+                if(plantCardScript != null && plantCardScript.getHoverThis() && !Input.GetMouseButton(0))
+                {
+                    currHover= true; break;
+                }
+            }
+        }
+
+        if (currHover != showPlant)
+        {
+            showPlant = currHover;
+            ToggleShowPlant(currHover);
+        }
     }
 
     void UpdateShowTimer()
