@@ -5,18 +5,18 @@ using UnityEngine;
 public class MomPlantData : MonoBehaviour
 {
     //Orchid data
-    int orchid_row, orchid_col, orchid_val, orchid_val17, orchid_val18, orchid_val19, orchid_val20, orchid_val21;
+    int orchid_row, orchid_col, orchid_val, orchid_val18, orchid_val19, orchid_val20, orchid_val21, orchid_val22;
 
     void Start()
     {
         orchid_row = 0;
         orchid_col = 0;
         orchid_val = 10;
-        orchid_val17 = 10;
-        orchid_val18 = 9;
-        orchid_val19 = 7;
-        orchid_val20 = 4;
-        orchid_val21 = 2;
+        orchid_val18 = 10;
+        orchid_val19 = 9;
+        orchid_val20 = 7;
+        orchid_val21 = 4;
+        orchid_val22 = 2;
     }
 
     //called when the mom orchid is planted
@@ -27,8 +27,6 @@ public class MomPlantData : MonoBehaviour
         orchid_col = col_num;
         switch (lvNum)
         {
-            case 17:
-                return orchid_val17;
             case 18:
                 return orchid_val18;
             case 19:
@@ -37,6 +35,8 @@ public class MomPlantData : MonoBehaviour
                 return orchid_val20;
             case 21:
                 return orchid_val21;
+            case 22:
+                return orchid_val22;
             default:
                 return -1;
         }

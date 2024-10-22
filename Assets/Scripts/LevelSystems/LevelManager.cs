@@ -44,6 +44,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] AudioSource lvCompleteSound;
     [SerializeField] AudioSource lvCompleteLeavesSound;
 
+    //audiossource for score changing SFX
+    [SerializeField] AudioSource scoreIncSFX;
+
     /*
      * time of day for level
      * 0 = day
@@ -230,6 +233,7 @@ public class LevelManager : MonoBehaviour
     //Totals the score of all plants after the turn is ended
     void UpdateScore()
     {
+        int prev_score = total_score;
         total_score = 0;
         foreach(GameObject tile in tiles)
         {
@@ -238,6 +242,11 @@ public class LevelManager : MonoBehaviour
         }
         //total_score.SetText(score + "");
         total_score_canvas.SetText(total_score + "/" + goal_score);
+        if(scoreIncSFX != null && total_score > prev_score)
+        {
+            scoreIncSFX.Play();
+            Debug.Log("ScoreIncSFX played");
+        }
     }
 
     //returns score
