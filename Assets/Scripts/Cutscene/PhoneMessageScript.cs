@@ -31,6 +31,7 @@ public class PhoneMessageScript : MonoBehaviour
     [SerializeField] Sprite otherMsg8;
     [SerializeField] Sprite otherMsg9;
 
+    // Size offsets for message backgrounds
     [SerializeField] float smallSize; // size 0
     [SerializeField] float medSize; // size 1
     [SerializeField] float bigSize; // size 2
@@ -40,6 +41,7 @@ public class PhoneMessageScript : MonoBehaviour
     [SerializeField] float size7;
     [SerializeField] float size8;
     [SerializeField] float size9;
+    [SerializeField] float genBGOffset;
 
     //colors for different ppl
     [SerializeField] Color maggieColor; //id 0
@@ -56,7 +58,7 @@ public class PhoneMessageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateBGSize();   
     }
 
     public void SetMsgProps(int id, int size, bool newSender)
@@ -133,6 +135,9 @@ public class PhoneMessageScript : MonoBehaviour
                     break;
             }
             messageText.alignment = TextAlignmentOptions.Right;
+            messageBG.rectTransform.anchorMin = new Vector2(1.0f, messageBG.rectTransform.anchorMin.y);
+            messageBG.rectTransform.anchorMax = new Vector2(1.0f, messageBG.rectTransform.anchorMin.y);
+            messageBG.rectTransform.pivot = new Vector2(1.0f, .5f);
         }
         else
         {
@@ -175,7 +180,11 @@ public class PhoneMessageScript : MonoBehaviour
                     this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, size9);
                     break;
             }
+            
             messageText.alignment = TextAlignmentOptions.Left;
+            messageBG.rectTransform.anchorMin = new Vector2(0.0f, messageBG.rectTransform.anchorMin.y);
+            messageBG.rectTransform.anchorMax = new Vector2(0.0f, messageBG.rectTransform.anchorMin.y);
+            messageBG.rectTransform.pivot = new Vector2(0.0f, .5f);
         }
         //Debug.Log(messageBG.sprite);
     }
@@ -198,5 +207,11 @@ public class PhoneMessageScript : MonoBehaviour
     public void ClearText()
     {
         messageText.text = "";
+    }
+
+    void UpdateBGSize()
+    {
+        messageBG.rectTransform.sizeDelta = new Vector2(messageText.GetRenderedValues(true).x + genBGOffset + 5, messageText.GetRenderedValues(true).y + genBGOffset);
+        messageBG.rectTransform.anchoredPosition = new Vector2(0.0f, messageBG.rectTransform.anchoredPosition.y);
     }
 }
