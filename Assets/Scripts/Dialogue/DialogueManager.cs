@@ -80,6 +80,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+        Debug.Log("Get Rendered Values : " + dialogueText.GetRenderedValues(true) + "\ttextBounds : " + dialogueText.textBounds);
+        //dialogueText.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogueText.textBounds.size.x, dialogueText.textBounds.size.y);
         currDialogue = null;
     }
 
