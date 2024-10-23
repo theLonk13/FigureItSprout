@@ -48,6 +48,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     //animator for point change sprites
     [SerializeField] Animator pointChangeAnimator;
+    //animator for pot
+    [SerializeField] Animator potAnimator;
     //particle system for lv complete
     [SerializeField] ParticleSystem[] lvCompParticles;
     bool lvCompleteParticlesPlayed = false;
@@ -263,6 +265,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void PointIncAnimation()
     {
         pointChangeAnimator.SetTrigger("PointIncrease");
+        potAnimator.SetTrigger("PointIncrease");
     }
 
     public void ShiitakePointInc()
@@ -273,6 +276,15 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void PointDecAnimation()
     {
         pointChangeAnimator.SetTrigger("PointDecrease");
+    }
+
+    //Destroys the plant currently in this tile, removing its points and freeing the tile to be replanted
+    public void DestroyPlant()
+    {
+        animator.SetBool("Planted", false);
+        plantType = -1;
+        potImage.sprite = null;
+        turnCounter = 0;
     }
 
     public void playLvCompParticles()

@@ -200,6 +200,9 @@ public class LevelManager : MonoBehaviour
                 break;
             case 17:
                 Sunflower(row_num, col_num); break;
+            case 19:
+                Cereus(row_num, col_num);
+                break;
             default:
                 Debug.Log("What are you doing with your life?");
                 break;
@@ -823,6 +826,15 @@ public class LevelManager : MonoBehaviour
         //curr_tile.PointIncAnimation();
     }
 
+    //ID 19: Cereus - Worth 2 pts. After 2 turns, destroys itself
+    //This is the active part, setting point value to 2
+    //TurnCounter function is implemented below
+    void Cereus(int row_num, int col_num)
+    {
+        LevelTile curr_tile = findTile(row_num, col_num);
+        curr_tile.curr_score = 2;
+    }
+
 
     //"Setup" plant actions : these actions wait until another action/condition is met
     //Setup plants have two actions, the one that occurs when it is planted, and the one that triggers when another condition is met
@@ -897,6 +909,8 @@ public class LevelManager : MonoBehaviour
                     SunflowerTreeCounter(tiledata); break;
                 case 18:
                     CarnationCounter(tiledata); break;
+                case 19:
+                    CereusCounter(tiledata); break;
                 case 77: //Pear tree
                     PearTreeCounter(tiledata);
                     break;
@@ -932,6 +946,15 @@ public class LevelManager : MonoBehaviour
         if(pear_data.incCounter() == 5)
         {
             pear_data.curr_score *= 3;
+        }
+    }
+
+    //ID 19: Cereus - This is the TurnCounter behaviour for Cereus
+    void CereusCounter(LevelTile cereus_data)
+    {
+        if(cereus_data.incCounter() == 2)
+        {
+            cereus_data.DestroyPlant();
         }
     }
 }
