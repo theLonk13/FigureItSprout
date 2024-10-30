@@ -5023,6 +5023,7 @@ MonoBehaviour:
   row: 0
   col: 0
   curr_score: 0
+  tileIndicator: {fileID: 2783321763402226216}
   potImageObj: {fileID: 7777139505770051627}
   potAudio: {fileID: 8662519303881474237}
   shy_indicator: {fileID: 7891009774065832850}

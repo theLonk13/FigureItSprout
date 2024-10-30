@@ -16,6 +16,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     //persistent script that holds the potted sprites
     PottedSpriteInfo potted_sprites;
 
+    //Image for the tile indicator
+    [SerializeField] Image tileIndicator;
     //Image rendering this pot
     [SerializeField] GameObject potImageObj;
     RectTransform potImageRect;
@@ -300,6 +302,16 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
+    public void HoverAOE()
+    {
+        tileIndicator.color = Color.yellow;
+    }
+
+    public void UnhoverAOE()
+    {
+        tileIndicator.color = Color.white;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         followMouse.IncHover(plantType);
@@ -308,5 +320,22 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerExit(PointerEventData eventData)
     {
         followMouse.DecHover();
+    }
+
+    //----------------- Getter Methods --------------------
+
+    public int GetTileRow()
+    {
+        return row;
+    }
+
+    public int GetTileColumn()
+    {
+        return col;
+    }
+
+    public int GetTileScore()
+    {
+        return curr_score;
     }
 }

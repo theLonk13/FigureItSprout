@@ -426,6 +426,140 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    //Main method for hover AOE
+    public void HoverAOE(int plantType = -1, int col = -1, int row = -1)
+    {
+        ClearHoverAOE();
+        HoverAOETile(col, row);
+        switch(plantType)
+        {
+            case 5:
+                //Lemongrass - Row
+                HorizontalHoverAOE(row);
+                break;
+            case 6:
+                //Thyme - column
+                VerticalHoverAOE(col);
+                break;
+            case 7:
+                //Clover - 4 adjacent tiles (NSEW)
+                AdjacentHoverAOE(col, row);
+                break;
+            case 8:
+                //Alfalfa - column
+                VerticalHoverAOE(col);
+                break;
+            case 9:
+                //Basil - 4 adjacent
+                AdjacentHoverAOE(col, row);
+                break;
+            case 10:
+                //SunSucc - 8 surrounding
+                SurroundingHoverAOE(col, row);
+                break;
+            case 11:
+                //Vipergrass - row
+                HorizontalHoverAOE(row);
+                break;
+            case 12:
+                //Crabgrass - row
+                HorizontalHoverAOE(row);
+                break;
+            case 13:
+                //Shiitake - 4 adjacent
+                AdjacentHoverAOE(col, row);
+                break;
+            case 15:
+                //Shyplant
+                AdjacentHoverAOE(col, row);
+                break;
+            default:
+                //No aoe plants
+                break;
+        }
+
+    }
+
+    //Helper method for horizontal hover AOEs
+    void HorizontalHoverAOE(int row)
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if (tileScript != null && tileScript.GetTileRow() == row)
+            {
+                tileScript.HoverAOE();
+            }
+        }
+    }
+
+    //Helper Method for horizontal AOE
+    void VerticalHoverAOE(int col)
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if (tileScript != null && tileScript.GetTileColumn() == col)
+            {
+                tileScript.HoverAOE();
+            }
+        }
+    }
+
+    //Helper method for 4 adjacent aoe
+    void AdjacentHoverAOE(int col, int row)
+    {
+        LevelTile currTile = findTile(row - 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col + 1);
+        if(currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+    }
+
+    //helper method for 8 surrounding aoe
+    void SurroundingHoverAOE(int col, int row)
+    {
+        LevelTile currTile = findTile(row - 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row -1, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row - 1, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+    }
+
+    //helper method for hovering ont tile
+    void HoverAOETile(int col, int row)
+    {
+        LevelTile tileScript = findTile(row, col);
+        if(tileScript != null) { tileScript.HoverAOE(); }
+    }
+
+    //Stops all HoverAOEs
+    void ClearHoverAOE()
+    {
+        foreach(GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if(tileScript != null)
+            {
+                tileScript.UnhoverAOE();
+            }
+        }
+    }
+
 
     //TODO IMPLEMENT ALL PLANT ACTIONS HERE
     //"Active" plant actions: These actions occur on planting the plant
