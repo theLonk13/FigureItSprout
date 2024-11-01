@@ -11,12 +11,20 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     Image hoverSprite;
     PottedSpriteInfo potted_sprites;
 
+    LevelManager lvMan;
+
     void Awake()
     {
         thisTile = this.gameObject.GetComponent<LevelTile>();
         potted_sprites = GameObject.Find("DayPottedSpriteInfo").GetComponent<PottedSpriteInfo>();
         hoverSprite = hoverSpriteObj.GetComponent<Image>();
         if (hoverSprite == null) { Debug.LogError("hoverSprite failed to initialize"); }
+
+        GameObject LevelManObj = GameObject.Find("LevelUICanvas");
+        if(LevelManObj != null)
+        {
+            lvMan = LevelManObj.GetComponent<LevelManager>();
+        }
     }
 
     void Update()
@@ -36,6 +44,8 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 DragAndDrop.dragImage.enabled = false;
             }
+
+            if (lvMan != null) { lvMan.HoverAOE(DragAndDrop.plantDrag, thisTile.GetTileColumn(), thisTile.GetTileRow()); }
         }
 
         thisTile.hoverThis = true;
@@ -50,6 +60,8 @@ public class HoverSprite : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             DragAndDrop.dragImage.enabled = true;
         }
+
+        if (lvMan != null) { lvMan.HoverAOE(); }
 
         thisTile.hoverThis = false;
     }

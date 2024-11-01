@@ -5023,6 +5023,7 @@ MonoBehaviour:
   row: 0
   col: 0
   curr_score: 0
+  tileIndicator: {fileID: 2783321763402226216}
   potImageObj: {fileID: 7777139505770051627}
   potAudio: {fileID: 8662519303881474237}
   shy_indicator: {fileID: 7891009774065832850}
@@ -5030,6 +5031,7 @@ MonoBehaviour:
   blossom_text: {fileID: 4566990053830375301}
   scoreDisplay: {fileID: 4104780813459873669}
   pointChangeAnimator: {fileID: 857095068761728664}
+  potAnimator: {fileID: 5824436948787844151}
   lvCompParticles:
   - {fileID: 5979381563898514098}
   - {fileID: 77581757530401744}
@@ -26318,7 +26320,7 @@ Animator:
   m_GameObject: {fileID: 7777139505770051627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee4b0247183d1d1458d44b4825e30a60, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

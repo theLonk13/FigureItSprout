@@ -16,6 +16,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     //persistent script that holds the potted sprites
     PottedSpriteInfo potted_sprites;
 
+    //Image for the tile indicator
+    [SerializeField] Image tileIndicator;
     //Image rendering this pot
     [SerializeField] GameObject potImageObj;
     RectTransform potImageRect;
@@ -48,6 +50,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     //animator for point change sprites
     [SerializeField] Animator pointChangeAnimator;
+    //animator for pot
+    [SerializeField] Animator potAnimator;
     //particle system for lv complete
     [SerializeField] ParticleSystem[] lvCompParticles;
     bool lvCompleteParticlesPlayed = false;
@@ -263,6 +267,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void PointIncAnimation()
     {
         pointChangeAnimator.SetTrigger("PointIncrease");
+        potAnimator.SetTrigger("PointIncrease");
     }
 
     public void ShiitakePointInc()
@@ -273,6 +278,15 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void PointDecAnimation()
     {
         pointChangeAnimator.SetTrigger("PointDecrease");
+    }
+
+    //Destroys the plant currently in this tile, removing its points and freeing the tile to be replanted
+    public void DestroyPlant()
+    {
+        animator.SetBool("Planted", false);
+        plantType = -1;
+        potImage.sprite = null;
+        turnCounter = 0;
     }
 
     public void playLvCompParticles()
@@ -288,6 +302,16 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
+    public void HoverAOE()
+    {
+        tileIndicator.color = Color.yellow;
+    }
+
+    public void UnhoverAOE()
+    {
+        tileIndicator.color = Color.white;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         followMouse.IncHover(plantType);
@@ -296,5 +320,22 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerExit(PointerEventData eventData)
     {
         followMouse.DecHover();
+    }
+
+    //----------------- Getter Methods --------------------
+
+    public int GetTileRow()
+    {
+        return row;
+    }
+
+    public int GetTileColumn()
+    {
+        return col;
+    }
+
+    public int GetTileScore()
+    {
+        return curr_score;
     }
 }

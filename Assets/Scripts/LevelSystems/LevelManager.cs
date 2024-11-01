@@ -44,6 +44,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] AudioSource lvCompleteSound;
     [SerializeField] AudioSource lvCompleteLeavesSound;
 
+    //audiossource for score changing SFX
+    [SerializeField] AudioSource scoreIncSFX;
+
     /*
      * time of day for level
      * 0 = day
@@ -197,6 +200,9 @@ public class LevelManager : MonoBehaviour
                 break;
             case 17:
                 Sunflower(row_num, col_num); break;
+            case 19:
+                Cereus(row_num, col_num);
+                break;
             default:
                 Debug.Log("What are you doing with your life?");
                 break;
@@ -230,6 +236,7 @@ public class LevelManager : MonoBehaviour
     //Totals the score of all plants after the turn is ended
     void UpdateScore()
     {
+        int prev_score = total_score;
         total_score = 0;
         foreach(GameObject tile in tiles)
         {
@@ -238,6 +245,11 @@ public class LevelManager : MonoBehaviour
         }
         //total_score.SetText(score + "");
         total_score_canvas.SetText(total_score + "/" + goal_score);
+        if(scoreIncSFX != null && total_score > prev_score)
+        {
+            scoreIncSFX.Play();
+            Debug.Log("ScoreIncSFX played");
+        }
     }
 
     //returns score
@@ -411,6 +423,140 @@ public class LevelManager : MonoBehaviour
         {
             LevelTile tiledata = tile.GetComponent<LevelTile>();
             tiledata.playLvCompParticles();
+        }
+    }
+
+    //Main method for hover AOE
+    public void HoverAOE(int plantType = -1, int col = -1, int row = -1)
+    {
+        ClearHoverAOE();
+        HoverAOETile(col, row);
+        switch(plantType)
+        {
+            case 5:
+                //Lemongrass - Row
+                HorizontalHoverAOE(row);
+                break;
+            case 6:
+                //Thyme - column
+                VerticalHoverAOE(col);
+                break;
+            case 7:
+                //Clover - 4 adjacent tiles (NSEW)
+                AdjacentHoverAOE(col, row);
+                break;
+            case 8:
+                //Alfalfa - column
+                VerticalHoverAOE(col);
+                break;
+            case 9:
+                //Basil - 4 adjacent
+                AdjacentHoverAOE(col, row);
+                break;
+            case 10:
+                //SunSucc - 8 surrounding
+                SurroundingHoverAOE(col, row);
+                break;
+            case 11:
+                //Vipergrass - row
+                HorizontalHoverAOE(row);
+                break;
+            case 12:
+                //Crabgrass - row
+                HorizontalHoverAOE(row);
+                break;
+            case 13:
+                //Shiitake - 4 adjacent
+                AdjacentHoverAOE(col, row);
+                break;
+            case 15:
+                //Shyplant
+                AdjacentHoverAOE(col, row);
+                break;
+            default:
+                //No aoe plants
+                break;
+        }
+
+    }
+
+    //Helper method for horizontal hover AOEs
+    void HorizontalHoverAOE(int row)
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if (tileScript != null && tileScript.GetTileRow() == row)
+            {
+                tileScript.HoverAOE();
+            }
+        }
+    }
+
+    //Helper Method for horizontal AOE
+    void VerticalHoverAOE(int col)
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if (tileScript != null && tileScript.GetTileColumn() == col)
+            {
+                tileScript.HoverAOE();
+            }
+        }
+    }
+
+    //Helper method for 4 adjacent aoe
+    void AdjacentHoverAOE(int col, int row)
+    {
+        LevelTile currTile = findTile(row - 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col + 1);
+        if(currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+    }
+
+    //helper method for 8 surrounding aoe
+    void SurroundingHoverAOE(int col, int row)
+    {
+        LevelTile currTile = findTile(row - 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row -1, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col - 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row + 1, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+        currTile = findTile(row - 1, col + 1);
+        if (currTile != null) { currTile.HoverAOE(); }
+    }
+
+    //helper method for hovering ont tile
+    void HoverAOETile(int col, int row)
+    {
+        LevelTile tileScript = findTile(row, col);
+        if(tileScript != null) { tileScript.HoverAOE(); }
+    }
+
+    //Stops all HoverAOEs
+    void ClearHoverAOE()
+    {
+        foreach(GameObject tile in tiles)
+        {
+            LevelTile tileScript = tile.GetComponent<LevelTile>();
+            if(tileScript != null)
+            {
+                tileScript.UnhoverAOE();
+            }
         }
     }
 
@@ -814,6 +960,15 @@ public class LevelManager : MonoBehaviour
         //curr_tile.PointIncAnimation();
     }
 
+    //ID 19: Cereus - Worth 2 pts. After 2 turns, destroys itself
+    //This is the active part, setting point value to 2
+    //TurnCounter function is implemented below
+    void Cereus(int row_num, int col_num)
+    {
+        LevelTile curr_tile = findTile(row_num, col_num);
+        curr_tile.curr_score = 2;
+    }
+
 
     //"Setup" plant actions : these actions wait until another action/condition is met
     //Setup plants have two actions, the one that occurs when it is planted, and the one that triggers when another condition is met
@@ -888,6 +1043,8 @@ public class LevelManager : MonoBehaviour
                     SunflowerTreeCounter(tiledata); break;
                 case 18:
                     CarnationCounter(tiledata); break;
+                case 19:
+                    CereusCounter(tiledata); break;
                 case 77: //Pear tree
                     PearTreeCounter(tiledata);
                     break;
@@ -923,6 +1080,15 @@ public class LevelManager : MonoBehaviour
         if(pear_data.incCounter() == 5)
         {
             pear_data.curr_score *= 3;
+        }
+    }
+
+    //ID 19: Cereus - This is the TurnCounter behaviour for Cereus
+    void CereusCounter(LevelTile cereus_data)
+    {
+        if(cereus_data.incCounter() == 2)
+        {
+            cereus_data.DestroyPlant();
         }
     }
 }
