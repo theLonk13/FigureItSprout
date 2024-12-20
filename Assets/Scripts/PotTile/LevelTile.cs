@@ -33,6 +33,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     //Indicator for shy plant activation
     int shy_toggle = -1;
     [SerializeField] GameObject shy_indicator;
+    //Indicator for buffalograss indicator
+    [SerializeField] GameObject buffalo_indicator;
 
     //Indicator for blossoming plant counter
     [SerializeField] GameObject blossom_indicator;
@@ -92,6 +94,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         displayShy();
         displayBlossom();
+        displayBuffalo();
         if(plantType > 0)
         {
             potImageObj.SetActive(true);
@@ -145,7 +148,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         hints.PlayerPlanted();
 
         //set animator to planted
-        animator.SetBool("Planted", true);
+        //animator.SetBool("Planted", true);
 
         plantType = plantID;
         //TODO: initialize the current score of this tile to the base score of the plant
@@ -208,7 +211,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void displayBlossom()
     {
-        if(plantType != 17 && plantType != 18) {
+        if(plantType != 17 && plantType != 18 && plantType != 19) {
             blossom_indicator.SetActive(false); 
             return; 
         }
@@ -231,6 +234,26 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 potImage.sprite = potted_sprites.bloom_plant(plantType);
                 potAudio.PlayBlossom();
             }
+        }
+        else if(plantType == 19)
+        {
+            blossom_text.SetText(Mathf.Max(0, 2 - turnCounter) + "");
+            if (turnCounter >= 2)
+            {
+                blossom_indicator.SetActive(false);
+            }
+        }
+    }
+
+    void displayBuffalo()
+    {
+        if(plantType == 21 && buffalo_indicator != null)
+        {
+            buffalo_indicator.SetActive(true);
+        }
+        else
+        {
+            buffalo_indicator.SetActive(false);
         }
     }
 
@@ -287,6 +310,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         plantType = -1;
         potImage.sprite = null;
         turnCounter = 0;
+        curr_score = 0;
+        shy_toggle = -1;
     }
 
     public void playLvCompParticles()

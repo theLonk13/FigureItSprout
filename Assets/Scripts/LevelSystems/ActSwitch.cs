@@ -7,6 +7,7 @@ public class ActSwitch : MonoBehaviour
 {
     [SerializeField] Transform acts;
     int currAct = 1;
+    [SerializeField] int numActs = 3;
 
     [SerializeField] GameObject prevButton;
     [SerializeField] GameObject nextButton;
@@ -29,7 +30,7 @@ public class ActSwitch : MonoBehaviour
         if(currAct == 1)
         {
             //prevButton.SetActive(false);
-        }else if(currAct == 3) {
+        }else if(currAct >= numActs) {
             nextButton.SetActive(false);
         }
     }
@@ -47,7 +48,7 @@ public class ActSwitch : MonoBehaviour
     public void nextAct()
     {
         buttonAudio.Play();
-        currAct = Mathf.Min(3, currAct + 1);
+        currAct = Mathf.Min(numActs, currAct + 1);
     }
 
     public void prevAct()

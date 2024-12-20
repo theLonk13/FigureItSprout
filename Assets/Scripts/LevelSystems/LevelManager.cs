@@ -203,10 +203,19 @@ public class LevelManager : MonoBehaviour
             case 19:
                 Cereus(row_num, col_num);
                 break;
+            case 20:
+                SpiderPlant(row_num, col_num);
+                break;
+            case 21:
+                //Buffalograss(row_num, col_num);
+                break;
             default:
                 Debug.Log("What are you doing with your life?");
                 break;
         }
+
+        //Continuous Plant actions
+        ContinuousPlantActions(row_num, col_num);
 
         //Increment plant counters and perform "Turn Counter" plant actions
         incCounterPlants();
@@ -969,6 +978,93 @@ public class LevelManager : MonoBehaviour
         curr_tile.curr_score = 2;
     }
 
+    void SpiderPlant(int row_num, int col_num)
+    {
+        bool selfMultiply = false; //flag to check if the spiderplant should selfmultiply
+
+        //set base value
+        LevelTile spiderTile = findTile(row_num, col_num);
+        spiderTile.curr_score = 3;
+
+        //top left
+        LevelTile curr_tile = findTile(row_num - 1, col_num - 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //top mid
+        curr_tile = findTile(row_num - 1, col_num);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //top right
+        curr_tile = findTile(row_num - 1, col_num + 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //mid left
+        curr_tile = findTile(row_num, col_num - 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //mid right
+        curr_tile = findTile(row_num, col_num + 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //botttom left
+        curr_tile = findTile(row_num + 1, col_num - 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //bottom mid
+        curr_tile = findTile(row_num + 1, col_num);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        //bottom right
+        curr_tile = findTile(row_num + 1, col_num + 1);
+        if (curr_tile != null && curr_tile.getPlantType() > 0 && curr_tile.curr_score == 3)
+        {
+            curr_tile.curr_score *= 3;
+            selfMultiply = true;
+            curr_tile.PointIncAnimation();
+        }
+
+        if(selfMultiply)
+        {
+            spiderTile.curr_score *= 3;
+            spiderTile.PointIncAnimation();
+        }
+    }
+
 
     //"Setup" plant actions : these actions wait until another action/condition is met
     //Setup plants have two actions, the one that occurs when it is planted, and the one that triggers when another condition is met
@@ -1089,6 +1185,37 @@ public class LevelManager : MonoBehaviour
         if(cereus_data.incCounter() == 2)
         {
             cereus_data.DestroyPlant();
+        }
+    }
+
+    //"Continuous Plants" Actions
+    //These are effects that take place when a plant is planted after another plant has been planted
+
+    /*
+     * Params: row_num - the row of the LAST PLANT PLANTED
+     *         col_num - the column of the LAST PLANT PLANTED
+     */
+    void ContinuousPlantActions(int row_num, int col_num)
+    {
+        foreach (GameObject tile in tiles)
+        {
+            LevelTile tiledata = tile.GetComponent<LevelTile>();
+            switch (tiledata.getPlantType())
+            {
+                case 21:
+                    BuffalograssContinuous(tiledata, row_num, col_num); break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    void BuffalograssContinuous(LevelTile buffalo_data, int row_num, int col_num)
+    {
+        if(buffalo_data.GetTileRow() == row_num && buffalo_data.GetTileColumn() != col_num)
+        {
+            buffalo_data.curr_score += 2;
+            buffalo_data.PointIncAnimation();
         }
     }
 }

@@ -9,6 +9,7 @@ public class LevelSelectIcon : MonoBehaviour
 {
     [SerializeField] int lvNum;
     [SerializeField] string LevelSceneName;
+    [SerializeField] bool TestLevel = false;
 
     //Level icon button and text
     [SerializeField] TextMeshProUGUI levelText;
@@ -24,7 +25,15 @@ public class LevelSelectIcon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelText.SetText("Level " + lvNum);
+        if (TestLevel)
+        {
+            int testLvNum = lvNum - 32;
+            levelText.SetText("Test Level " + testLvNum);
+        }
+        else
+        {
+            levelText.SetText("Level " + lvNum);
+        }
         buttonAudio = GetComponent<AudioSource>();
     }
 

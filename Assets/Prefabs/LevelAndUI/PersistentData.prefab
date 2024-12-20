@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ed53d72ba1f234aa8017e164255965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numLevels: 32
+  numLevels: 42
   Act1CheevoLv: 0
   Act2CheevoLv: 0
 --- !u!1 &1363151966218872835

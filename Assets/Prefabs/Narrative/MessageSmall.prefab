@@ -97,20 +97,20 @@ MonoBehaviour:
   nameText: {fileID: 798741739287956363}
   messageAnim: {fileID: 3241455659429629975}
   messageBG: {fileID: 6154759149680319840}
-  selfMsgSmall: {fileID: 21300000, guid: 7c1ac8ec60e67944c99d60f5f038ea75, type: 3}
-  selfMsgMed: {fileID: 21300000, guid: 07e16bb25c5a8cc4399ef181d378fca1, type: 3}
-  selfMsgBig: {fileID: 21300000, guid: b16ec39ab34acbf40bda1efcfc6ebc29, type: 3}
-  selfMsg4: {fileID: 21300000, guid: 6de3cd4164a4cc54c83834e6f4c79bf9, type: 3}
-  selfMsg5: {fileID: 21300000, guid: be7dee5bd1fc3b0478926b15d6ad6eb7, type: 3}
+  selfMsgSmall: {fileID: 21300000, guid: 9709fbd659063ff48943f6660dde847a, type: 3}
+  selfMsgMed: {fileID: 21300000, guid: b2351744a0cc03340bc696b6e6f909d1, type: 3}
+  selfMsgBig: {fileID: 21300000, guid: dd24d99e3370e47478ffc532ee889d9b, type: 3}
+  selfMsg4: {fileID: 21300000, guid: 9f5ba322bccb4c54cbbfd63115361ce2, type: 3}
+  selfMsg5: {fileID: 21300000, guid: 870bf878cdcd14544863d0c7f41696c3, type: 3}
   selfMsg6: {fileID: 21300000, guid: 5dc38192a0f860041bb0ba2786723744, type: 3}
   selfMsg7: {fileID: 21300000, guid: 188307b21b0781d45a63fd972826ba6e, type: 3}
   selfMsg8: {fileID: 21300000, guid: 475938466123cae46824ce26e1152886, type: 3}
   selfMsg9: {fileID: 21300000, guid: bf7e472d089ca9c43a65bc01bdedec60, type: 3}
-  otherMsgSmall: {fileID: 21300000, guid: 3a237a4508d025f4bb51f805a81105a5, type: 3}
-  otherMsgMed: {fileID: 21300000, guid: f2c50d0304ed8424db01d1f53aeda3c2, type: 3}
-  otherMsgBig: {fileID: 21300000, guid: 2d70b5347f7998946b66b2223228b718, type: 3}
-  otherMsg4: {fileID: 21300000, guid: f88bec50f9795054293194caba7797ac, type: 3}
-  otherMsg5: {fileID: 21300000, guid: af79162f8ca29a44bbf2724b77454c7f, type: 3}
+  otherMsgSmall: {fileID: 21300000, guid: 398d456318b691e41847e544efa0c2f1, type: 3}
+  otherMsgMed: {fileID: 21300000, guid: 932c827bfb522d64883fe7fff37c56d0, type: 3}
+  otherMsgBig: {fileID: 21300000, guid: f47507406c3aefe438a165fd5a5eb2f9, type: 3}
+  otherMsg4: {fileID: 21300000, guid: 1c666cba0847e8f46b46373f279ae755, type: 3}
+  otherMsg5: {fileID: 21300000, guid: c2c3238f419bb1d44a2c37f97e6d31dc, type: 3}
   otherMsg6: {fileID: 21300000, guid: cdd51f201c1258e42acdf65154c640b5, type: 3}
   otherMsg7: {fileID: 21300000, guid: 69d79de8cc3c1934380048d74ab77344, type: 3}
   otherMsg8: {fileID: 21300000, guid: 86dd91f398db8b947a532c2a62ef751e, type: 3}
@@ -125,7 +125,7 @@ MonoBehaviour:
   size8: 90
   size9: 100
   genBGOffset: 6
-  maggieColor: {r: 0.627451, g: 0.84705883, b: 0.53333336, a: 1}
+  maggieColor: {r: 1, g: 1, b: 1, a: 1}
   momColor: {r: 0.972549, g: 0.42352942, b: 0.38431373, a: 1}
   dadColor: {r: 0.4392157, g: 0.75686276, b: 1, a: 1}
   cassColor: {r: 0.96862745, g: 0.6901961, b: 0.39215687, a: 1}

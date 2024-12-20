@@ -5573,10 +5573,6 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7064662090204713025, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
-      propertyPath: numLevels
-      value: 31
-      objectReference: {fileID: 0}
     - target: {fileID: 7789108467160814201, guid: 8436ff3ca5e719e47a1a36bb19036164, type: 3}
       propertyPath: act1ResetVol
       value: 0.8

@@ -125,6 +125,7 @@ public class LevelData : MonoBehaviour, IDataPersistance
 
     public int getLvResets(int lvNum)
     {
+        Debug.Log("" + lvNum + " " + level_resets.Length);
         return level_resets[lvNum - 1];
     }
 
