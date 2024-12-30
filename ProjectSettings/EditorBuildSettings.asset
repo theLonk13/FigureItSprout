@@ -176,4 +176,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/TestLevels/TestLevel1.unity
     guid: bc5811634ebf7274485bbed5694ecb5a
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel2.unity
+    guid: f9f8dea2257341b44898906e3a6d6768
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel3.unity
+    guid: c0755ddde686665428a7fb706fb2c52d
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel4.unity
+    guid: ae44bb8664b8c8c4891263ea01e6cac2
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel5.unity
+    guid: 517fd968663d46f49a2871b754e521f1
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel6.unity
+    guid: 670799b9e56f7dc46bb9b2c576da9537
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel7.unity
+    guid: 14c79a0e86fa7ea40bab3f9db8512219
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel8.unity
+    guid: a66e904b4fc59f24e917f2b161a0085c
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel9.unity
+    guid: 8adf57f64c2a6a9468e7363ceef98749
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel10.unity
+    guid: 25c52d4c6dd7f6343b268f7d4f24939e
+  - enabled: 1
+    path: Assets/Scenes/Levels/TestLevels/TestLevel11.unity
+    guid: 482b77045bbc37e4598c2932161ecd27
   m_configObjects: {}
